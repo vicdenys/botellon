@@ -17,14 +17,14 @@
 
             <!-- Email Address -->
             <div>
-                <x-label for="email" :value="__('Email')" />
+                <x-label for="email" :value="__('email')" />
 
                 <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
             </div>
 
             <!-- Password -->
             <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
+                <x-label for="password" :value="__('password')" />
 
                 <x-input id="password" class="block mt-1 w-full"
                                 type="password"
@@ -35,14 +35,10 @@
            
 
             <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
+                
 
                 <x-button class="ml-3">
-                    {{ __('Log in') }}
+                    {{ __('log in') }}
                 </x-button>
             </div>
         </form>

@@ -1,3 +1,19 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+@layer base {
+
+    @font-face {
+        font-family: 'Bazovy';
+        src: local('Bazovy'), url(/fonts/Bazovy.otf) format('otf');
+    }
+    @font-face {
+        font-family: 'Victorianna-thin';
+        src: local('Victorianna-thin'), url(/fonts/Victorianna-thin.ttf) format('truetype');
+    }
+    @font-face {
+        font-family: 'Victorianna-thin-italic';
+        src: local('Victorianna-thin-italic'), url(/fonts/Victorianna-thin-italic.ttf) format('truetype');
+    }
+  }

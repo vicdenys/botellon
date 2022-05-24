@@ -11,6 +11,10 @@ module.exports = {
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
+                'bazovy': ['Bazovy', 'sans-serif'],
+                'victorianna-thin': ['Victorianna-thin', 'sans-serif'],
+                'victorianna-thin-italic': ['Victorianna-thin-italic', 'sans-serif'],
+                
             },
         },
     },

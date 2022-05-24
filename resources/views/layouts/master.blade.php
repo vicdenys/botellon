@@ -11,7 +11,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     </head>
     <body class="antialiased">
-        <div class=" container mx-auto items-center">
+        <div class=" container mx-auto items-center text-[1.5rem]">
             @yield('content')
         </div>
 
