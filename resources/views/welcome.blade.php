@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
 @section('content')
-    <p>This is my body content.</p>
+    <div class="w-full h-screen flex justify-center items-center">
+        <div class="w-44">
+            <x-application-logo></x-application-logo>
+        </div>
+    </div>
 @stop

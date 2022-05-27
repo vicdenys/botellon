@@ -1,5 +1,6 @@
 <x-app-layout>
-    <div x-data="{open: false}">
+    
+    <div x-data='{{ $errors->any() ? "{open: true}" : "{open: false}"  }}'>
         <x-slot name="header">
             <h2 class="font-semibold  text-gray-800 leading-tight">
                 {{ __('dashboard') }}
@@ -21,8 +22,8 @@
             </div>
         </div>
 
-        <x-modal>
-            <x-add-pdf></x-add-pdf> 
+        <x-modal name="pdfUpload">
+            <x-add-pdf></x-add-pdf>
         </x-modal>
     </div>
 

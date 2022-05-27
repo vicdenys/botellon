@@ -17,7 +17,7 @@
         <script src="{{ asset('js/app.js') }}" defer></script>
         
     </head>
-    <body class=" font-victorianna-thin text-[1.5rem] antialiased">
+    <body class=" font-bazovy antialiased">
         <div class="min-h-screen bg-gray-100">
             @include('layouts.navigation')
 

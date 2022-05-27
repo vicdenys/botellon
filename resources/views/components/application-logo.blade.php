@@ -1,3 +1,3 @@
 
-@svg('logo.svg', 'w-20 h-auto')
+@svg('logo.svg', 'w-full h-auto')
 
