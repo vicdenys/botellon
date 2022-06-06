@@ -17,13 +17,13 @@
 
 
 
-        <h1 class="mb-6" x-text="files ? 'bestand geselecteerd': 'pdf upload'"></h1>
+        <h1 class="font-light font-victorianna-thin text-xl mb-4" x-text="files ? 'bestand geselecteerd': 'pdf upload'"></h1>
 
         @if ($errors->any())
         <div class="alert alert-danger" x-show="!files">
-            <ul class="bg-red-100 p-2 ">
+            <ul class="text-red-600 mb-4 border border-red-600 p-4 ">
                 @foreach ($errors->all() as $error)
-                <li class="text-red-900">{{ $error }}</li>
+                <li class="">{{ $error }}</li>
                 @endforeach
             </ul>
         </div>
@@ -31,13 +31,13 @@
 
         <!-- File -->
         <div class="text-center">
-            <label class=" relative bg-gray-50 border-gray-200 hover:bg-gray-100  text-center w-full block rounded  my-2 " :class="{  'h-72 p-3  cursor-pointer border-2': files === null }" for="customFile2">
-                <input type="file" name="menuFile" maxlength="254" accept="application/pdf" required class="opacity-0 w-full h-full z-40 absolute left-0 top-0" id="customFile2" x-on:change="files = Object.values($event.target.files).length > 0 ? Object.values($event.target.files) : null;">
+            <label class=" relative bg-white border-green hover:bg-green/10  text-center w-full block   my-2 " :class="{  'h-72 p-3  cursor-pointer border-2': files === null }" for="customFile2">
+                <input type="file" name="menuFile" maxlength="254" accept="application/pdf" required class="opacity-0 cursor-pointer w-full h-full z-40 absolute left-0 top-0" id="customFile2" x-on:change="files = Object.values($event.target.files).length > 0 ? Object.values($event.target.files) : null;">
                 <div class=" w-full relative  " :class="{  'z-50': files }">
                     <span x-show="!files" x-text="files ? 'bestand geselecteerd' : 'kies bestand of sleep het hier'" :class="{  'text-gray-700': files }"></span>
-                    <div x-show="files" class="relative w-full text-left p-2 mt-4 border bg-gray-200 border-gray-200">
+                    <div x-show="files" class="relative w-full text-left p-2 mt-4 border bg-green border-green text-white">
                         <div class="flex text-left">
-                            <span x-text="files ? files.map(file => file.name).join(', '): ''" class="text-left" :class="{  'text-gray-700': files }"></span>
+                            <span x-text="files ? files.map(file => file.name).join(', '): ''" class="text-left" :class="{  'text-white': files }"></span>
                         </div>
                         <button x-show="files" type="reset" @click="files = null" class="absolute p-1 box-content  right-0 top-0 flex translate-x-1/2 -translate-y-1/2 bg-black  text-white w-3 h-3 items-center justify-center rounded-full">
                             <span class="absolute font-sans text-xs w-2 fill-white ">
@@ -55,9 +55,9 @@
         <!-- Make active Menu -->
         <div class="my-4">
             <div class="form-check" x-show="files">
-                <input class="form-check-input appearance-none h-4 w-4 border border-gray-300 rounded-sm bg-white checked:bg-black text-black checked:border-black focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name="makeActiveCheckbox" value="MakeActiveCheckbox" id="MakeActiveCheckbox">
+                <input class="form-check-input appearance-none h-4 w-4 border border-green  bg-white checked:bg-green focus:bg-green hover:bg-green  text-black checked:border-green focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name="makeActiveCheckbox" value="MakeActiveCheckbox" id="MakeActiveCheckbox">
                 <label class="form-check-label inline-block text-gray-800" for="MakeActiveCheckbox">
-                    maak menu actief
+                    make menu active
                 </label>
             </div>
         </div>
@@ -68,10 +68,10 @@
 
 
 
-            <a @click="files = null; open = false; document.getElementById('pdfUploadForm').reset()" class="inline-flex cursor-pointer font-light items-center px-4 py-2 bg-gray-100 border border-transparent rounded-md text-black  hover:bg-gray-300 active:bg-gray-300 focus:outline-none focus:border-gray-300 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150">
+            <a @click="files = null; open = false; document.getElementById('pdfUploadForm').reset()" class="inline-flex font-light items-center px-4 py-2 bg-green lowercase  border  text-white hover:shadow-lg hover:scale-105 focus:bg-white focus:text-green focus:shadow-lg focus:scale-105 shadow-gray-900  hover:bg-white cursor-pointer hover:text-green active:bg-white hover:border-green focus:border-green active:border-green focus:outline-none  disabled:opacity-25 transition ease-in-out duration-150">
                 annuleren
             </a>
-            <x-button class="ml-3">
+            <x-button class="ml-3 hover:bg-green focus:bg-green active:bg-green hover:text-white focus:text-white active:text-white  text-green border-green">
                 {{ __('bevestigen') }}
             </x-button>
         </div>

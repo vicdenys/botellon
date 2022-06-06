@@ -12,9 +12,9 @@
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 @if (Session::has('success'))
                 <div class="alert alert-danger mb-4" >
-                    <ul class="bg-green-100 p-2 ">
+                    <ul class="text-black mb-4 border border-black  p-4 ">
                         
-                        <li class="text-green-900">{{ Session::get('success') }}</li>
+                        <li class="text-black">{{ Session::get('success') }}</li>
                         
                     </ul>
                 </div>
@@ -22,8 +22,8 @@
 
                 @if(!$activeFile->count() && $files->count())
 
-                <p class=" bg-rose-500 text-white mb-4 rounded p-3">
-                    Er is nog geen menu bestand actief. Maak er eentje actief door in de tabel op 'maak actief te klikken'...
+                <p class="  text-red-600 mb-4 border border-red-600 p-4">
+                    There is no menu file active. To activate one press the 'make active' button on a file record.
                 </p>
 
                 @endif
@@ -31,7 +31,7 @@
                 <x-button @click="open = true" class="my-6">
                     {{ __('upload pdf') }}
                 </x-button>
-                <div class=" overflow-hidden shadow-sm sm:rounded-lg">
+                <div class=" ">
 
                     <div class="">
                         

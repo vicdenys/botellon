@@ -38,7 +38,7 @@
                         <td class="py-6 ">
                             @if($file->is_active)
                             <span class="border border-white rounded-[100%] px-2 py-1 text-green bg-white">
-                                actief
+                                active
                             </span>
 
                             @endif
@@ -52,7 +52,9 @@
                                 {{ method_field('PUT') }}
 
                                 <div class="form-group">
-                                    <input type="submit" class="font-medium text-blue-600 dark:text-blue-500 hover:underline cursor-pointer" value="Maak actief">
+                                    <x-button class="ml-3 float-right text-base">
+                                        {{ __('make active') }}
+                                    </x-button>
                                 </div>
                             </form>
                             @endif
@@ -60,19 +62,22 @@
 
                         </td>
                         <td class="py-6 text-right" x-data="{ openDeleteModal: false}">
-                            <a @click="openDeleteModal = true" class="text-red-600 cursor-pointer" href="#">verwijder</a>
+                            <x-button @click="openDeleteModal = true" class="ml-3 text-base hover:bg-red-600 focus:bg-red-600 active:bg-red-600  text-red-600 border-red-600">
+                                {{ __('delete') }}
+                            </x-button>
                             <div x-show="openDeleteModal" class="fixed flex items-center justify-center left-0 top-0 w-screen h-screen ">
-                                <div @click="openDeleteModal = false" class="w-full h-full absolute left-0 top-0 bg-black/50">
+                                <div @click="openDeleteModal = false" class="w-full h-full absolute left-0 top-0 bg-black/70">
 
                                 </div>
-                                <div class="p-4 w-96 bg-white absolute text-left">
+                                <div class="p-4 w-96 bg-white text-green absolute text-left">
+                                    <h1 class="font-light font-victorianna-thin text-xl mb-4">delete file</h1>
                                     <p>
-                                        weet u zeker dat u dit bestand wilt verwijderen. Dit kan niet ongedaan gemaakt worden
+                                        are you sure you want to delete <span class="italic text-green/50">'{{$file->title}}'</span>. This can't be undone.
 
                                     </p>
                                     @if($file->is_active)
-                                    <p class=" bg-black p-2  mt-4 text-white rounded">
-                                        Dit is het actief menu. Vergeet geen nieuw menu actief te maken.
+                                    <p class=" bg-black p-4  my-4 text-white ">
+                                        This is the active menu. Once deleted, make sure to activate another one.
                                     </p>
                                     @endif
 
@@ -80,8 +85,10 @@
                                         {{ csrf_field() }}
                                         {{ method_field('DELETE') }}
 
-                                        <div class="form-group">
-                                            <input type="submit" class="text-white bg-red-600 px-4 py-2 rounded mt-8 cursor-pointer" value="Verwijder">
+                                        <div class="form-group mt-4">
+                                            <x-button class="ml-3 float-right text-base hover:bg-red-600 focus:bg-red-600 active:bg-red-600 hover:text-white focus:text-white active:text-white  text-red-600 border-red-600">
+                                                {{ __('delete') }}
+                                            </x-button>
                                         </div>
                                     </form>
                                 </div>
