@@ -2,7 +2,7 @@
 
     <div class="w-full mx-auto">
 
-        <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <div class="relative overflow-x-auto ">
             @if($files->count())
             <table class="w-full text-xl text-left ">
                 <thead class=" border-b border-white text-white font-light lowercase ">
@@ -30,7 +30,7 @@
                     @foreach($files as $file)
                     <tr class=" border-b  text-white text-base lowercase">
                         <th scope="row" class="py-6 font-medium  whitespace-nowrap">
-                            <a href="/menu-files/{{ $file->title }}" target="_blank">{{ $file->title}}</a>
+                            <a href="/menu-files/{{ $file->title }}" target="_blank">{{ substr($file->title, 11);}}</a>
                         </th>
                         <td class="py-6">
                             {{ $file->created_at}}
@@ -72,7 +72,7 @@
                                 <div class="p-4 w-96 bg-white text-green absolute text-left">
                                     <h1 class="font-light font-victorianna-thin text-xl mb-4">delete file</h1>
                                     <p>
-                                        are you sure you want to delete <span class="italic text-green/50">'{{$file->title}}'</span>. This can't be undone.
+                                        are you sure you want to delete <span class="italic text-green/50">'{{substr($file->title, 11);}}'</span>. This can't be undone.
 
                                     </p>
                                     @if($file->is_active)

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Models\File;
 use Illuminate\Support\MessageBag;
+use Illuminate\Support\Facades\File as FileL; 
 
 class MenuUploadController extends Controller
 {
@@ -40,7 +41,7 @@ class MenuUploadController extends Controller
 
         if ($request->file('menuFile')) {
             $file = $request->file('menuFile');
-            $filename = $file->getClientOriginalName();
+            $filename = time().'.'.$file->getClientOriginalName();
 
             // File upload location
             $location = 'menu-files';
@@ -89,6 +90,10 @@ class MenuUploadController extends Controller
         $file->delete();
 
 
+        
+        FileL::delete('menu-files/' . $file->title);
+
+
         return redirect('/dashboard'); 
     }
 
@@ -101,6 +106,8 @@ class MenuUploadController extends Controller
     {
         $fileToChange = File::where('is_active', 1)->update(['is_active' => null]);
         $file = File::findOrFail($id)->update(['is_active' => 1]);
+
+
 
 
         return redirect('/dashboard'); 
