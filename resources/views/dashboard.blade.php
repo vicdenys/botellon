@@ -19,13 +19,23 @@
                     </ul>
                 </div>
                 @endif
-                <x-button @click="open = true" class="mb-8">
+
+                @if(!$activeFile->count() && $files->count())
+
+                <p class=" bg-rose-500 text-white mb-4 rounded p-3">
+                    Er is nog geen menu bestand actief. Maak er eentje actief door in de tabel op 'maak actief te klikken'...
+                </p>
+
+                @endif
+
+                <x-button @click="open = true" class="my-6">
                     {{ __('upload pdf') }}
                 </x-button>
-                <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
+                <div class=" overflow-hidden shadow-sm sm:rounded-lg">
 
-                    <div class="p-6 bg-white border-b border-gray-200">
-
+                    <div class="">
+                        
+                        <x-files-table :files="$files"></x-files-table>
                     </div>
                 </div>
             </div>

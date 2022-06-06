@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuUploadController;
+use App\Http\Controllers\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,10 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-
+Route::get('/dashboard', [MenuUploadController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::post('/upload-menu', [MenuUploadController::class, 'store'])->middleware(['auth'])->name('upload-menu');
+Route::delete('/delete-menu/{id}', [MenuUploadController::class, 'destroy'])->middleware(['auth'])->name('delete-menu');
+Route::put('/make-active-menu/{id}', [MenuUploadController::class, 'update'])->middleware(['auth'])->name('make-active-menu');
 
 require __DIR__.'/auth.php';

@@ -8,6 +8,7 @@ module.exports = {
     ],
 
     theme: {
+        
         extend: {
             fontFamily: {
                 sans: ['Nunito', ...defaultTheme.fontFamily.sans],
@@ -15,6 +16,10 @@ module.exports = {
                 'victorianna-thin': ['Victorianna-thin', 'sans-serif'],
                 'victorianna-thin-italic': ['Victorianna-thin-italic', 'sans-serif'],
                 
+            },
+            colors: {
+                'white' : '#f6eee3',
+                'green' : '#063e33',
             },
         },
     },
