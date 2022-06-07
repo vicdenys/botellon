@@ -22,6 +22,8 @@
         
     </head>
     <body class=" font-bazovy antialiased">
+        <x-loader></x-loader>
+
         <div class="min-h-screen bg-green">
             @include('layouts.navigation')
 
