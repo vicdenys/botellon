@@ -9,9 +9,9 @@
 
         <div class="py-6">
 
-            <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+            <div class="max-w-7xl mx-auto px-4 lg:px-8">
                 @if (Session::has('success'))
-                <div class="alert alert-danger mb-4" >
+                <div class="alert alert-danger mb-4 animate-slide-up origin-top" >
                     <ul class="text-black mb-4 border border-black  p-4 ">
                         
                         <li class="text-black">{{ Session::get('success') }}</li>
@@ -28,7 +28,7 @@
 
                 @endif
 
-                <x-button @click="open = true" class="my-6">
+                <x-button color='green' negative-color='white' @click="open = true" class="my-6">
                     {{ __('upload pdf') }}
                 </x-button>
                 <div class=" ">

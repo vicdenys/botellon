@@ -37,7 +37,7 @@
             <div class="flex items-center justify-end mt-16">
                 
 
-                <x-button class="ml-3 text-xl  ">
+                <x-button color='green' negative-color='white' class="ml-3 text-xl  ">
                     {{ __('log in') }}
                 </x-button>
             </div>

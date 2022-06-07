@@ -1,4 +1,4 @@
-<div class=" w-[30rem]">
+<div class=" sm:w-[30rem]">
     <form method="POST" id="pdfUploadForm" enctype="multipart/form-data" action="{{ route('upload-menu') }}" x-data="{ files: null }">
         @csrf
 
@@ -39,7 +39,7 @@
                         <div class="flex text-left">
                             <span x-text="files ? files.map(file => file.name).join(', '): ''" class="text-left" :class="{  'text-white': files }"></span>
                         </div>
-                        <button x-show="files" type="reset" @click="files = null" class="absolute p-1 box-content  right-0 top-0 flex translate-x-1/2 -translate-y-1/2 bg-black  text-white w-3 h-3 items-center justify-center rounded-full">
+                        <button aria-label="remove file" x-show="files" type="reset" @click="files = null" class="absolute p-1 box-content  right-0 top-0 flex translate-x-1/2 -translate-y-1/2 bg-black  text-white w-3 h-3 items-center justify-center rounded-full">
                             <span class="absolute font-sans text-xs w-2 fill-white ">
                                 @svg('cross-icon.svg', '')
                             </span>
@@ -55,7 +55,7 @@
         <!-- Make active Menu -->
         <div class="my-4">
             <div class="form-check" x-show="files">
-                <input class="form-check-input appearance-none h-4 w-4 border border-green  bg-white checked:bg-green focus:bg-green hover:bg-green  text-black checked:border-green focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name="makeActiveCheckbox" value="MakeActiveCheckbox" id="MakeActiveCheckbox">
+                <input class="form-check-input appearance-none h-4 w-4 border border-green checked:text-green  bg-white checked:bg-green  text-black checked:border-green focus:outline-none transition duration-200 mt-1 align-top bg-no-repeat bg-center bg-contain float-left mr-2 cursor-pointer" type="checkbox" name="makeActiveCheckbox" value="MakeActiveCheckbox" id="MakeActiveCheckbox">
                 <label class="form-check-label inline-block text-gray-800" for="MakeActiveCheckbox">
                     make menu active
                 </label>
@@ -71,7 +71,7 @@
             <a @click="files = null; open = false; document.getElementById('pdfUploadForm').reset()" class="inline-flex font-light items-center px-4 py-2 bg-green lowercase  border  text-white hover:shadow-lg hover:scale-105 focus:bg-white focus:text-green focus:shadow-lg focus:scale-105 shadow-gray-900  hover:bg-white cursor-pointer hover:text-green active:bg-white hover:border-green focus:border-green active:border-green focus:outline-none  disabled:opacity-25 transition ease-in-out duration-150">
                 annuleren
             </a>
-            <x-button class="ml-3 hover:bg-green focus:bg-green active:bg-green hover:text-white focus:text-white active:text-white  text-green border-green">
+            <x-button color='white' negative-color='green' class="ml-3 ">
                 {{ __('bevestigen') }}
             </x-button>
         </div>
