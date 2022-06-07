@@ -11,10 +11,10 @@
 
             <div class="max-w-7xl mx-auto px-4 lg:px-8">
                 @if (Session::has('success'))
-                <div class="alert alert-danger mb-4 animate-slide-up origin-top" >
-                    <ul class="text-black mb-4 border border-black  p-4 ">
+                <div class="alert alert-danger mb-4 h-16  overflow-hidden animate-slide-up flex items-center w-full origin-top" >
+                    <ul class="text-black mb-4  w-full bg-black  px-4 h-full flex items-center ">
                         
-                        <li class="text-black">{{ Session::get('success') }}</li>
+                        <li class="text-white">{{ Session::get('success') }}</li>
                         
                     </ul>
                 </div>

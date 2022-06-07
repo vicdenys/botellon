@@ -25,13 +25,16 @@ select:-webkit-autofill:focus {
     @font-face {
         font-family: 'Bazovy';
         src: local('Bazovy'), url(/fonts/Bazovy.otf) format('otf');
+        font-display: swap;
     }
     @font-face {
         font-family: 'Victorianna-thin';
         src: local('Victorianna-thin'), url(/fonts/Victorianna-thin.ttf) format('truetype');
+        font-display: swap;
     }
     @font-face {
         font-family: 'Victorianna-thin-italic';
         src: local('Victorianna-thin-italic'), url(/fonts/Victorianna-thin-italic.ttf) format('truetype');
+        font-display: swap;
     }
   }

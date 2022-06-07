@@ -2,7 +2,7 @@
 
     <div class="w-full mx-auto">
 
-        <div class="relative overflow-x-auto ">
+        <div class="relative ">
             @if($files->count())
             <table class="w-full text-xl text-left ">
                 <thead class=" border-b border-white text-white font-light lowercase ">
@@ -94,9 +94,9 @@
                                                         <x-button color='white' negative-color='red-600' class="ml-3 float-right text-base ">
                                                             {{ __('delete') }}
                                                         </x-button>
-                                                        <a @click=" openDeleteModal = false" class="float-right ml-4  font-light items-center px-4 py-2 border-green bg-green lowercase  border  text-white hover:shadow-lg hover:scale-105 focus:bg-white focus:text-green focus:shadow-lg focus:scale-105 shadow-gray-900  hover:bg-white cursor-pointer hover:text-green active:bg-white hover:border-green focus:border-green active:border-green focus:outline-none  disabled:opacity-25 transition ease-in-out duration-150">
+                                                        <button @click=" openDeleteModal = false" class="float-right ml-4  font-light items-center px-4 py-2 border-green bg-green lowercase  border  text-white hover:shadow-lg hover:scale-105 focus:bg-white focus:text-green focus:shadow-lg focus:scale-105 shadow-gray-900  hover:bg-white cursor-pointer hover:text-green active:bg-white hover:border-green focus:border-green active:border-green focus:outline-none  disabled:opacity-25 transition ease-in-out duration-150">
                                                             cancel
-                                                        </a>
+                                                        </button>
                                                     </div>
                                                 </form>
                                             </div>
@@ -166,9 +166,9 @@
                                             <x-button color='white' negative-color='red-600' class="ml-3 float-right text-base ">
                                                 {{ __('delete') }}
                                             </x-button>
-                                            <a @click=" openDeleteModal = false" class="float-right ml-4  font-light items-center px-4 py-2 border-green bg-green lowercase  border  text-white hover:shadow-lg hover:scale-105 focus:bg-white focus:text-green focus:shadow-lg focus:scale-105 shadow-gray-900  hover:bg-white cursor-pointer hover:text-green active:bg-white hover:border-green focus:border-green active:border-green focus:outline-none  disabled:opacity-25 transition ease-in-out duration-150">
+                                            <button aria-label="close modal" @click=" openDeleteModal = false" class="float-right ml-4  font-light items-center px-4 py-2 border-green bg-green lowercase  border  text-white hover:shadow-lg hover:scale-105 focus:bg-white focus:text-green focus:shadow-lg focus:scale-105 shadow-gray-900  hover:bg-white cursor-pointer hover:text-green active:bg-white hover:border-green focus:border-green active:border-green focus:outline-none  disabled:opacity-25 transition ease-in-out duration-150">
                                                 cancel
-                                            </a>
+                                            </button>
                                         </div>
                                     </form>
                                 </div>

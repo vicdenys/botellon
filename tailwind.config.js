@@ -8,7 +8,11 @@ module.exports = {
     ],
     safelist: [
         {
-            pattern: /bg-(white|green)/,
+            pattern: /bg-(white|green|red)/,
+            variants: [ "hover", "focus", "hover"],
+        },
+        {
+            pattern: /text-(white|green|red)/,
             variants: [ "hover", "focus", "hover"],
         },
     ],
@@ -30,8 +34,8 @@ module.exports = {
             },
             keyframes: {
                 "slide-up": {
-                    "0%": { transform: "scaleY(100%)" },
-                    "100%": { transform: "scaleY(0%)" },
+                    "0%": { height: "4rem" },
+                    "100%": { height: "0rem" },
                 },
             },
             animation: {
