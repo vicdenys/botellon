@@ -19,6 +19,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
+
+
 Route::get('/dashboard', [MenuUploadController::class, 'index'])->middleware(['auth'])->name('dashboard');
 Route::post('/upload-menu', [MenuUploadController::class, 'store'])->middleware(['auth'])->name('upload-menu');
 Route::delete('/delete-menu/{id}', [MenuUploadController::class, 'destroy'])->middleware(['auth'])->name('delete-menu');

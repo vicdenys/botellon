@@ -5076,7 +5076,6 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
-/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
 /* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
 /* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 /* harmony import */ var three_examples_jsm_loaders_GLTFLoader_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! three/examples/jsm/loaders/GLTFLoader.js */ "./node_modules/three/examples/jsm/loaders/GLTFLoader.js");
@@ -5089,76 +5088,75 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_3__.ScrollTrigger);
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
-alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
-var ctx = document.getElementById('bottleCanvas');
-var scene = new three__WEBPACK_IMPORTED_MODULE_4__.Scene();
-var camera = new three__WEBPACK_IMPORTED_MODULE_4__.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-var renderer = new three__WEBPACK_IMPORTED_MODULE_4__.WebGLRenderer({
-  canvas: ctx,
-  alpha: true
-});
-renderer.setClearColor(0x000000, 0);
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setPixelRatio(window.devicePixelRatio);
-var bottleObj;
-window.addEventListener('resize', function () {
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-}); // const mtlLoader = new MTLLoader();
-// mtlLoader.setTexturePath("models/bottleObj/")
-// mtlLoader.load('models/bottleObj/bottle.mtl', (materials)=> {
-//     materials.preload();
-//     const objLoader = new THREE.ObjectLoader();
-//     // objLoader.setMaterials(materials);
-//     objLoader.load('./models/bottleObj/bottle.obj', (object) =>{
-//         bottleObj = object;
-//         scene.add(bottleObj);
-//     })
-// })
-
-var loader = new three_examples_jsm_loaders_GLTFLoader_js__WEBPACK_IMPORTED_MODULE_1__.GLTFLoader();
-loader.load('models/bottleObj/bottle.gltf', function (gltf) {
-  bottleObj = gltf.scene;
-  scene.add(gltf.scene);
-  initGSAP();
-  animate();
-}, undefined, function (error) {
-  console.error(error);
-});
-var ambientLight = new three__WEBPACK_IMPORTED_MODULE_4__.AmbientLight(0xFFFFFF);
-ambientLight.intensity = 2;
-scene.add(ambientLight);
-camera.position.z = 0.35;
-
-function animate() {
-  bottleObj.rotation.y += 0.01;
-  requestAnimationFrame(animate);
-  renderer.render(scene, camera);
-}
-
-function initGSAP() {
-  gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.fromTo(bottleObj.rotation, {
-    x: -0.05,
-    z: -.4
-  }, {
-    x: 0.5,
-    z: -.4,
-    scrollTrigger: {
-      scrub: true
-    }
-  });
-  gsap__WEBPACK_IMPORTED_MODULE_2__.gsap.fromTo(bottleObj.position, {
-    x: .5,
-    z: -.4
-  }, {
-    x: .05,
-    z: -.04,
-    scrollTrigger: {
-      scrub: true
-    }
-  });
-}
+alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start(); // const ctx = document.getElementById('bottleCanvas');
+// const scene = new THREE.Scene();
+// const camera = new THREE.PerspectiveCamera(
+//     75,
+//     window.innerWidth / window.innerHeight,
+//     0.1,
+//     1000
+// );
+// const renderer = new THREE.WebGLRenderer({canvas : ctx, alpha: true});
+// renderer.setClearColor( 0x000000, 0 );
+// renderer.setSize(window.innerWidth, window.innerHeight);
+// renderer.setPixelRatio(window.devicePixelRatio);
+// let bottleObj;
+// window.addEventListener('resize',  () => {
+//     renderer.setSize(window.innerWidth, window.innerHeight);
+//     camera.aspect = window.innerWidth/window.innerHeight;
+//     camera.updateProjectionMatrix();
+// });
+// // const mtlLoader = new MTLLoader();
+// // mtlLoader.setTexturePath("models/bottleObj/")
+// // mtlLoader.load('models/bottleObj/bottle.mtl', (materials)=> {
+// //     materials.preload();
+// //     const objLoader = new THREE.ObjectLoader();
+// //     // objLoader.setMaterials(materials);
+// //     objLoader.load('./models/bottleObj/bottle.obj', (object) =>{
+// //         bottleObj = object;
+// //         scene.add(bottleObj);
+// //     })
+// // })
+// const loader = new GLTFLoader();
+// loader.load( 'models/bottleObj/bottle.gltf', function ( gltf ) {
+//     bottleObj = gltf.scene
+// 	scene.add( gltf.scene );
+//     initGSAP();
+//     animate();
+// }, undefined, function ( error ) {
+// 	console.error( error );
+// } );
+// const ambientLight = new THREE.AmbientLight(0xFFFFFF);
+// ambientLight.intensity = 2;
+// scene.add( ambientLight );
+// camera.position.z = 0.35;
+// function animate() {
+//     bottleObj.rotation.y += 0.01;
+//     requestAnimationFrame(animate);
+//     renderer.render(scene, camera);
+// }
+// function initGSAP(){
+//     gsap.fromTo(bottleObj.rotation, {
+//         x :  -0.05,
+//         z : -.4,
+//     },{
+//         x :  0.5,
+//         z : -.4,
+//         scrollTrigger: {
+//             scrub: true,
+//         }
+//     } )
+//     gsap.fromTo(bottleObj.position, {
+//         x :  .5,
+//         z : -.4,
+//     },{
+//         x :  .05,
+//         z : -.04,
+//         scrollTrigger: {
+//             scrub: true,
+//         }
+//     } )
+// }
 
 /***/ }),
 
