@@ -2,7 +2,7 @@
     <ul class="w-full py-6 px-8 flex items-center justify-between">
         <li>
             <div class="w-16  flex items-center">
-                <a class="fill-white" href="{{ route('dashboard') }}">
+                <a class="fill-white" href="/">
                     <x-application-logo />
                 </a>
             </div>

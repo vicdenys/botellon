@@ -773,6 +773,9 @@ select {
 .mt-16 {
   margin-top: 4rem;
 }
+.mt-48 {
+  margin-top: 12rem;
+}
 .box-content {
   box-sizing: content-box;
 }
@@ -1067,6 +1070,10 @@ select {
   border-left-width: 0px;
   border-right-width: 0px;
 }
+.border-y {
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+}
 .border-b {
   border-bottom-width: 1px;
 }
@@ -1115,6 +1122,11 @@ select {
 }
 .border-transparent {
   border-color: transparent;
+}
+.border-y-white {
+  --tw-border-opacity: 1;
+  border-top-color: rgb(246 238 227 / var(--tw-border-opacity));
+  border-bottom-color: rgb(246 238 227 / var(--tw-border-opacity));
 }
 .border-b-white {
   --tw-border-opacity: 1;
@@ -1260,6 +1272,10 @@ select {
   padding-left: 2rem;
   padding-right: 2rem;
 }
+.py-8 {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
 .pt-6 {
   padding-top: 1.5rem;
 }
@@ -1321,6 +1337,18 @@ select {
 }
 .text-\[1\.35rem\] {
   font-size: 1.35rem;
+}
+.text-4xl {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+.text-7xl {
+  font-size: 4.5rem;
+  line-height: 1;
+}
+.text-6xl {
+  font-size: 3.75rem;
+  line-height: 1;
 }
 .font-medium {
   font-weight: 500;
