@@ -1,4 +1,4 @@
-<nav class=" block w-screen border-b border-b-white">
+<nav class=" block z-50 relative w-screen border-b border-b-white">
     <ul class="w-full py-6 px-8 flex items-center justify-between">
         <li>
             <div class="w-16  flex items-center">

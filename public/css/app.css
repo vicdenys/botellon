@@ -776,6 +776,12 @@ select {
 .mt-48 {
   margin-top: 12rem;
 }
+.mt-\[30\%\] {
+  margin-top: 30%;
+}
+.mt-\[10\%\] {
+  margin-top: 10%;
+}
 .box-content {
   box-sizing: content-box;
 }
