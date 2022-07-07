@@ -24,7 +24,7 @@ select:-webkit-autofill:focus {
 
     @font-face {
         font-family: 'Bazovy';
-        src: local('Bazovy'), url(/fonts/Bazovy.otf) format('otf');
+        src: local('Bazovy'), url(/fonts/Bazovy.ttf) format('truetype');
         font-display: swap;
     }
     @font-face {

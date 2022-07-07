@@ -2,4 +2,5 @@
 
 return [
     "reservation" => "reserveren",
+    "aperitif" => "aperitief",
 ];

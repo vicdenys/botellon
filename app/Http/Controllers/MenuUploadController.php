@@ -11,6 +11,20 @@ use Illuminate\Support\Facades\File as FileL;
 
 class MenuUploadController extends Controller
 {
+     /**
+     * Display the dashboard view.
+     *
+     * @return \Illuminate\View\View
+     */
+    public function show()
+    {
+        $activeFile = File::where('is_active', 1)
+            ->get();
+
+
+        return view('menu')->with(['activeFile' => $activeFile[0]]);
+    }
+
     /**
      * Display the dashboard view.
      *

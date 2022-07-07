@@ -19,9 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/menu', function () {
-    return view('menu');
-});
+Route::get('/menu', [MenuUploadController::class, 'show'])->name('menu');
+
 Route::get('/bottle-bag', function () {
     return view('bottle-bag');
 });

@@ -17,10 +17,11 @@
 
 </head>
 
-<body class="antialiased">
 
-        <div class="min-h-screen bg-green" x-data="{menuOpen: false}">
-            @include('layouts.navigation-guest')
+<body class="antialiased  {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}">
+
+        <div class="min-h-screen font-bazovy" x-data="{menuOpen: false}">
+            @include('layouts.navigation-guest', ['isDarkTheme' => isset($isDarkTheme)])
 
             
 
@@ -29,7 +30,7 @@
                 @yield('content')
             </main>
 
-            <x-footer-overlay></x-footer-overlay>
+            <x-footer-overlay :isDarkTheme="isset($isDarkTheme)"></x-footer-overlay>
         </div>
 
 

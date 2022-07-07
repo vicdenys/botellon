@@ -5093,114 +5093,127 @@ gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPAC
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
 var ctx = document.getElementById("bottleCanvas");
-var scene = new three__WEBPACK_IMPORTED_MODULE_5__.Scene();
-var camera = new three__WEBPACK_IMPORTED_MODULE_5__.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 1000);
-var params = {
-  color: 0x063e33,
-  transmission: 0.5,
-  opacity: 1,
-  metalness: 1,
-  roughness: 0,
-  ior: 1.52,
-  thickness: 0.1,
-  specularIntensity: 5,
-  specularColor: 0x000000,
-  lightIntensity: 1,
-  exposure: 1
-};
-var renderer = new three__WEBPACK_IMPORTED_MODULE_5__.WebGLRenderer({
-  canvas: ctx,
-  alpha: true
-});
-renderer.setClearColor(0x000000, 0);
-renderer.setSize(window.innerWidth, window.innerHeight);
-renderer.setPixelRatio(window.devicePixelRatio);
-var bottleObj;
-window.addEventListener("resize", function () {
-  renderer.setSize(window.innerWidth, window.innerHeight);
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-});
-camera.position.z = 10; // LIGHTS
 
-var pointLight = new three__WEBPACK_IMPORTED_MODULE_5__.PointLight(0xffffff, 1, 20);
-var ambientLight = new three__WEBPACK_IMPORTED_MODULE_5__.AmbientLight(0xffffff);
-scene.add(pointLight);
-pointLight.position.x = -5;
-pointLight.position.y = 2;
-pointLight.position.z = 15; // LOAD OBJECTS
+if (ctx) {
+  var animate = function animate() {
+    // camera.lookAt(bottleObj.position);
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+  };
 
-var loader = new three_examples_jsm_loaders_GLTFLoader_js__WEBPACK_IMPORTED_MODULE_1__.GLTFLoader(); // Load envMap.
+  var addMouseMoveListener = function addMouseMoveListener() {
+    console.log(ctx);
+    document.addEventListener("mousemove", function (e) {
+      pointLight.position.x = (e.screenX / document.body.clientWidth * 100 - 50) * 0.02;
+      pointLight.position.y = (e.screenY / document.body.clientHeight * 100 - 50) * 0.02 + 2;
+      bottleObj.rotation.z = (e.screenY / document.body.clientWidth * 100 - 50) * 0.001;
+      bottleObj.rotation.x = (e.screenX / document.body.clientWidth * 100 - 50) * 0.002;
+      bottleObj.rotation.y = (e.screenY / document.body.clientWidth * 100 - 50) * 0.002;
+    });
+  };
 
-var textureLoader = new three__WEBPACK_IMPORTED_MODULE_5__.TextureLoader();
-var texture = textureLoader.load("/img/antwerp_360.jpeg");
-var pmremGenerator = new three__WEBPACK_IMPORTED_MODULE_5__.PMREMGenerator(renderer);
-pmremGenerator.compileEquirectangularShader();
-loader.load("models/bottleObj/bottle.gltf", function (gltf) {
-  bottleObj = gltf.scene.children[0];
-  var material = new three__WEBPACK_IMPORTED_MODULE_5__.MeshPhysicalMaterial({
-    color: params.color,
-    metalness: params.metalness,
-    roughness: params.roughness,
-    ior: params.ior,
-    transmission: params.transmission,
-    specularIntensity: params.specularIntensity,
-    specularColor: params.specularColor,
-    opacity: params.opacity,
-    side: three__WEBPACK_IMPORTED_MODULE_5__.DoubleSide
-  });
-  new three_examples_jsm_loaders_RGBELoader_js__WEBPACK_IMPORTED_MODULE_2__.RGBELoader().load("img/background_1k.hdr", function (texture) {
-    texture.mapping = three__WEBPACK_IMPORTED_MODULE_5__.EquirectangularReflectionMapping;
-    var envMap = pmremGenerator.fromEquirectangular(texture).texture;
-    bottleObj.material.envMap = envMap;
-    scene.environment = envMap; //scene.background
+  var initGSAP = function initGSAP() {
+    gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.fromTo(bottleObj.position, {
+      z: -8.4,
+      y: -3
+    }, {
+      z: -2.54,
+      y: -2.5,
+      duration: 1,
+      ease: "power1.inOut"
+    });
+    gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.fromTo(bottleObj.material, {
+      transmission: 1
+    }, {
+      transmission: 0.5,
+      duration: 1,
+      ease: "power1.inOut"
+    });
+  };
 
-    bottleObj.position.y -= 2.5;
-    bottleObj.material = material;
-    scene.add(bottleObj);
-    addMouseMoveListener();
-    initGSAP();
-    animate();
-  });
-}, undefined, function (error) {
-  console.error(error);
-});
-
-function animate() {
-  // camera.lookAt(bottleObj.position);
-  requestAnimationFrame(animate);
-  renderer.render(scene, camera);
-}
-
-function addMouseMoveListener() {
-  console.log(ctx);
-  document.addEventListener('mousemove', function (e) {
-    pointLight.position.x = (e.screenX / document.body.clientWidth * 100 - 50) * 0.02;
-    pointLight.position.y = (e.screenY / document.body.clientHeight * 100 - 50) * 0.02 + 2;
-    bottleObj.rotation.z = (e.screenY / document.body.clientWidth * 100 - 50) * 0.001;
-    bottleObj.rotation.x = (e.screenX / document.body.clientWidth * 100 - 50) * 0.002;
-    bottleObj.rotation.y = (e.screenY / document.body.clientWidth * 100 - 50) * 0.002;
-  });
-}
-
-function initGSAP() {
-  gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.fromTo(bottleObj.position, {
-    z: -8.4,
-    y: -3
-  }, {
-    z: -2.54,
-    y: -2.5,
-    duration: 1,
-    ease: "power1.inOut"
-  });
-  gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.fromTo(bottleObj.material, {
-    transmission: 1
-  }, {
+  var scene = new three__WEBPACK_IMPORTED_MODULE_5__.Scene();
+  var camera = new three__WEBPACK_IMPORTED_MODULE_5__.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 1000);
+  var params = {
+    color: 0x063e33,
     transmission: 0.5,
-    duration: 1,
-    ease: "power1.inOut"
+    opacity: 1,
+    metalness: 1,
+    roughness: 0,
+    ior: 1.52,
+    thickness: 0.1,
+    specularIntensity: 5,
+    specularColor: 0x000000,
+    lightIntensity: 1,
+    exposure: 1
+  };
+  var renderer = new three__WEBPACK_IMPORTED_MODULE_5__.WebGLRenderer({
+    canvas: ctx,
+    alpha: true
+  });
+  renderer.setClearColor(0x000000, 0);
+  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setPixelRatio(window.devicePixelRatio);
+  var bottleObj;
+  window.addEventListener("resize", function () {
+    renderer.setSize(window.innerWidth, window.innerHeight);
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+  });
+  camera.position.z = 10; // LIGHTS
+
+  var pointLight = new three__WEBPACK_IMPORTED_MODULE_5__.PointLight(0xffffff, 1, 20);
+  var ambientLight = new three__WEBPACK_IMPORTED_MODULE_5__.AmbientLight(0xffffff);
+  scene.add(pointLight);
+  pointLight.position.x = -5;
+  pointLight.position.y = 2;
+  pointLight.position.z = 15; // LOAD OBJECTS
+
+  var loader = new three_examples_jsm_loaders_GLTFLoader_js__WEBPACK_IMPORTED_MODULE_1__.GLTFLoader(); // Load envMap.
+
+  var textureLoader = new three__WEBPACK_IMPORTED_MODULE_5__.TextureLoader();
+  var texture = textureLoader.load("/img/antwerp_360.jpeg");
+  var pmremGenerator = new three__WEBPACK_IMPORTED_MODULE_5__.PMREMGenerator(renderer);
+  pmremGenerator.compileEquirectangularShader();
+  loader.load("models/bottleObj/bottle.gltf", function (gltf) {
+    bottleObj = gltf.scene.children[0];
+    var material = new three__WEBPACK_IMPORTED_MODULE_5__.MeshPhysicalMaterial({
+      color: params.color,
+      metalness: params.metalness,
+      roughness: params.roughness,
+      ior: params.ior,
+      transmission: params.transmission,
+      specularIntensity: params.specularIntensity,
+      specularColor: params.specularColor,
+      opacity: params.opacity,
+      side: three__WEBPACK_IMPORTED_MODULE_5__.DoubleSide
+    });
+    new three_examples_jsm_loaders_RGBELoader_js__WEBPACK_IMPORTED_MODULE_2__.RGBELoader().load("img/background_1k.hdr", function (texture) {
+      texture.mapping = three__WEBPACK_IMPORTED_MODULE_5__.EquirectangularReflectionMapping;
+      var envMap = pmremGenerator.fromEquirectangular(texture).texture;
+      bottleObj.material.envMap = envMap;
+      scene.environment = envMap; //scene.background
+
+      bottleObj.position.y -= 2.5;
+      bottleObj.material = material;
+      scene.add(bottleObj);
+      addMouseMoveListener();
+      initGSAP();
+      animate();
+    });
+  }, undefined, function (error) {
+    console.error(error);
   });
 }
+
+console.log("ddd");
+gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.to(".paralax-img", {
+  top: -20,
+  scrollTrigger: {
+    trigger: ".parallax-container",
+    scrub: 1,
+    top: 'top 0'
+  }
+});
 
 /***/ }),
 

@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.master' , ['isDarkTheme' => 'true'])
 
 @section('content')
 
@@ -10,11 +10,11 @@
                 <x-application-logo-animated></x-application-logo-animated>
             </h1>
         </div>
-        <div class="flex overflow-hidden items-center justify-center md:h-28 h-20 mx-auto md:py-8 border-t border-t-white text-center font-victorianna-thin text-white text-4xl md:text-6xl">
+        <div class="flex overflow-hidden items-center justify-center md:h-28 h-20 mx-auto md:py-8 border-t border-t-white text-center font-victorianna-thin text-white text-2xl sm:text-4xl lg:text-6xl">
             <h2 class="">
                 <span class="inline-block opacity-0 transform translate-y-full animate-pop-up" style="animation-delay: 0.2s;">brunch</span>
                 <span class="inline-block opacity-0 transform translate-y-full animate-pop-up" style="animation-delay: 0.25s;">&</span>
-                <span class="inline-block opacity-0 transform translate-y-full animate-pop-up" style="animation-delay: 0.3s;">aperitief</span>
+                <span class="inline-block opacity-0 transform translate-y-full animate-pop-up" style="animation-delay: 0.3s;">{{ __('home.aperitif') }}</span>
                 <span class="inline-block opacity-0 transform translate-y-full animate-pop-up" style="animation-delay: 0.35s;">restaurant</span>
             </h2>
         </div>
