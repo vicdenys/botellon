@@ -22,14 +22,14 @@ const camera = new THREE.PerspectiveCamera(
     1000
 );
 const params = {
-    color: 0x19191A,
-    transmission: 0.9,
+    color: 0x063e33,
+    transmission: 0.5,
     opacity: 1,
-    metalness: 0.2,
+    metalness: 1,
     roughness: 0,
     ior: 1.52,
     thickness: 0.1,
-    specularIntensity: 0.9,
+    specularIntensity: 5,
     specularColor: 0x000000,
     lightIntensity: 1,
     exposure: 1
@@ -49,7 +49,7 @@ window.addEventListener("resize", () => {
     camera.updateProjectionMatrix();
 });
 
-camera.position.z = 5;
+camera.position.z = 10;
 
 // LIGHTS
 
@@ -97,13 +97,14 @@ loader.load(
 
             scene.environment = envMap;
             //scene.background
+
             bottleObj.position.y -= 2.5;
-            bottleObj.material = material
+            bottleObj.material = material;
 
             scene.add(bottleObj);
 
             addMouseMoveListener();
-            // initGSAP();
+             initGSAP();
 
             animate();
         });
@@ -116,11 +117,9 @@ loader.load(
 
 
 
-camera.position.z = 5;
 
 function animate() {
 
-    camera.position.z += 0.005;
     
     // camera.lookAt(bottleObj.position);
 
@@ -136,30 +135,28 @@ function addMouseMoveListener() {
     document.addEventListener('mousemove', (e) => {
         pointLight.position.x = ((e.screenX / document.body.clientWidth * 100) - 50) * 0.02;
         pointLight.position.y = (((e.screenY / document.body.clientHeight * 100) - 50) * 0.02) + 2 ;
+        bottleObj.rotation.z = ((e.screenY / document.body.clientWidth * 100) - 50) * 0.001;
+        bottleObj.rotation.x = ((e.screenX / document.body.clientWidth * 100) - 50) * 0.002;
+        bottleObj.rotation.y = ((e.screenY / document.body.clientWidth * 100) - 50) * 0.002;
     })
 }
 
-// function initGSAP(){
+function initGSAP(){ 
 
-//     gsap.fromTo(bottleObj.rotation, {
-//         x :  -0.05,
-//         z : -.4,
-//     },{
-//         x :  0.5,
-//         z : -.4,
-//         scrollTrigger: {
-//             scrub: true,
-//         }
-//     } )
-
-//     gsap.fromTo(bottleObj.position, {
-//         x :  .5,
-//         z : -.4,
-//     },{
-//         x :  .05,
-//         z : -.04,
-//         scrollTrigger: {
-//             scrub: true,
-//         }
-//     } )
-// }
+    gsap.fromTo(bottleObj.position, {
+        z : -8.4,
+        y: -3   
+    },{
+        z : -2.54,
+        y: -2.5,  
+        duration: 1,
+        ease: "power1.inOut"
+    } )
+    gsap.fromTo(bottleObj.material, {
+        transmission : 1,
+    },{
+        transmission : 0.5,
+        duration: 1,
+        ease: "power1.inOut"
+    } )
+}

@@ -19,6 +19,27 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/menu', function () {
+    return view('menu');
+});
+Route::get('/bottle-bag', function () {
+    return view('bottle-bag');
+});
+Route::get('/our-makers', function () {
+    return view('our-makers');
+});
+Route::get('/museum', function () {
+    return view('museum');
+});
+Route::get('/events', function () {
+    return view('events');
+});
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+
+
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
 
 
@@ -27,4 +48,4 @@ Route::post('/upload-menu', [MenuUploadController::class, 'store'])->middleware(
 Route::delete('/delete-menu/{id}', [MenuUploadController::class, 'destroy'])->middleware(['auth'])->name('delete-menu');
 Route::put('/make-active-menu/{id}', [MenuUploadController::class, 'update'])->middleware(['auth'])->name('make-active-menu');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

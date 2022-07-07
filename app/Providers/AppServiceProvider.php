@@ -35,7 +35,8 @@ class AppServiceProvider extends ServiceProvider
             $svg = new \DOMDocument();
             $svg->load(public_path( '/img/' .$path) );
             $svg->documentElement->setAttribute("class", $class);
-            $output = $svg->saveXML($svg->documentElement);
+
+            $output = '<h1>ddd</h1>'; file_get_contents(public_path( '/img/' .$path)); 
     
             return $output;
         });

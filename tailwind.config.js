@@ -1,3 +1,4 @@
+const { opacity } = require("tailwindcss/defaultTheme");
 const defaultTheme = require("tailwindcss/defaultTheme");
 
 module.exports = {
@@ -37,9 +38,14 @@ module.exports = {
                     "0%": { height: "4rem" },
                     "100%": { height: "0rem" },
                 },
+                "pop-up": {
+                    "0%": { transform: "translateY(100%)", opacity: 0 },
+                    "100%": { transform: "translateY(0)", opacity: 1 },
+                },
             },
             animation: {
                 "slide-up": "slide-up 0.5s ease-in-out 3s forwards",
+                "pop-up": "pop-up 0.3s ease-in-out forwards",
             },
         },
     },

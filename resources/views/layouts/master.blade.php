@@ -19,7 +19,7 @@
 
 <body class="antialiased">
 
-        <div class="min-h-screen bg-green">
+        <div class="min-h-screen bg-green" x-data="{menuOpen: false}">
             @include('layouts.navigation-guest')
 
             
