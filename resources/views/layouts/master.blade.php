@@ -18,7 +18,7 @@
 </head>
 
 
-<body class="antialiased  {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}">
+<body class="antialiased cursor-none  {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}">
 
         <div class="min-h-screen font-bazovy" x-data="{menuOpen: false}">
             @include('layouts.navigation-guest', ['isDarkTheme' => isset($isDarkTheme)])
@@ -31,6 +31,12 @@
             </main>
 
             <x-footer-overlay :isDarkTheme="isset($isDarkTheme)"></x-footer-overlay>
+
+            
+        </div>
+       
+        <div id="mouse" class="fixed z-[1000] transform -translate-x-1/2 -translate-y-1/2 w-4 h-4  rounded-full pointer-events-none {{  Request::is('/') ? 'bg-white ' : 'bg-green' }}">
+            
         </div>
 
 

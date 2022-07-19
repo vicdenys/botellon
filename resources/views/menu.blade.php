@@ -4,78 +4,96 @@
 
 
 <div id="menu-container" class=" mb-20  relative z-40 mx-auto text-xl  items-center  mt-[3.75rem] md:mt-[4.75rem] lg:mt-[4.75rem]">
-   <div class="sticky z-50 top-[3.75rem] bg-white md:top-[4.75rem] lg:top-[4.75rem] text-center border-b border-green py-8">
-      <a class="bg-green text-white rounded-full font-victorianna-thin text-xl px-6 py-3" href="/menu-files/{{ $activeFile->title }}" target="_blank">bekijk menukaart</a>
+   <div id="menuTopSection" class="sticky z-50 top-[3.75rem] bg-white md:top-[4.75rem] lg:top-[4.75rem] text-center border-b border-green py-8 md:py-16">
+      <h1 id="menuTopSectionText" class="font-victorianna-thin text-3xl mb-4 hidden md:block">{{ __('menu.curious') }}</h1>
+      <a data-hover-btn class="bg-green hover:bg-green/95 text-white  border border-green inline-block   rounded-full font-victorianna-thin text-xl px-6 py-3" href="/menu-files/{{ $activeFile->title }}" target="_blank">{{ __('menu.seemenu') }}</a>
    </div>
-   <div class="text-center py-4 border-b border-green">
-      <h1 class="font-victorianna-thin text-3xl ">Every day brunch?</h1>
+   <div class="text-center py-4 border-b border-green ">
+      <h1 class="font-victorianna-thin text-3xl  ">Every day brunch?</h1>
    </div>
-   <div class="px-8 py-8">
-      <p class="font-bazovy">
-         Bij botellón kan het want brunch is ALTIJD een goed idee!
-         <br><br>
-         Van donderdag t.e.m. zondag voorzien wij een heerlijk lunch buffet met gezonde en minder ge- zonde ;) lekkernijen. Denk soep, stoofpotjes, sala- des, brood en beleg, patéekes, vers fruit, enz...
-         <br><br>
-         Last van keuzestress?
-         <br>
-         Dan neem je toch gewoon ALLES!
-      </p>
-   </div>
-   <div class="parallax-container max-h-52 overflow-hidden  border-y border-green">
-      <img class="paralax-img relative" src="/img/brunch-botellon.jpeg" alt="brunch images ">
+   <div class=" md:flex  md:flex-row-reverse md:border-b border-green">
+      <div class="px-8 py-8 md:py-12 bg-white md:w-1/2">
+         <p class="font-bazovy">
+            <span class="block mb-8">
+               {{ __('menu.1.1') }}
+            </span>
+            <span class="block mb-8">
+               {{ __('menu.1.2') }} </span>
+            <span class="block ">
+               {{ __('menu.1.3') }} </span>
+            <span class="block">
+               {{ __('menu.1.4') }} </span>
+
+         </p>
+      </div>
+      <div data-module-parallax class="parallax-container max-h-48 sm:max-h-72 relative  md:max-h-[24rem] md:w-1/2 overflow-hidden  border-y md:border-none border-green">
+         <img data-parallax data-speed='-0.15' class="paralax-img relative md:absolute   md:w-[120%]  w-full" src="/img/brunch-botellon.jpeg" alt="brunch images ">
+      </div>
+
    </div>
 
-   <div class="px-8 py-8">
+
+   <div class="px-8 py-8 md:py-12 bg-white">
       <p class="text-center">
-         Tussen 11u30 en 14u30 kan je komen opscheppen
-         <br><br>
-         Op donderdag en vrijdag
-         <br>
-         voor 19,5 euro per persoon
-         <br><br>
-         Op zaterdag en zondag
-         <br>
-         voor 21,5 euro per persoon
-         <br><br>
-         Koffie en thee krijg je er gewoon bij!
-         <br><br>
-         Dit dan aangevuld met een lekker flesje?
-         <br>
-         -OF COURSE-
+         <span class="block mb-8">
+            {{ __('menu.2.1') }} </span>
+         <span class="block ">
+            {{ __('menu.2.2') }} </span>
+         <span class="block mb-8">
+            {{ __('menu.2.2.1') }} </span>
+         <span class="block">
+            {{ __('menu.2.3') }} </span>
+         <span class="block mb-8">
+            {{ __('menu.2.3.1') }} </span>
+         <span class="block mb-8">
+            {{ __('menu.2.4') }} </span>
+         <span class="block ">
+            {{ __('menu.2.5') }}
+         </span>
+         <span>
+            {{ __('menu.2.5.1') }} </span>
+
       </p>
    </div>
 
-   <div class="parallax-container max-h-52 overflow-hidden  border-y border-green">
-      <img class="paralax-img relative" src="/img/apero-botellon.jpeg" alt="apero images ">
+   <div class="md:flex  md:flex-row-reverse md:border-y border-green">
+      <div data-module-parallax class="parallax-container max-h-48 sm:max-h-72 md:w-1/2 relative md:max-h-[24rem] overflow-hidden  border-y md:border-none border-green">
+         <img data-parallax data-speed='-0.15' class="paralax-img w-full md:absolute   md:w-[120%] relative" src="/img/apero-botellon.jpeg" alt="apero images ">
+      </div>
+
+      <div class="px-8 py-8 md:py-12 bg-white md:w-1/2">
+         <p class="font-bazovy">
+            <span class="block mb-8">
+               {{ __('menu.3.1') }} </span>
+            <span>
+               {{ __('menu.3.2') }} </span>
+         </p>
+      </div>
+
    </div>
 
-   <div class="px-8 py-8">
-      <p class="font-bazovy">
-         Lekker eten, een (door ons weldoordacht) goed flesje wijn, parels of een niet zo veelvoorkomend biertje vergezeld van heerlijke muziek op de ach- tergrond in een leuke setting... Genieten komt bij ons op de eerste plaats.
-         <br><br>
-         Drink je liever 0%? Dan hebben we daar -uiter- aard- ook lekkere alternatieven voor. Kom ze maar snel ontdekken!
+
+
+   <div id="bottleTrigger" class="text-center py-4 border-y md:border-y-0 md:border-b border-green  ">
+      <h1 class="font-victorianna-thin text-3xl ">{{ __('menu.aperofrom15') }}</h1>
+   </div>
+
+   <div class="px-8 py-8 md:py-12 md:text-center md:flex md:justify-center  bg-white">
+      <p class="font-bazovy max-w-xl">
+         <span class="block mb-8">
+            {{ __('menu.4.1') }} </span>
+         <span class="block mb-8">
+            {{ __('menu.4.2') }} </span>
+         <span>
+            {{ __('menu.4.3') }} </span>
       </p>
    </div>
 
-   <div class="text-center py-4 border-y border-green">
-      <h1 class="font-victorianna-thin text-3xl ">Aperitief vanaf 15u!</h1>
-   </div>
-
-   <div class="px-8 py-8">
-      <p class="font-bazovy">
-         Na het buffet (vanaf 15u) kan je nog steeds komen genieten van een lekker flesje en is het apéro-tijd!
-         <br><br>
-         Wij zorgen voor de amuses en hapjes die gere- geld (receptiestijl) zullen passeren.
-         <br><br>
-         Dit minstens tot de zon ondergaat...
-      </p>
-   </div>
-
-   <div class="text-center py-4 border-t border-green">
-      <h1 class="font-victorianna-thin text-3xl ">footer</h1>
-   </div>
+   <x-contact-footer></x-contact-footer>
 
 </div>
+
+
 
 
 @stop

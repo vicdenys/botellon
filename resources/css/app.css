@@ -20,6 +20,7 @@ select:-webkit-autofill:focus {
   border-bottom: solid 1px #f6eee3;
 }
 
+
 @layer base {
 
     @font-face {
@@ -38,3 +39,7 @@ select:-webkit-autofill:focus {
         font-display: swap;
     }
   }
+
+a {
+    @apply cursor-none;
+}

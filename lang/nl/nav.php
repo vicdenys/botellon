@@ -2,7 +2,7 @@
 
 return [
     "menu" => "menu",
-    "bottle-bag" => "picknick-bag",
+    "bottle-bag" => "bottle-bag",
     "our-makers" => "onze makers",
     "museum" => "museum",
     "events" => "events",

@@ -1,4 +1,4 @@
-<nav class=" block z-[60] fixed top-0 w-screen border-b  {{ $isDarkTheme ? 'border-b-white ' : 'border-b-green bg-white' }}" >
+<nav class=" block z-[60] fixed top-0 w-screen border-b  {{ $isDarkTheme ? 'border-b-white ' : 'border-b-green bg-white' }}">
 
 
 
@@ -7,12 +7,16 @@
         <li class="z-[60] relative">
             <div class="w-16  flex items-center">
                 @if($isDarkTheme)
-                <a class="lg:fill-white' " href="/" :class="[ menuOpen ? 'fill-green delay-300':'fill-white  delay-300 ' ]">
-                    <x-application-logo />
+                <a class="lg:fill-white py-2' " href="/" :class="[ menuOpen ? 'fill-green delay-300':'fill-white  delay-300 ' ]" data-hover>
+                    <object class=" pointer-events-none" data="" type="">
+                        <x-application-logo />
+                    </object>
                 </a>
                 @else
-                <a class="lg:fill-green" href="/"">
-                    <x-application-logo />
+                <a class="lg:fill-green py-2" href="/"" data-hover>
+                    <object class="pointer-events-none" data="" type="">
+                        <x-application-logo />
+                    </object>
                 </a>
                 @endif
                
@@ -22,22 +26,22 @@
         <li class=" z-[60] fixed lg:relative w-screen h-[calc(100%-15rem)] top-20 left-0 lg:w-auto lg:h-auto lg:top-auto lg:left-auto lg:inline-block font-victorianna-thin text-white text-[1.35rem]" :class="[ menuOpen ? 'visible':'invisible lg:visible' ]">
                     <ul class="lg:flex text-4xl lg:text-xl   pt-12 lg:pt-0 text-green text-center items-center gap-8 {{ $isDarkTheme ? 'lg:text-white' : 'lg:text-green' }}">
                         <li class="mb-4 lg:mb-0 transform transition-all" :class="[ menuOpen ? 'opacity-100 translate-y-0 delay-1000':'opacity-0 translate-y-2 lg:opacity-100 lg:translate-y-0 ' ]">
-                            <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" href="/menu">{{ __('nav.menu') }}</a>
+                            <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" class="{{  request()->is('menu') ? 'font-victorianna-thin-italic ' : '' }} " href="/menu" data-hover>{{ __('nav.menu') }}</a>
                         </li>
                         <li class="mb-4 lg:mb-0  transform transition-all" :class="[ menuOpen ? 'opacity-100 translate-y-0 delay-[1.1s]':'opacity-0 translate-y-2 lg:opacity-100 lg:translate-y-0  ' ]">
-                            <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" href="/bottle-bag">{{ __('nav.bottle-bag') }}</a>
+                            <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" class="{{  request()->is('bottle-bag') ? 'font-victorianna-thin-italic ' : '' }}" href="/bottle-bag" data-hover>{{ __('nav.bottle-bag') }}</a>
                         </li>
                         <li class="mb-4 lg:mb-0  transform transition-all" :class="[ menuOpen ? 'opacity-100 translate-y-0 delay-[1.2s]':'opacity-0 translate-y-2 lg:opacity-100 lg:translate-y-0  ' ]">
-                            <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" href="/our-makers">{{ __('nav.our-makers') }}</a>
+                            <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" class="{{  request()->is('our-makers') ? 'font-victorianna-thin-italic ' : '' }}" href="/our-makers" data-hover>{{ __('nav.our-makers') }}</a>
                         </li>
                         <li class="mb-4 lg:mb-0 transform transition-all" :class="[ menuOpen ? 'opacity-100 translate-y-0 delay-[1.3s]':'opacity-0 translate-y-2 lg:opacity-100 lg:translate-y-0  ' ]">
-                            <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" href="/museum">{{ __('nav.museum') }}</a>
+                            <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" class="{{  request()->is('museum') ? 'font-victorianna-thin-italic ' : '' }}" href="/museum" data-hover>{{ __('nav.museum') }}</a>
                         </li>
                         <li class="mb-4 lg:mb-0 transform transition-all" :class="[ menuOpen ? 'opacity-100 translate-y-0 delay-[1.4s]':'opacity-0 translate-y-2 lg:opacity-100 lg:translate-y-0 ' ]">
-                            <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" href="/events">{{ __('nav.events') }}</a>
+                            <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" class="{{  request()->is('events') ? 'font-victorianna-thin-italic ' : '' }}" href="/events" data-hover>{{ __('nav.events') }}</a>
                         </li>
                         <li class="mb-4 lg:mb-0 transform transition-all" :class="[ menuOpen ? 'opacity-100 translate-y-0 delay-[1.5s]':'opacity-0 translate-y-2 lg:opacity-100 lg:translate-y-0  ' ]">
-                            <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" href="/contact">{{ __('nav.contact') }}</a>
+                            <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" class="{{  request()->is('contact') ? 'font-victorianna-thin-italic ' : '' }}" href="/contact" data-hover>{{ __('nav.contact') }}</a>
                         </li>
                     </ul>
         </li>
