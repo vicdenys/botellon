@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div id="menu-container" class=" mb-20  relative z-40 mx-auto text-xl  items-center  mt-[3.75rem] md:mt-[4.75rem] lg:mt-[4.75rem]">
+<div id="menu-container" class=" mb-20  relative z-40 mx-auto text-xl  items-center  mt-[4.25rem] md:mt-20">
    <div id="menuTopSection" class="sticky z-50 top-[3.75rem] bg-white md:top-[4.75rem] lg:top-[4.75rem] text-center border-b border-green py-8 md:py-16">
       <h1 id="menuTopSectionText" class="font-victorianna-thin text-3xl mb-4 hidden md:block">{{ __('menu.curious') }}</h1>
       <a data-hover-btn class="bg-green hover:bg-green/95 text-white  border border-green inline-block   rounded-full font-victorianna-thin text-xl px-6 py-3" href="/menu-files/{{ $activeFile->title }}" target="_blank">{{ __('menu.seemenu') }}</a>
@@ -57,7 +57,7 @@
    </div>
 
    <div class="md:flex  md:flex-row-reverse md:border-y border-green">
-      <div data-module-parallax class="parallax-container max-h-48 sm:max-h-72 md:w-1/2 relative md:max-h-[24rem] overflow-hidden  border-y md:border-none border-green">
+      <div data-module-parallax class="parallax-container max-h-48 sm:max-h-72 md:w-1/2 relative md:max-h-max overflow-hidden  border-y md:border-none border-green">
          <img data-parallax data-speed='-0.15' class="paralax-img w-full md:absolute   md:w-[120%] relative" src="/img/apero-botellon.jpeg" alt="apero images ">
       </div>
 
