@@ -4,10 +4,23 @@
 
 
 <div id="menu-container" class=" mb-20  relative z-40 mx-auto text-xl  items-center  mt-[4.25rem] md:mt-20">
-   <div id="menuTopSection" class="sticky z-50 top-[3.75rem] bg-white md:top-[4.75rem] lg:top-[4.75rem] text-center border-b border-green py-8 md:py-16">
+   <div id="menuTopSection" class="sticky z-50 top-[3.75rem] bg-white md:top-20  text-center border-b border-green py-8 md:py-16">
       <h1 id="menuTopSectionText" class="font-victorianna-thin text-3xl mb-4 hidden md:block">{{ __('menu.curious') }}</h1>
       <a data-hover-btn class="bg-green hover:bg-green/95 text-white  border border-green inline-block   rounded-full font-victorianna-thin text-xl px-6 py-3" href="/menu-files/{{ $activeFile->title }}" target="_blank">{{ __('menu.seemenu') }}</a>
    </div>
+
+   <div class="text-left flex items-center py-4 px-8 border-b overflow-hidden border-green ">
+      <div class="">
+         <h1 class="font-victorianna-thin text-3xl w-1/2 ">bottle information title</h1>
+         <h1 class="text-2xl w-1/2 ">here you get some more information about the bottle</h1></h1>
+      </div>
+      
+      <div class=" w-1/2 z-30 h-96 top-0 left-0 relative">
+         <canvas id="bottleCanvas" class="w-full h-full"></canvas>
+      </div>
+   </div>
+
+
    <div class="text-center py-4 border-b border-green ">
       <h1 class="font-victorianna-thin text-3xl  ">Every day brunch?</h1>
    </div>

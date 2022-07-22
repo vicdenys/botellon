@@ -6,6 +6,7 @@ import { gsap, Power1 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
+import { Loader } from "@googlemaps/js-api-loader";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -196,19 +197,25 @@ if (ctx) {
                 trigger: "#bottleTrigger",
             });
         } else {
-            gsap.fromTo(
-                bottleObj.position,
-                {
-                    z: -8.4,
-                    y: -3,
-                },
-                {
-                    z: -2.54,
-                    y: -2.5,
-                    duration: 1,
+            gsap.timeline()
+                .fromTo(
+                    bottleObj.position,
+                    {
+                        z: -8.4,
+                        y: -3,
+                    },
+                    {
+                        z: -2.54,
+                        y: -2.5,
+                        duration: 1,
+                        ease: "power1.inOut",
+                    }
+                )
+                .to(bottleObj.position, {
+                    z: -0.54,
+                    duration: 30,
                     ease: "power1.inOut",
-                }
-            );
+                });
             gsap.fromTo(
                 bottleObj.material,
                 {
@@ -287,53 +294,52 @@ gsap.utils.toArray("[data-module-parallax]").forEach((section) => {
 
 // MOUSE ACTION
 
-// get all links 
+// get all links
 let mouseIsMovable = true;
 let mouseIsHoveringBtn = false;
-let allHoverLinks = document.querySelectorAll('a[data-hover]');
-let allHoverButtons = document.querySelectorAll('a[data-hover-btn]');
+let allHoverLinks = document.querySelectorAll("a[data-hover]");
+let allHoverButtons = document.querySelectorAll("a[data-hover-btn]");
 
-allHoverButtons.forEach(btn => {
-    btn.addEventListener('mouseenter', e => {
+allHoverButtons.forEach((btn) => {
+    btn.addEventListener("mouseenter", (e) => {
         mouseIsHoveringBtn = true;
         gsap.to("#mouse", {
             duration: 0.1,
             css: {
-                backgroundColor: '#f6eee3',
-            }
+                backgroundColor: "#f6eee3",
+            },
         });
         gsap.to(btn, {
             duration: 0.1,
             scale: 1.05,
         });
-        
-    })
-    btn.addEventListener('mouseout', e => {
+    });
+    btn.addEventListener("mouseout", (e) => {
         mouseIsHoveringBtn = false;
         gsap.to("#mouse", {
             duration: 0.1,
             css: {
-                backgroundColor: '#063e33',
-            }
+                backgroundColor: "#063e33",
+            },
         });
         gsap.to(btn, {
             duration: 0.1,
             scale: 1,
         });
         btn.style.transform = `translate(0px ,0px)`;
-    })
-    btn.addEventListener('mousemove', e => {
-        if(mouseIsHoveringBtn){
+    });
+    btn.addEventListener("mousemove", (e) => {
+        if (mouseIsHoveringBtn) {
             let rect = btn.getBoundingClientRect();
-            btn.style.transform = `scale(1.05) translate(${(e.clientX - rect.left - rect.width/2)/12 }px,${(e.clientY - rect.top - rect.height/2)/12 }px)`;
-            
+            btn.style.transform = `scale(1.05) translate(${
+                (e.clientX - rect.left - rect.width / 2) / 12
+            }px,${(e.clientY - rect.top - rect.height / 2) / 12}px)`;
         }
-        
-    })
-})
+    });
+});
 
-allHoverLinks.forEach(link => {
-    link.addEventListener('mouseenter', e => {
+allHoverLinks.forEach((link) => {
+    link.addEventListener("mouseenter", (e) => {
         let targetBox = e.target.getBoundingClientRect();
         mouseIsMovable = false;
         gsap.to("#mouse", {
@@ -342,45 +348,53 @@ allHoverLinks.forEach(link => {
                 left: e.pageX,
                 top: e.pageY - window.scrollY,
                 borderRadius: 0,
-                height: '1px',
+                height: "1px",
                 width: e.currentTarget.offsetWidth,
                 left: targetBox.x,
                 top: targetBox.y + targetBox.height,
-                transform: 'translate(0,0)'
+                transform: "translate(0,0)",
             },
         });
-    })
-    link.addEventListener('mouseout', e => {
+    });
+    link.addEventListener("mouseout", (e) => {
         mouseIsMovable = true;
         gsap.to("#mouse", {
             duration: 0.1,
             css: {
                 left: e.pageX,
                 top: e.pageY - window.scrollY,
-                borderRadius: '100%',
-                height: '1rem',
-                width: '1rem',
-                transform: 'translate(-50%,-50%)'
+                borderRadius: "100%",
+                height: "1rem",
+                width: "1rem",
+                transform: "translate(-50%,-50%)",
             },
         });
-    })
-})
+    });
+});
 
 function moveMouse(e) {
-    if(mouseIsMovable){
+    if (mouseIsMovable) {
         gsap.to("#mouse", {
             duration: 0.1,
             css: {
                 left: e.pageX,
                 top: e.pageY - window.scrollY,
-                borderRadius: '100%',
-                height: '1rem',
-                width: '1rem',
-                transform: 'translate(-50%,-50%)'
+                borderRadius: "100%",
+                height: "1rem",
+                width: "1rem",
+                transform: "translate(-50%,-50%)",
             },
         });
     }
-    
 }
 
 window.addEventListener("mousemove", moveMouse);
+
+// HIDE MISE IF MOBILE
+if (
+    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
+        navigator.userAgent
+    )
+) {
+    document.getElementById('mouse').hidden = true;
+}

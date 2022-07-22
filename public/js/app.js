@@ -1,6 +1,342 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./node_modules/@googlemaps/js-api-loader/dist/index.esm.js":
+/*!******************************************************************!*\
+  !*** ./node_modules/@googlemaps/js-api-loader/dist/index.esm.js ***!
+  \******************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "DEFAULT_ID": () => (/* binding */ DEFAULT_ID),
+/* harmony export */   "Loader": () => (/* binding */ Loader),
+/* harmony export */   "LoaderStatus": () => (/* binding */ LoaderStatus)
+/* harmony export */ });
+// do not edit .js files directly - edit src/index.jst
+
+
+
+var fastDeepEqual = function equal(a, b) {
+  if (a === b) return true;
+
+  if (a && b && typeof a == 'object' && typeof b == 'object') {
+    if (a.constructor !== b.constructor) return false;
+
+    var length, i, keys;
+    if (Array.isArray(a)) {
+      length = a.length;
+      if (length != b.length) return false;
+      for (i = length; i-- !== 0;)
+        if (!equal(a[i], b[i])) return false;
+      return true;
+    }
+
+
+
+    if (a.constructor === RegExp) return a.source === b.source && a.flags === b.flags;
+    if (a.valueOf !== Object.prototype.valueOf) return a.valueOf() === b.valueOf();
+    if (a.toString !== Object.prototype.toString) return a.toString() === b.toString();
+
+    keys = Object.keys(a);
+    length = keys.length;
+    if (length !== Object.keys(b).length) return false;
+
+    for (i = length; i-- !== 0;)
+      if (!Object.prototype.hasOwnProperty.call(b, keys[i])) return false;
+
+    for (i = length; i-- !== 0;) {
+      var key = keys[i];
+
+      if (!equal(a[key], b[key])) return false;
+    }
+
+    return true;
+  }
+
+  // true if both NaN, false otherwise
+  return a!==a && b!==b;
+};
+
+/**
+ * Copyright 2019 Google LLC. All Rights Reserved.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at.
+ *
+ *      Http://www.apache.org/licenses/LICENSE-2.0.
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+const DEFAULT_ID = "__googleMapsScriptId";
+/**
+ * The status of the [[Loader]].
+ */
+var LoaderStatus;
+(function (LoaderStatus) {
+    LoaderStatus[LoaderStatus["INITIALIZED"] = 0] = "INITIALIZED";
+    LoaderStatus[LoaderStatus["LOADING"] = 1] = "LOADING";
+    LoaderStatus[LoaderStatus["SUCCESS"] = 2] = "SUCCESS";
+    LoaderStatus[LoaderStatus["FAILURE"] = 3] = "FAILURE";
+})(LoaderStatus || (LoaderStatus = {}));
+/**
+ * [[Loader]] makes it easier to add Google Maps JavaScript API to your application
+ * dynamically using
+ * [Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
+ * It works by dynamically creating and appending a script node to the the
+ * document head and wrapping the callback function so as to return a promise.
+ *
+ * ```
+ * const loader = new Loader({
+ *   apiKey: "",
+ *   version: "weekly",
+ *   libraries: ["places"]
+ * });
+ *
+ * loader.load().then((google) => {
+ *   const map = new google.maps.Map(...)
+ * })
+ * ```
+ */
+class Loader {
+    /**
+     * Creates an instance of Loader using [[LoaderOptions]]. No defaults are set
+     * using this library, instead the defaults are set by the Google Maps
+     * JavaScript API server.
+     *
+     * ```
+     * const loader = Loader({apiKey, version: 'weekly', libraries: ['places']});
+     * ```
+     */
+    constructor({ apiKey, authReferrerPolicy, channel, client, id = DEFAULT_ID, language, libraries = [], mapIds, nonce, region, retries = 3, url = "https://maps.googleapis.com/maps/api/js", version, }) {
+        this.CALLBACK = "__googleMapsCallback";
+        this.callbacks = [];
+        this.done = false;
+        this.loading = false;
+        this.errors = [];
+        this.apiKey = apiKey;
+        this.authReferrerPolicy = authReferrerPolicy;
+        this.channel = channel;
+        this.client = client;
+        this.id = id || DEFAULT_ID; // Do not allow empty string
+        this.language = language;
+        this.libraries = libraries;
+        this.mapIds = mapIds;
+        this.nonce = nonce;
+        this.region = region;
+        this.retries = retries;
+        this.url = url;
+        this.version = version;
+        if (Loader.instance) {
+            if (!fastDeepEqual(this.options, Loader.instance.options)) {
+                throw new Error(`Loader must not be called again with different options. ${JSON.stringify(this.options)} !== ${JSON.stringify(Loader.instance.options)}`);
+            }
+            return Loader.instance;
+        }
+        Loader.instance = this;
+    }
+    get options() {
+        return {
+            version: this.version,
+            apiKey: this.apiKey,
+            channel: this.channel,
+            client: this.client,
+            id: this.id,
+            libraries: this.libraries,
+            language: this.language,
+            region: this.region,
+            mapIds: this.mapIds,
+            nonce: this.nonce,
+            url: this.url,
+            authReferrerPolicy: this.authReferrerPolicy,
+        };
+    }
+    get status() {
+        if (this.errors.length) {
+            return LoaderStatus.FAILURE;
+        }
+        if (this.done) {
+            return LoaderStatus.SUCCESS;
+        }
+        if (this.loading) {
+            return LoaderStatus.LOADING;
+        }
+        return LoaderStatus.INITIALIZED;
+    }
+    get failed() {
+        return this.done && !this.loading && this.errors.length >= this.retries + 1;
+    }
+    /**
+     * CreateUrl returns the Google Maps JavaScript API script url given the [[LoaderOptions]].
+     *
+     * @ignore
+     */
+    createUrl() {
+        let url = this.url;
+        url += `?callback=${this.CALLBACK}`;
+        if (this.apiKey) {
+            url += `&key=${this.apiKey}`;
+        }
+        if (this.channel) {
+            url += `&channel=${this.channel}`;
+        }
+        if (this.client) {
+            url += `&client=${this.client}`;
+        }
+        if (this.libraries.length > 0) {
+            url += `&libraries=${this.libraries.join(",")}`;
+        }
+        if (this.language) {
+            url += `&language=${this.language}`;
+        }
+        if (this.region) {
+            url += `&region=${this.region}`;
+        }
+        if (this.version) {
+            url += `&v=${this.version}`;
+        }
+        if (this.mapIds) {
+            url += `&map_ids=${this.mapIds.join(",")}`;
+        }
+        if (this.authReferrerPolicy) {
+            url += `&auth_referrer_policy=${this.authReferrerPolicy}`;
+        }
+        return url;
+    }
+    deleteScript() {
+        const script = document.getElementById(this.id);
+        if (script) {
+            script.remove();
+        }
+    }
+    /**
+     * Load the Google Maps JavaScript API script and return a Promise.
+     */
+    load() {
+        return this.loadPromise();
+    }
+    /**
+     * Load the Google Maps JavaScript API script and return a Promise.
+     *
+     * @ignore
+     */
+    loadPromise() {
+        return new Promise((resolve, reject) => {
+            this.loadCallback((err) => {
+                if (!err) {
+                    resolve(window.google);
+                }
+                else {
+                    reject(err.error);
+                }
+            });
+        });
+    }
+    /**
+     * Load the Google Maps JavaScript API script with a callback.
+     */
+    loadCallback(fn) {
+        this.callbacks.push(fn);
+        this.execute();
+    }
+    /**
+     * Set the script on document.
+     */
+    setScript() {
+        if (document.getElementById(this.id)) {
+            // TODO wrap onerror callback for cases where the script was loaded elsewhere
+            this.callback();
+            return;
+        }
+        const url = this.createUrl();
+        const script = document.createElement("script");
+        script.id = this.id;
+        script.type = "text/javascript";
+        script.src = url;
+        script.onerror = this.loadErrorCallback.bind(this);
+        script.defer = true;
+        script.async = true;
+        if (this.nonce) {
+            script.nonce = this.nonce;
+        }
+        document.head.appendChild(script);
+    }
+    /**
+     * Reset the loader state.
+     */
+    reset() {
+        this.deleteScript();
+        this.done = false;
+        this.loading = false;
+        this.errors = [];
+        this.onerrorEvent = null;
+    }
+    resetIfRetryingFailed() {
+        if (this.failed) {
+            this.reset();
+        }
+    }
+    loadErrorCallback(e) {
+        this.errors.push(e);
+        if (this.errors.length <= this.retries) {
+            const delay = this.errors.length * Math.pow(2, this.errors.length);
+            console.log(`Failed to load Google Maps script, retrying in ${delay} ms.`);
+            setTimeout(() => {
+                this.deleteScript();
+                this.setScript();
+            }, delay);
+        }
+        else {
+            this.onerrorEvent = e;
+            this.callback();
+        }
+    }
+    setCallback() {
+        window.__googleMapsCallback = this.callback.bind(this);
+    }
+    callback() {
+        this.done = true;
+        this.loading = false;
+        this.callbacks.forEach((cb) => {
+            cb(this.onerrorEvent);
+        });
+        this.callbacks = [];
+    }
+    execute() {
+        this.resetIfRetryingFailed();
+        if (this.done) {
+            this.callback();
+        }
+        else {
+            // short circuit and warn if google.maps is already loaded
+            if (window.google && window.google.maps && window.google.maps.version) {
+                console.warn("Google Maps already loaded outside @googlemaps/js-api-loader." +
+                    "This may result in undesirable behavior as options and script parameters may not match.");
+                this.callback();
+                return;
+            }
+            if (this.loading) ;
+            else {
+                this.loading = true;
+                this.setCallback();
+                this.setScript();
+            }
+        }
+    }
+}
+
+
+//# sourceMappingURL=index.esm.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/alpinejs/dist/module.esm.js":
 /*!**************************************************!*\
   !*** ./node_modules/alpinejs/dist/module.esm.js ***!
@@ -5076,12 +5412,13 @@ module.exports = {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var alpinejs__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! alpinejs */ "./node_modules/alpinejs/dist/module.esm.js");
-/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
-/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/gsap-core.js");
-/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
+/* harmony import */ var three__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! three */ "./node_modules/three/build/three.module.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/index.js");
+/* harmony import */ var gsap__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! gsap */ "./node_modules/gsap/gsap-core.js");
+/* harmony import */ var gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! gsap/ScrollTrigger */ "./node_modules/gsap/ScrollTrigger.js");
 /* harmony import */ var three_examples_jsm_loaders_GLTFLoader_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! three/examples/jsm/loaders/GLTFLoader.js */ "./node_modules/three/examples/jsm/loaders/GLTFLoader.js");
 /* harmony import */ var three_examples_jsm_loaders_RGBELoader_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! three/examples/jsm/loaders/RGBELoader.js */ "./node_modules/three/examples/jsm/loaders/RGBELoader.js");
+/* harmony import */ var _googlemaps_js_api_loader__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @googlemaps/js-api-loader */ "./node_modules/@googlemaps/js-api-loader/dist/index.esm.js");
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
@@ -5092,7 +5429,8 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
-gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger);
+
+gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger);
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
 var ctx = document.getElementById("bottleCanvas");
@@ -5122,7 +5460,7 @@ if (ctx) {
   var initGSAP = function initGSAP() {
     if (document.getElementById("whiteBottleCanvasContainer")) {
       bottleObj.rotation.x = -0.4;
-      var whiteBottleTln = gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.timeline();
+      var whiteBottleTln = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
       whiteBottleTln.to(bottleObj.position, {
         z: -1800.4
       }).to(bottleObj.position, {
@@ -5135,13 +5473,13 @@ if (ctx) {
         y: -6,
         z: -0.1
       });
-      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.create({
+      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
         animation: whiteBottleTln,
         scrub: true,
         trigger: "#bottleTrigger"
       });
     } else {
-      gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.fromTo(bottleObj.position, {
+      gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline().fromTo(bottleObj.position, {
         z: -8.4,
         y: -3
       }, {
@@ -5149,8 +5487,12 @@ if (ctx) {
         y: -2.5,
         duration: 1,
         ease: "power1.inOut"
+      }).to(bottleObj.position, {
+        z: -0.54,
+        duration: 30,
+        ease: "power1.inOut"
       });
-      gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.fromTo(bottleObj.material, {
+      gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.fromTo(bottleObj.material, {
         transmission: 1
       }, {
         transmission: 0.5,
@@ -5160,8 +5502,8 @@ if (ctx) {
     }
   };
 
-  var scene = new three__WEBPACK_IMPORTED_MODULE_5__.Scene();
-  var camera = new three__WEBPACK_IMPORTED_MODULE_5__.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 1000);
+  var scene = new three__WEBPACK_IMPORTED_MODULE_6__.Scene();
+  var camera = new three__WEBPACK_IMPORTED_MODULE_6__.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 1000);
   var params = {};
 
   if (document.getElementById("whiteBottleCanvasContainer")) {
@@ -5194,7 +5536,7 @@ if (ctx) {
     };
   }
 
-  var renderer = new three__WEBPACK_IMPORTED_MODULE_5__.WebGLRenderer({
+  var renderer = new three__WEBPACK_IMPORTED_MODULE_6__.WebGLRenderer({
     canvas: ctx,
     alpha: true
   });
@@ -5215,8 +5557,8 @@ if (ctx) {
   } // LIGHTS
 
 
-  var pointLight = new three__WEBPACK_IMPORTED_MODULE_5__.PointLight(0xffffff, 1, 20);
-  var ambientLight = new three__WEBPACK_IMPORTED_MODULE_5__.AmbientLight(0xffffff);
+  var pointLight = new three__WEBPACK_IMPORTED_MODULE_6__.PointLight(0xffffff, 1, 20);
+  var ambientLight = new three__WEBPACK_IMPORTED_MODULE_6__.AmbientLight(0xffffff);
   scene.add(pointLight);
   pointLight.position.x = -5;
   pointLight.position.y = 2;
@@ -5224,13 +5566,13 @@ if (ctx) {
 
   var loader = new three_examples_jsm_loaders_GLTFLoader_js__WEBPACK_IMPORTED_MODULE_1__.GLTFLoader(); // Load envMap.
 
-  var textureLoader = new three__WEBPACK_IMPORTED_MODULE_5__.TextureLoader();
+  var textureLoader = new three__WEBPACK_IMPORTED_MODULE_6__.TextureLoader();
   var texture = textureLoader.load("/img/antwerp_360.jpeg");
-  var pmremGenerator = new three__WEBPACK_IMPORTED_MODULE_5__.PMREMGenerator(renderer);
+  var pmremGenerator = new three__WEBPACK_IMPORTED_MODULE_6__.PMREMGenerator(renderer);
   pmremGenerator.compileEquirectangularShader();
   loader.load("models/bottleObj/bottle.gltf", function (gltf) {
     bottleObj = gltf.scene.children[0];
-    var material = new three__WEBPACK_IMPORTED_MODULE_5__.MeshPhysicalMaterial({
+    var material = new three__WEBPACK_IMPORTED_MODULE_6__.MeshPhysicalMaterial({
       color: params.color,
       metalness: params.metalness,
       roughness: params.roughness,
@@ -5239,10 +5581,10 @@ if (ctx) {
       specularIntensity: params.specularIntensity,
       specularColor: params.specularColor,
       opacity: params.opacity,
-      side: three__WEBPACK_IMPORTED_MODULE_5__.DoubleSide
+      side: three__WEBPACK_IMPORTED_MODULE_6__.DoubleSide
     });
     new three_examples_jsm_loaders_RGBELoader_js__WEBPACK_IMPORTED_MODULE_2__.RGBELoader().load("img/background_1k.hdr", function (texture) {
-      texture.mapping = three__WEBPACK_IMPORTED_MODULE_5__.EquirectangularReflectionMapping;
+      texture.mapping = three__WEBPACK_IMPORTED_MODULE_6__.EquirectangularReflectionMapping;
       var envMap = pmremGenerator.fromEquirectangular(texture).texture;
       bottleObj.material.envMap = envMap;
       scene.environment = envMap; //scene.background
@@ -5263,7 +5605,7 @@ if (ctx) {
   });
 }
 
-gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.to(".paralax-img", {
+gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.to(".paralax-img", {
   top: -20,
   scrollTrigger: {
     trigger: ".parallax-container",
@@ -5272,31 +5614,31 @@ gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.to(".paralax-img", {
   }
 }); // MENU TOP SECTION ANIMATION
 
-var topSectionAnim = gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.timeline();
+var topSectionAnim = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
 topSectionAnim.to("#menuTopSectionText", {
   color: "#f6eee3",
   duration: 0.2
 }).to("#menuTopSection", {
   paddingTop: "2rem",
   paddingBottom: "2rem",
-  ease: gsap__WEBPACK_IMPORTED_MODULE_6__.Power1.easeIn,
+  ease: gsap__WEBPACK_IMPORTED_MODULE_7__.Power1.easeIn,
   duration: 0.2
 }).to("#menuTopSectionText", {
   height: 0,
   marginBottom: 0,
-  ease: gsap__WEBPACK_IMPORTED_MODULE_6__.Power1.easeOut,
+  ease: gsap__WEBPACK_IMPORTED_MODULE_7__.Power1.easeOut,
   duration: 0.2
 });
-gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_4__.ScrollTrigger.create({
+gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
   animation: topSectionAnim,
   start: "-75rem top",
   toggleActions: "play none none reverse "
 });
-gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.utils.toArray("[data-module-parallax]").forEach(function (section) {
-  gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.utils.toArray(section.querySelectorAll("[data-parallax]")).forEach(function (parallax) {
+gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.utils.toArray("[data-module-parallax]").forEach(function (section) {
+  gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.utils.toArray(section.querySelectorAll("[data-parallax]")).forEach(function (parallax) {
     var depth = parallax.dataset.speed;
     var movement = -(parallax.offsetHeight * depth);
-    gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.fromTo(parallax, {
+    gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.fromTo(parallax, {
       y: -movement
     }, {
       y: movement,
@@ -5308,41 +5650,41 @@ gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.utils.toArray("[data-module-parallax]").f
     });
   });
 }); // MOUSE ACTION
-// get all links 
+// get all links
 
 var mouseIsMovable = true;
 var mouseIsHoveringBtn = false;
-var allHoverLinks = document.querySelectorAll('a[data-hover]');
-var allHoverButtons = document.querySelectorAll('a[data-hover-btn]');
+var allHoverLinks = document.querySelectorAll("a[data-hover]");
+var allHoverButtons = document.querySelectorAll("a[data-hover-btn]");
 allHoverButtons.forEach(function (btn) {
-  btn.addEventListener('mouseenter', function (e) {
+  btn.addEventListener("mouseenter", function (e) {
     mouseIsHoveringBtn = true;
-    gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.to("#mouse", {
+    gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.to("#mouse", {
       duration: 0.1,
       css: {
-        backgroundColor: '#f6eee3'
+        backgroundColor: "#f6eee3"
       }
     });
-    gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.to(btn, {
+    gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.to(btn, {
       duration: 0.1,
       scale: 1.05
     });
   });
-  btn.addEventListener('mouseout', function (e) {
+  btn.addEventListener("mouseout", function (e) {
     mouseIsHoveringBtn = false;
-    gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.to("#mouse", {
+    gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.to("#mouse", {
       duration: 0.1,
       css: {
-        backgroundColor: '#063e33'
+        backgroundColor: "#063e33"
       }
     });
-    gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.to(btn, {
+    gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.to(btn, {
       duration: 0.1,
       scale: 1
     });
     btn.style.transform = "translate(0px ,0px)";
   });
-  btn.addEventListener('mousemove', function (e) {
+  btn.addEventListener("mousemove", function (e) {
     if (mouseIsHoveringBtn) {
       var rect = btn.getBoundingClientRect();
       btn.style.transform = "scale(1.05) translate(".concat((e.clientX - rect.left - rect.width / 2) / 12, "px,").concat((e.clientY - rect.top - rect.height / 2) / 12, "px)");
@@ -5350,33 +5692,33 @@ allHoverButtons.forEach(function (btn) {
   });
 });
 allHoverLinks.forEach(function (link) {
-  link.addEventListener('mouseenter', function (e) {
+  link.addEventListener("mouseenter", function (e) {
     var _css;
 
     var targetBox = e.target.getBoundingClientRect();
     mouseIsMovable = false;
-    gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.to("#mouse", {
+    gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.to("#mouse", {
       duration: 0.1,
       css: (_css = {
         left: e.pageX,
         top: e.pageY - window.scrollY,
         borderRadius: 0,
-        height: '1px',
+        height: "1px",
         width: e.currentTarget.offsetWidth
-      }, _defineProperty(_css, "left", targetBox.x), _defineProperty(_css, "top", targetBox.y + targetBox.height), _defineProperty(_css, "transform", 'translate(0,0)'), _css)
+      }, _defineProperty(_css, "left", targetBox.x), _defineProperty(_css, "top", targetBox.y + targetBox.height), _defineProperty(_css, "transform", "translate(0,0)"), _css)
     });
   });
-  link.addEventListener('mouseout', function (e) {
+  link.addEventListener("mouseout", function (e) {
     mouseIsMovable = true;
-    gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.to("#mouse", {
+    gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.to("#mouse", {
       duration: 0.1,
       css: {
         left: e.pageX,
         top: e.pageY - window.scrollY,
-        borderRadius: '100%',
-        height: '1rem',
-        width: '1rem',
-        transform: 'translate(-50%,-50%)'
+        borderRadius: "100%",
+        height: "1rem",
+        width: "1rem",
+        transform: "translate(-50%,-50%)"
       }
     });
   });
@@ -5384,21 +5726,25 @@ allHoverLinks.forEach(function (link) {
 
 function moveMouse(e) {
   if (mouseIsMovable) {
-    gsap__WEBPACK_IMPORTED_MODULE_3__.gsap.to("#mouse", {
+    gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.to("#mouse", {
       duration: 0.1,
       css: {
         left: e.pageX,
         top: e.pageY - window.scrollY,
-        borderRadius: '100%',
-        height: '1rem',
-        width: '1rem',
-        transform: 'translate(-50%,-50%)'
+        borderRadius: "100%",
+        height: "1rem",
+        width: "1rem",
+        transform: "translate(-50%,-50%)"
       }
     });
   }
 }
 
-window.addEventListener("mousemove", moveMouse);
+window.addEventListener("mousemove", moveMouse); // HIDE MISE IF MOBILE
+
+if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+  document.getElementById('mouse').hidden = true;
+}
 
 /***/ }),
 

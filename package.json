@@ -21,6 +21,7 @@
         "tailwindcss": "^3.0.18"
     },
     "dependencies": {
+        "@googlemaps/js-api-loader": "^1.14.3",
         "gsap": "^3.10.4",
         "three": "^0.141.0",
         "three-mtl-loader": "^1.0.2",
