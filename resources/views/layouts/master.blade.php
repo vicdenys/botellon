@@ -18,9 +18,9 @@
 </head>
 
 
-<body class="antialiased cursor-none  {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}">
+<body class="antialiased cursor-none  {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}"  x-data="{menuOpen: false}">
 
-        <div class="min-h-screen font-bazovy" x-data="{menuOpen: false}">
+        <div class="min-h-screen font-bazovy">
             @include('layouts.navigation-guest', ['isDarkTheme' => isset($isDarkTheme)])
 
             
@@ -35,7 +35,7 @@
             
         </div>
        
-        <div id="mouse" class="fixed z-[1000] transform -translate-x-1/2 -translate-y-1/2 w-4 h-4  rounded-full pointer-events-none {{  Request::is('/') ? 'bg-white ' : 'bg-green' }}">
+        <div id="mouse" class="fixed z-[1000] transform -translate-x-1/2 -translate-y-1/2 w-4 h-4  rounded-full pointer-events-none {{  Request::is('/') ? 'bg-white ' : 'bg-green' }}" :class="[ menuOpen ? 'bg-green': 'bg-white' ]">
             
         </div>
 

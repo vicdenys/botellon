@@ -9,14 +9,14 @@
       <a data-hover-btn class="bg-green hover:bg-green/95 text-white  border border-green inline-block   rounded-full font-victorianna-thin text-xl px-6 py-3" href="/menu-files/{{ $activeFile->title }}" target="_blank">{{ __('menu.seemenu') }}</a>
    </div>
 
-   <div class="text-left flex items-center py-4 px-8 border-b overflow-hidden border-green ">
-      <div class="">
-         <h1 class="font-victorianna-thin text-3xl w-1/2 ">bottle information title</h1>
+   <div class="text-left flex flex-row-reverse items-center  border-b overflow-hidden border-green ">
+      <div class="w-1/2 pl-8 ">
+         <h1 class="font-victorianna-thin text-3xl w-1/2 ">Pick your bottle</h1>
          <h1 class="text-2xl w-1/2 ">here you get some more information about the bottle</h1></h1>
       </div>
       
-      <div class=" w-1/2 z-30 h-96 top-0 left-0 relative">
-         <canvas id="bottleCanvas" class="w-full h-full"></canvas>
+      <div id="bottleCanvasContainer" class=" border-green w-1/2 z-30 h-96 top-0 left-0 relative">
+         <canvas id="bottleCanvas" class="menuCanvas w-full h-full" width="100%" height="100%"></canvas>
       </div>
    </div>
 

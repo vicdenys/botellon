@@ -5434,10 +5434,26 @@ gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.registerPlugin(gsap_ScrollTrigger__WEBPAC
 window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
 var ctx = document.getElementById("bottleCanvas");
+var ctxContainer = document.getElementById("bottleCanvasContainer"); // CHECK IF MENU CANVAS EXISTs
 
 if (ctx) {
+  var resizeCanvasToDisplaySize = function resizeCanvasToDisplaySize() {
+    var canvas = renderer.domElement; // look up the size the canvas is being displayed
+
+    var width = ctxContainer.clientWidth;
+    var height = ctxContainer.clientHeight; // adjust displayBuffer size to match
+
+    if (canvas.width !== width || canvas.height !== height) {
+      // you must pass false here or three.js sadly fights the browser
+      renderer.setSize(width, height, false);
+      camera.aspect = width / height;
+      camera.updateProjectionMatrix(); // update any render target sizes here
+    }
+  };
+
   var animate = function animate() {
     // camera.lookAt(bottleObj.position);
+    resizeCanvasToDisplaySize();
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
   };
@@ -5458,37 +5474,17 @@ if (ctx) {
   };
 
   var initGSAP = function initGSAP() {
-    if (document.getElementById("whiteBottleCanvasContainer")) {
-      bottleObj.rotation.x = -0.4;
-      var whiteBottleTln = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
-      whiteBottleTln.to(bottleObj.position, {
-        z: -1800.4
-      }).to(bottleObj.position, {
-        z: 4.54,
-        ease: "power1.inOut"
-      }).to(bottleObj.rotation, {
-        y: -3,
-        z: -0.1
-      }).to(bottleObj.rotation, {
-        y: -6,
-        z: -0.1
-      });
-      gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
-        animation: whiteBottleTln,
-        scrub: true,
-        trigger: "#bottleTrigger"
-      });
-    } else {
+    if (isMenuCanvas) {} else {
       gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline().fromTo(bottleObj.position, {
         z: -8.4,
         y: -3
       }, {
-        z: -2.54,
+        z: -4.54,
         y: -2.5,
         duration: 1,
         ease: "power1.inOut"
       }).to(bottleObj.position, {
-        z: -0.54,
+        z: -3.54,
         duration: 30,
         ease: "power1.inOut"
       });
@@ -5502,16 +5498,17 @@ if (ctx) {
     }
   };
 
+  var isMenuCanvas = ctx.classList.contains("menuCanvas");
   var scene = new three__WEBPACK_IMPORTED_MODULE_6__.Scene();
   var camera = new three__WEBPACK_IMPORTED_MODULE_6__.PerspectiveCamera(25, window.innerWidth / window.innerHeight, 0.1, 1000);
   var params = {};
 
-  if (document.getElementById("whiteBottleCanvasContainer")) {
+  if (isMenuCanvas) {
     params = {
-      color: 0xf6eee3,
-      transmission: 1,
-      opacity: 1,
-      metalness: 0.3,
+      color: 0x063e33,
+      transmission: 0.3,
+      opacity: 0.5,
+      metalness: 1,
       roughness: 0,
       ior: 1.52,
       thickness: 0.1,
@@ -5519,7 +5516,9 @@ if (ctx) {
       specularColor: 0x000000,
       lightIntensity: 1,
       exposure: 1
-    };
+    }; //scene.fog = new THREE.Fog('#f6eee3', 10, 35);
+
+    scene.backgroundColor = '#FFFFFF';
   } else {
     params = {
       color: 0x063e33,
@@ -5541,17 +5540,18 @@ if (ctx) {
     alpha: true
   });
   renderer.setClearColor(0x000000, 0);
-  renderer.setSize(window.innerWidth, window.innerHeight);
+  renderer.setSize(ctx.clientWidth, ctx.clientHeight);
   renderer.setPixelRatio(window.devicePixelRatio);
+  resizeCanvasToDisplaySize();
   var bottleObj;
   window.addEventListener("resize", function () {
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.aspect = window.innerWidth / window.innerHeight;
+    renderer.setSize(ctxContainer.clientWidth, ctxContainer.clientHeight);
+    camera.aspect = ctxContainer.clientWidth / ctxContainer.clientHeight;
     camera.updateProjectionMatrix();
   });
 
-  if (document.getElementById("whiteBottleCanvasContainer")) {
-    camera.position.z = 35;
+  if (isMenuCanvas) {
+    camera.position.z = 15;
   } else {
     camera.position.z = 10;
   } // LIGHTS
@@ -5590,11 +5590,31 @@ if (ctx) {
       scene.environment = envMap; //scene.background
 
       bottleObj.position.y -= 2.5;
-      bottleObj.material = material;
-      scene.add(bottleObj);
+      bottleObj.material = material; //scene.add(bottleObj);
 
-      if (!document.getElementById("whiteBottleCanvasContainer")) {
-        addMouseMoveListener();
+      if (isMenuCanvas) {
+        var bottlecopies = [];
+
+        for (var i = 0; i < 8; i++) {
+          bottlecopies[i] = bottleObj.clone(); //bottlecopies[i].position.z -= 20* Math.cos(-1*(Math.PI/2) / 8 *i);
+          //bottlecopies[i].position.x += -7- (10* Math.sin(-1*(Math.PI/2) / 8 *i));
+
+          console.log(Math.sin(-1 * (Math.PI / 2) / 8 * i));
+          scene.add(bottlecopies[i]);
+          gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.fromTo(bottlecopies[i].position, {
+            x: 0,
+            z: 0
+          }, {
+            x: -7 - 10 * Math.sin(-1 * (Math.PI / 2) / 8 * i),
+            z: -20 * Math.cos(-1 * (Math.PI / 2) / 8 * i),
+            duration: 1,
+            ease: "power1.inOut",
+            scrollTrigger: {
+              start: "-75rem top",
+              toggleActions: "play none none reverse "
+            }
+          });
+        }
       }
 
       initGSAP();
@@ -5740,7 +5760,7 @@ function moveMouse(e) {
   }
 }
 
-window.addEventListener("mousemove", moveMouse); // HIDE MISE IF MOBILE
+window.addEventListener("mousemove", moveMouse); // HIDE MouSE IF MOBILE
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
   document.getElementById('mouse').hidden = true;

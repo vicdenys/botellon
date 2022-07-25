@@ -43,12 +43,12 @@ module.exports = {
                     "100%": { transform: "translateY(0)", opacity: 1 },
                 },
                 "pop-up-out": {
-                    "0%": { transform: "translateY(100%)", opacity: 0 },
+                    "0%": { transform: "translateY(50%)", opacity: 0 },
                     "5%": { transform: "translateY(0)", opacity: 1 },
                     "45%": { transform: "translateY(0)", opacity: 1 },
-                    "50%": { transform: "translateY(-100%)", opacity: 0 },
-                    "100%": { transform: "translateY(-100%)", opacity: 0 },
-                    "100%": { transform: "translateY(-100%)", opacity: 0 },
+                    "50%": { transform: "translateY(-50%)", opacity: 0 },
+                    "100%": { transform: "translateY(-50%)", opacity: 0 },
+                    "100%": { transform: "translateY(-50%)", opacity: 0 },
                 },
             },
             animation: {

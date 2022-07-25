@@ -15,8 +15,14 @@ window.Alpine = Alpine;
 Alpine.start();
 
 const ctx = document.getElementById("bottleCanvas");
+const ctxContainer = document.getElementById("bottleCanvasContainer");
+
+// CHECK IF MENU CANVAS EXISTs
+
 
 if (ctx) {
+    const isMenuCanvas = ctx.classList.contains("menuCanvas");
+
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(
         25,
@@ -27,20 +33,23 @@ if (ctx) {
 
     let params = {};
 
-    if (document.getElementById("whiteBottleCanvasContainer")) {
+    if (isMenuCanvas) {
         params = {
-            color: 0xf6eee3,
-            transmission: 1,
-            opacity: 1,
-            metalness: 0.3,
+            color: 0x063e33,
+            transmission: 0.3,
+            opacity: 0.5,
+            metalness: 1,
             roughness: 0,
             ior: 1.52,
             thickness: 0.1,
             specularIntensity: 5,
-            specularColor: 0x000000,
+            specularColor:0x000000,
             lightIntensity: 1,
             exposure: 1,
         };
+
+        //scene.fog = new THREE.Fog('#f6eee3', 10, 35);
+        scene.backgroundColor = '#FFFFFF';
     } else {
         params = {
             color: 0x063e33,
@@ -59,20 +68,21 @@ if (ctx) {
 
     const renderer = new THREE.WebGLRenderer({ canvas: ctx, alpha: true });
     renderer.setClearColor(0x000000, 0);
-    renderer.setSize(window.innerWidth, window.innerHeight);
+    renderer.setSize(ctx.clientWidth, ctx.clientHeight);
     renderer.setPixelRatio(window.devicePixelRatio);
+    resizeCanvasToDisplaySize();
 
     let bottleObj;
 
     window.addEventListener("resize", () => {
-        renderer.setSize(window.innerWidth, window.innerHeight);
-        camera.aspect = window.innerWidth / window.innerHeight;
+        renderer.setSize(ctxContainer.clientWidth, ctxContainer.clientHeight);
+        camera.aspect = ctxContainer.clientWidth / ctxContainer.clientHeight;
 
         camera.updateProjectionMatrix();
     });
 
-    if (document.getElementById("whiteBottleCanvasContainer")) {
-        camera.position.z = 35;
+    if (isMenuCanvas) {
+        camera.position.z = 15;
     } else {
         camera.position.z = 10;
     }
@@ -96,6 +106,23 @@ if (ctx) {
 
     let pmremGenerator = new THREE.PMREMGenerator(renderer);
     pmremGenerator.compileEquirectangularShader();
+
+    function resizeCanvasToDisplaySize() {
+        const canvas = renderer.domElement;
+        // look up the size the canvas is being displayed
+        const width = ctxContainer.clientWidth;
+        const height = ctxContainer.clientHeight;
+      
+        // adjust displayBuffer size to match
+        if (canvas.width !== width || canvas.height !== height) {
+          // you must pass false here or three.js sadly fights the browser
+          renderer.setSize(width, height, false);
+          camera.aspect = width / height;
+          camera.updateProjectionMatrix();
+      
+          // update any render target sizes here
+        }
+      }
 
     loader.load(
         "models/bottleObj/bottle.gltf",
@@ -127,11 +154,40 @@ if (ctx) {
                 bottleObj.position.y -= 2.5;
                 bottleObj.material = material;
 
-                scene.add(bottleObj);
+                //scene.add(bottleObj);
 
-                if (!document.getElementById("whiteBottleCanvasContainer")) {
-                    addMouseMoveListener();
+                if (isMenuCanvas) {
+                    
+            
+                    let bottlecopies = []
+
+                    for(let i= 0; i < 8; i++){
+                        bottlecopies[i] = bottleObj.clone();
+                        //bottlecopies[i].position.z -= 20* Math.cos(-1*(Math.PI/2) / 8 *i);
+                        //bottlecopies[i].position.x += -7- (10* Math.sin(-1*(Math.PI/2) / 8 *i));
+                        console.log(Math.sin(-1*(Math.PI/2) / 8 *i));
+                        scene.add(bottlecopies[i]);
+                        gsap.fromTo(
+                            bottlecopies[i].position,
+                            {
+                                x: 0,
+                                z: 0,
+                            },
+                            {
+                                x: -7- (10* Math.sin(-1*(Math.PI/2) / 8 *i)),
+                                z: -20* Math.cos(-1*(Math.PI/2) / 8 *i),
+                                duration: 1,
+                                ease: "power1.inOut",
+                                scrollTrigger: {
+                                    start:  "-75rem top",
+                                    toggleActions: "play none none reverse ",
+                                }
+                            }
+                        );
+                    } 
                 }
+                
+
 
                 initGSAP();
 
@@ -146,6 +202,7 @@ if (ctx) {
 
     function animate() {
         // camera.lookAt(bottleObj.position);
+        resizeCanvasToDisplaySize();
 
         requestAnimationFrame(animate);
         renderer.render(scene, camera);
@@ -168,34 +225,8 @@ if (ctx) {
     }
 
     function initGSAP() {
-        if (document.getElementById("whiteBottleCanvasContainer")) {
-            bottleObj.rotation.x = -0.4;
+        if (isMenuCanvas) {
 
-            let whiteBottleTln = gsap.timeline();
-
-            whiteBottleTln
-                .to(bottleObj.position, {
-                    z: -1800.4,
-                })
-                .to(bottleObj.position, {
-                    z: 4.54,
-                    ease: "power1.inOut",
-                })
-                .to(bottleObj.rotation, {
-                    y: -3,
-                    z: -0.1,
-                })
-
-                .to(bottleObj.rotation, {
-                    y: -6,
-                    z: -0.1,
-                });
-
-            ScrollTrigger.create({
-                animation: whiteBottleTln,
-                scrub: true,
-                trigger: "#bottleTrigger",
-            });
         } else {
             gsap.timeline()
                 .fromTo(
@@ -205,14 +236,14 @@ if (ctx) {
                         y: -3,
                     },
                     {
-                        z: -2.54,
+                        z: -4.54,
                         y: -2.5,
                         duration: 1,
                         ease: "power1.inOut",
                     }
                 )
                 .to(bottleObj.position, {
-                    z: -0.54,
+                    z: -3.54,
                     duration: 30,
                     ease: "power1.inOut",
                 });
@@ -390,7 +421,7 @@ function moveMouse(e) {
 
 window.addEventListener("mousemove", moveMouse);
 
-// HIDE MISE IF MOBILE
+// HIDE MouSE IF MOBILE
 if (
     /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
         navigator.userAgent
