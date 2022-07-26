@@ -18,8 +18,8 @@
                     {{ __('events.1.2') }} </span>
             </p>
         </div>
-        <div data-module-parallax class="parallax-container max-h-48 sm:max-h-72 relative  md:max-h-[24rem] md:w-1/2 overflow-hidden  border-y md:border-none border-green">
-            <img data-parallax data-speed='-0.15' class="paralax-img relative md:absolute  -mt-[60%]  md:w-[120%]  w-full" src="/img/bottle-rose.jpeg" alt="picnic cloth ">
+        <div data-module-parallax class="parallax-container flex  items-center justify-center relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-t md:border-none border-green">
+            <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-full relative md:absolute h-auto" src="/img/bottle-rose.jpeg" alt="picnic cloth ">
         </div>
 
     </div>
@@ -66,8 +66,8 @@
                     {{ __('events.3.5') }} </span>
             </p>
         </div>
-        <div data-module-parallax class="parallax-container max-h-48 sm:max-h-72 relative  md:max-h-[24rem] md:w-1/2 overflow-hidden  border-y md:border-none border-green">
-            <img data-parallax data-speed='-0.15' class="paralax-img relative md:absolute   md:w-[120%]  w-full" src="/img/bottles.jpeg" alt="picnic cloth ">
+        <div data-module-parallax class="parallax-container flex  items-center justify-center relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-t md:border-none border-green">
+            <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-full relative md:absolute h-auto" src="/img/bruschetta.jpg" alt="bruschetta  ">
         </div>
 
     </div>

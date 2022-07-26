@@ -22,8 +22,8 @@
                     {{ __('museum.1.4') }} </span>
             </p>
         </div>
-        <div data-module-parallax class="parallax-container max-h-48 sm:max-h-72 relative  md:max-h-[24rem] md:w-1/2 overflow-hidden  border-y md:border-none border-green">
-            <img data-parallax data-speed='-0.15' class="paralax-img relative md:absolute   md:w-[120%]  w-full" src="/img/picnic-cloth.jpg" alt="picnic cloth ">
+        <div data-module-parallax class="parallax-container flex  items-center justify-center relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-y md:border-none border-green">
+            <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-[150%] md:w-[200%] -mt-[15%]  lg:w-[150%] relative md:absolute h-auto" src="/img/museum.jpg" alt="museum group">
         </div>
 
     </div>
@@ -57,11 +57,12 @@
                     <a class="border-b border-green" href="https://reservations.tablebooker.com/?restaurantId=51380481&obmPrimaryColor=%23063e33&obmFontColor=%23f6eee3&lang={{ Config::get('app.locale') }}" target="_blank" class="pb-1" data-hover>link</a></span>
                 <span class="block">
                     {{ __('museum.3.2') }}
+                    <a data-hover href="mailto:info@botellonantwerp.be">info@botellonantwerp.be</a> </span>
                 </span>
             </p>
         </div>
-        <div data-module-parallax class="parallax-container max-h-48 sm:max-h-72 relative  md:max-h-[24rem] md:w-1/2 overflow-hidden  border-y md:border-none border-green">
-            <img data-parallax data-speed='-0.15' class="paralax-img relative md:absolute   md:w-[120%]  w-full" src="/img/bottles.jpeg" alt="picnic cloth ">
+        <div data-module-parallax class="parallax-container flex  items-center justify-center relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-t md:border-none border-green">
+            <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-full relative md:absolute h-auto" src="/img/bottles.jpg" alt="picnic cloth ">
         </div>
 
     </div>

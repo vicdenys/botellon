@@ -10,8 +10,8 @@
 
    <div class=" md:flex  border-b border-green">
 
-      <div data-module-parallax class="parallax-container max-h-48 sm:max-h-72 relative  md:max-h-[24rem] md:w-1/2 overflow-hidden  border-y md:border-none border-green">
-         <img data-parallax data-speed='-0.15' class="paralax-img relative md:absolute  -mt-[60%]  md:w-[120%]  w-full" src="/img/bottle-rose.jpeg" alt="picnic cloth ">
+      <div data-module-parallax class="parallax-container flex  items-center justify-center relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-y md:border-none border-green">
+         <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-[150%] md:w-[200%]  lg:w-[150%] relative md:absolute h-auto" src="/img/bottle-rose.jpeg" alt="picnic cloth ">
       </div>
       <div class="px-8 py-8 md:py-12 space-y-4 bg-white md:w-1/2">
          <p class="text-left space-y-4">

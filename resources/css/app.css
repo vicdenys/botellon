@@ -43,3 +43,13 @@ select:-webkit-autofill:focus {
 a {
     @apply cursor-none;
 }
+
+#menu-container{
+    will-change:  margin, color, height, padding;
+}
+#menuTopSection{
+    will-change: padding;
+}
+#menuTopSectionText{
+    will-change:  margin, color, height;
+}

@@ -31,9 +31,9 @@
         </p>
     </div>
 
-    <div class="  bg-white">
-        <div data-module-parallax class="parallax-container max-h-48 sm:max-h-72 relative  md:max-h-[24rem]  overflow-hidden  border-y  border-green">
-            <img data-parallax data-speed='-0.25' class="paralax-img relative md:-mt-[25%]  w-full" src="/img/quay-antwerp.jpg" alt="quay antwerp images ">
+    <div class=" flex min-h-[10rem] sm:min-h-[15rem] bg-white md:border-y border-green">
+        <div data-module-parallax class="parallax-container flex  items-center justify-center relative max-h-40  sm:max-h-60 md:max-h-[initial]   w-full overflow-hidden  border-y md:border-none border-green">
+            <img data-parallax data-speed='-0.25' class="paralax-img max-w-none w-[150%]  -mt-[15%]  lg:w-full relative md:absolute h-auto" src="/img/quay-antwerp.jpg" alt="quay antwerp images ">
         </div>
     </div>
 
@@ -98,8 +98,8 @@
                 <span class="block">
             </p>
         </div>
-        <div data-module-parallax class="parallax-container max-h-48 sm:max-h-72 relative  md:max-h-[24rem] md:w-1/2 overflow-hidden  border-y md:border-none border-green">
-            <img data-parallax data-speed='-0.15' class="paralax-img relative md:absolute   md:w-[120%]  w-full" src="/img/picnic-cloth.jpg" alt="picnic cloth ">
+        <div data-module-parallax class="parallax-container flex  items-center justify-center relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-y md:border-none border-green">
+            <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-[150%] md:w-[200%]  lg:w-[150%] relative md:absolute h-auto" src="/img/picnic-cloth.jpg" alt="picnic cloth ">
         </div>
 
     </div>

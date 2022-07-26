@@ -5435,6 +5435,9 @@ window.Alpine = alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"];
 alpinejs__WEBPACK_IMPORTED_MODULE_0__["default"].start();
 var ctx = document.getElementById("bottleCanvas");
 var ctxContainer = document.getElementById("bottleCanvasContainer"); // CHECK IF MENU CANVAS EXISTs
+////////////////////
+/// TRHEE JS PART //
+////////////////////
 
 if (ctx) {
   var resizeCanvasToDisplaySize = function resizeCanvasToDisplaySize() {
@@ -5506,7 +5509,7 @@ if (ctx) {
   if (isMenuCanvas) {
     params = {
       color: 0x063e33,
-      transmission: 0.3,
+      transmission: 0,
       opacity: 0.5,
       metalness: 1,
       roughness: 0,
@@ -5516,9 +5519,9 @@ if (ctx) {
       specularColor: 0x000000,
       lightIntensity: 1,
       exposure: 1
-    }; //scene.fog = new THREE.Fog('#f6eee3', 10, 35);
-
-    scene.backgroundColor = '#FFFFFF';
+    };
+    scene.fog = new three__WEBPACK_IMPORTED_MODULE_6__.Fog("#f6eee3", 10, 45);
+    scene.backgroundColor = "#FFFFFF";
   } else {
     params = {
       color: 0x063e33,
@@ -5590,7 +5593,7 @@ if (ctx) {
       scene.environment = envMap; //scene.background
 
       bottleObj.position.y -= 2.5;
-      bottleObj.material = material; //scene.add(bottleObj);
+      bottleObj.material = material;
 
       if (isMenuCanvas) {
         var bottlecopies = [];
@@ -5608,13 +5611,11 @@ if (ctx) {
             x: -7 - 10 * Math.sin(-1 * (Math.PI / 2) / 8 * i),
             z: -20 * Math.cos(-1 * (Math.PI / 2) / 8 * i),
             duration: 1,
-            ease: "power1.inOut",
-            scrollTrigger: {
-              start: "-75rem top",
-              toggleActions: "play none none reverse "
-            }
+            ease: "power1.inOut"
           });
         }
+      } else {
+        scene.add(bottleObj);
       }
 
       initGSAP();
@@ -5623,37 +5624,43 @@ if (ctx) {
   }, undefined, function (error) {
     console.error(error);
   });
+} // gsap.to(".paralax-img", {
+//     top: -20,
+//     scrollTrigger: {
+//         trigger: ".parallax-container",
+//         scrub: 1,
+//         top: "top 0",
+//     },
+// });
+// MENU TOP SECTION ANIMATION
+
+
+if (document.getElementById("menuTopSectionText")) {
+  var topSectionAnim = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
+  topSectionAnim.to("#menuTopSectionText", {
+    color: "#f6eee3",
+    duration: 0.1
+  }).to("#menuTopSection", {
+    paddingTop: "2rem",
+    paddingBottom: "2rem",
+    ease: gsap__WEBPACK_IMPORTED_MODULE_7__.Power1.easeIn,
+    duration: 0.2
+  }, '<').to("#menuTopSectionText", {
+    height: 0,
+    marginBottom: 0,
+    ease: gsap__WEBPACK_IMPORTED_MODULE_7__.Power1.easeOut,
+    duration: 0.2
+  }, '<');
+  gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
+    animation: topSectionAnim,
+    start: "-312rem top",
+    end: "-197rem top",
+    scrub: true,
+    trigger: '#menu-content',
+    toggleActions: "play none none reverse "
+  });
 }
 
-gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.to(".paralax-img", {
-  top: -20,
-  scrollTrigger: {
-    trigger: ".parallax-container",
-    scrub: 1,
-    top: "top 0"
-  }
-}); // MENU TOP SECTION ANIMATION
-
-var topSectionAnim = gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.timeline();
-topSectionAnim.to("#menuTopSectionText", {
-  color: "#f6eee3",
-  duration: 0.2
-}).to("#menuTopSection", {
-  paddingTop: "2rem",
-  paddingBottom: "2rem",
-  ease: gsap__WEBPACK_IMPORTED_MODULE_7__.Power1.easeIn,
-  duration: 0.2
-}).to("#menuTopSectionText", {
-  height: 0,
-  marginBottom: 0,
-  ease: gsap__WEBPACK_IMPORTED_MODULE_7__.Power1.easeOut,
-  duration: 0.2
-});
-gsap_ScrollTrigger__WEBPACK_IMPORTED_MODULE_5__.ScrollTrigger.create({
-  animation: topSectionAnim,
-  start: "-75rem top",
-  toggleActions: "play none none reverse "
-});
 gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.utils.toArray("[data-module-parallax]").forEach(function (section) {
   gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.utils.toArray(section.querySelectorAll("[data-parallax]")).forEach(function (parallax) {
     var depth = parallax.dataset.speed;
@@ -5678,7 +5685,6 @@ var allHoverLinks = document.querySelectorAll("a[data-hover]");
 var allHoverButtons = document.querySelectorAll("a[data-hover-btn]");
 allHoverButtons.forEach(function (btn) {
   btn.addEventListener("mouseenter", function (e) {
-    mouseIsHoveringBtn = true;
     gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.to("#mouse", {
       duration: 0.1,
       css: {
@@ -5691,7 +5697,6 @@ allHoverButtons.forEach(function (btn) {
     });
   });
   btn.addEventListener("mouseout", function (e) {
-    mouseIsHoveringBtn = false;
     gsap__WEBPACK_IMPORTED_MODULE_4__.gsap.to("#mouse", {
       duration: 0.1,
       css: {
@@ -5702,13 +5707,6 @@ allHoverButtons.forEach(function (btn) {
       duration: 0.1,
       scale: 1
     });
-    btn.style.transform = "translate(0px ,0px)";
-  });
-  btn.addEventListener("mousemove", function (e) {
-    if (mouseIsHoveringBtn) {
-      var rect = btn.getBoundingClientRect();
-      btn.style.transform = "scale(1.05) translate(".concat((e.clientX - rect.left - rect.width / 2) / 12, "px,").concat((e.clientY - rect.top - rect.height / 2) / 12, "px)");
-    }
   });
 });
 allHoverLinks.forEach(function (link) {
@@ -5763,7 +5761,7 @@ function moveMouse(e) {
 window.addEventListener("mousemove", moveMouse); // HIDE MouSE IF MOBILE
 
 if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-  document.getElementById('mouse').hidden = true;
+  document.getElementById("mouse").hidden = true;
 }
 
 /***/ }),

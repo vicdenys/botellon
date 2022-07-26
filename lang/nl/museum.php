@@ -13,6 +13,6 @@ return [
     "2.3" => "Oh ja! De gids eet uiteraard gratis!",
     "title.2" => "reserveren voor groepen",
     "3.1" => "Voor groepen onder de 15p kan u via deze ",
-    "3.2" => "Voor grotere gezelschappen graag een mailtje naar info@botellonantwerp.be",
+    "3.2" => "Voor grotere gezelschappen graag een mailtje naar",
     
 ];

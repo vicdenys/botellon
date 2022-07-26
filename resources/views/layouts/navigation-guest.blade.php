@@ -1,4 +1,4 @@
-<nav class=" block z-[60] fixed top-0 w-screen border-b  {{ $isDarkTheme ? 'border-b-white ' : 'border-b-green bg-white' }}">
+<nav id="navigation" class=" block z-[60] fixed top-0 w-screen border-b  {{ $isDarkTheme ? 'border-b-white ' : 'border-b-green bg-white' }}">
 
 
 
@@ -74,7 +74,7 @@
 
     <div class=" fixed z-50 h-screen top-0 left-0 bg-white transition-all duration-500 ease-in-out " :class=" [ menuOpen ? 'w-screen delay-200' :'w-0 ' ]"></div>
     <!-- Line under -->
-    <div class="fixed z-[60] top-20 left-0 bg-green h-px transition-all duration-500" :class="[ menuOpen ? ' w-screen delay-700':'w-0 ' ]"></div>
+    <div class="fixed z-[60] top-16 md:top-20 left-0 bg-green h-px transition-all duration-500" :class="[ menuOpen ? ' w-screen delay-700':'w-0 ' ]"></div>
 
 
 </nav>

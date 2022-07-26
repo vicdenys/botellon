@@ -13,6 +13,6 @@ return [
     "2.3" => "Oh right! The guide eats for free!",
     "title.2" => "Making a reservation for groups",
     "3.1" => "For groups under 15p you can book online via this ",
-    "3.2" => "For larger groups please contact us at info@botellonantwerp.be",
+    "3.2" => "For larger groups please contact us at",
 
 ];

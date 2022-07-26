@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <meta name="description" content="TODO" />
+    <meta name="description" content="brunch & aperitif restaurant! located in the hippest neighborhood of Antwerp, the south part!" />
 
 
     <title>Botellon</title>
@@ -18,9 +18,9 @@
 </head>
 
 
-<body class="antialiased cursor-none  {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}"  x-data="{menuOpen: false}">
+<body class="antialiased cursor-none text-green {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}"  x-data="{menuOpen: false}">
 
-        <div class="min-h-screen font-bazovy">
+        <div class="min-h-screen font-bazovy" @resize.window="menuOpen = false">
             @include('layouts.navigation-guest', ['isDarkTheme' => isset($isDarkTheme)])
 
             
@@ -35,13 +35,13 @@
             
         </div>
        
-        <div id="mouse" class="fixed z-[1000] transform -translate-x-1/2 -translate-y-1/2 w-4 h-4  rounded-full pointer-events-none {{  Request::is('/') ? 'bg-white ' : 'bg-green' }}" :class="[ menuOpen ? 'bg-green': 'bg-white' ]">
+        <div id="mouse" class="fixed z-[1000] transform -translate-x-1/2 -translate-y-1/2 w-4 h-4  rounded-full pointer-events-none {{  isset($isDarkTheme) ? 'bg-white ' : 'bg-green' }}" :class="[ menuOpen ? 'bg-green': 'bg-white' ]">
             
         </div>
 
 
 
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ asset('js/app.js') }}" defer></script>
 </body>
 
 </html>
