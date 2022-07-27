@@ -315,6 +315,7 @@ gsap.utils.toArray("[data-module-parallax]").forEach((section) => {
                 parallax,
                 {
                     y: -movement,
+                    lazy: false
                 },
                 {
                     y: movement,
