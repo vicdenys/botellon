@@ -314,12 +314,14 @@ gsap.utils.toArray("[data-module-parallax]").forEach((section) => {
             gsap.fromTo(
                 parallax,
                 {
+                    lazy: false,
                     y: -movement,
-                    lazy: false
+                    
                 },
                 {
                     y: movement,
                     ease: "none",
+                    lazy: false,
                     scrollTrigger: {
                         trigger: section,
                         scrub: true,
