@@ -13,15 +13,21 @@
                 © 2022 botellón Antwerp
             </p>
         </div>
-        <div class="text-right">
-            <a href="https://www.instagram.com/botellon_antwerp/" target="_blank" class=" flex items-center justify-end gap-1" data-hover>
-                <img class="inline-block w-[0.65rem]" src="img/instagram-icon.svg" alt="instagram icon">
-                Instagram
-            </a>
-            <a href="https://www.facebook.com/botellonantwerp" target="_blank" class=" flex items-center justify-end gap-1" data-hover>
-                <img class="inline-block w-[0.65rem]" src="img/facebook-icon.svg" alt="facebook icon">
-                Facebook
-            </a>
+        <div class="text-right inline-grid grid-cols-1 ">
+            <div class="flex justify-end">
+                <a href="https://www.instagram.com/botellon_antwerp/" target="_blank" class=" flex items-center justify-end gap-1" data-hover>
+                    <img class="inline-block w-[0.65rem]" src="img/instagram-icon.svg" alt="instagram icon">
+                    Instagram
+                </a>
+            </div>
+            <div class="flex justify-end">
+                <a href="https://www.facebook.com/botellonantwerp" target="_blank" class=" flex items-center justify-end gap-1" data-hover>
+                    <img class="inline-block w-[0.65rem]" src="img/facebook-icon.svg" alt="facebook icon">
+                    Facebook
+                </a>
+            </div>
+
+
         </div>
     </div>
     <div class="py-4 md:hidden">

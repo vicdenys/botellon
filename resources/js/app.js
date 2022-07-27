@@ -37,10 +37,10 @@ if (ctx) {
 
     if (isMenuCanvas) {
         params = {
-            color: 0x063e33,
-            transmission: 0,
+            color: 0x095959,
+            transmission: 0.1,
             opacity: 0.5,
-            metalness: 1,
+            metalness: 0.9,
             roughness: 0,
             ior: 1.52,
             thickness: 0.1,
@@ -50,7 +50,7 @@ if (ctx) {
             exposure: 1,
         };
 
-        scene.fog = new THREE.Fog("#f6eee3", 10, 45);
+        scene.fog = new THREE.Fog("#f6eee3", 15, 32);
         scene.backgroundColor = "#FFFFFF";
     } else {
         params = {
@@ -84,7 +84,7 @@ if (ctx) {
     });
 
     if (isMenuCanvas) {
-        camera.position.z = 15;
+        camera.position.z = 10;
     } else {
         camera.position.z = 10;
     }
@@ -278,7 +278,7 @@ if (document.getElementById("menuTopSectionText")) {
 
     topSectionAnim
         .to("#menuTopSectionText", {
-            color: "#f6eee3",
+            color: "#063e33",
             duration: 0.1,
         })
         .to("#menuTopSection", {
@@ -334,19 +334,16 @@ gsap.utils.toArray("[data-module-parallax]").forEach((section) => {
 let mouseIsMovable = true;
 let mouseIsHoveringBtn = false;
 let allHoverLinks = document.querySelectorAll("a[data-hover]");
-let allHoverButtons = document.querySelectorAll("a[data-hover-btn]");
+let allHoverDivs = document.querySelectorAll("div[data-hover-btn]");
+let allHoverButton = document.querySelectorAll("a[data-hover-btn]");
 
-allHoverButtons.forEach((btn) => {
+allHoverDivs.forEach((btn) => {
     btn.addEventListener("mouseenter", (e) => {
         gsap.to("#mouse", {
             duration: 0.1,
             css: {
                 backgroundColor: "#f6eee3",
             },
-        });
-        gsap.to(btn, {
-            duration: 0.1,
-            scale: 1.05,
         });
     });
     btn.addEventListener("mouseout", (e) => {
@@ -356,12 +353,18 @@ allHoverButtons.forEach((btn) => {
                 backgroundColor: "#063e33",
             },
         });
-        gsap.to(btn, {
-            duration: 0.1,
-            scale: 1,
-        });
     });
 });
+allHoverButton.forEach((btn) => {
+    btn.addEventListener("mouseenter", (e) => {
+        gsap.to("#mouse", {
+            duration: 0.1,
+            css: {
+                backgroundColor: "#f6eee3",
+            },
+        });
+    });
+})
 
 allHoverLinks.forEach((link) => {
     link.addEventListener("mouseenter", (e) => {
