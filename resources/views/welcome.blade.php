@@ -4,7 +4,7 @@
 
 
 <div class=" max-h-screen overflow-hidden relative z-40 mx-auto items-center text-[1.5rem] ">
-    <div class="w-full h-screen">
+    <div id="homePageWrapper" class="w-full h-screen flex" >
         <div class="w-full md:h-[calc(100%-12rem)] h-[calc(100%-10rem)] pt-20 fill-white flex justify-center items-center">
             <h1 class=" md:w-96 w-56 overflow-hidden">
                 <x-application-logo-animated></x-application-logo-animated>

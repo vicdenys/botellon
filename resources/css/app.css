@@ -53,3 +53,7 @@ a {
 #menuTopSectionText{
     will-change:  margin, color, height;
 }
+
+#homePageWrapper{
+    max-height: -webkit-fill-available;
+}
