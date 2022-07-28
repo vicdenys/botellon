@@ -10,7 +10,7 @@
    </div>
 
 
-   <div  id="menu-content" class="text-left pb-8 mt-[11.35rem] md:mt-[19.5rem] flex-wrap flex-wrap-reverse flex md:grid grid-cols-2  lg:gap-8 items-center   overflow-hidden border-green ">
+   <div  id="menu-content" class="text-left mt-[11.35rem] md:mt-[19.5rem] flex-wrap flex-wrap-reverse flex md:grid grid-cols-2  lg:gap-8 items-center   overflow-hidden border-green ">
       <div class="px-8 w-full md:w-auto pb-12 md:pt-12 text-center md:text-left md:pl-8 transform translate-y-8 md:transform-none col-span-2 md:col-span-1">
          <h1 class="font-victorianna-thin text-3xl mb-8 ">{{ __('menu.0.title') }}</h1>
          <p class="font-bazovy">
