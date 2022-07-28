@@ -26,6 +26,6 @@ return [
     "4.2" => "Accompanied with a nice bottle and some good folks! What more do you want!? ",
     "4.3" => "All of this until the sun sets…",
     "0.title" => "botellón literally means big bottle. It is a deep-rooted cultural phenomenon in Spain that refers to people gathering in the street to socialise and drink together.",
-    "0.1" => "Thus all our drinks our only available by the bottle ",
+    "0.1" => "Thus all our drinks our only available by the bottle.",
     "0.2" => "Don't worry! You can take what is left our we will keep it cool for you until the day after your visit.",
 ];

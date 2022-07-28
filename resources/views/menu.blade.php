@@ -14,7 +14,7 @@
       <div class="px-8 w-full md:w-auto pb-12 md:pt-12 text-center md:text-left md:pl-8 transform translate-y-8 md:transform-none col-span-2 md:col-span-1">
          <h1 class="font-victorianna-thin text-3xl mb-8 ">{{ __('menu.0.title') }}</h1>
          <p class="font-bazovy">
-            <span class="block mb-8">
+            <span class="block">
                {{ __('menu.0.1') }}
             </span>
             <span class="block mb-8">
