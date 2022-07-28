@@ -186,9 +186,8 @@ if (ctx) {
                                         duration: 1,
                                         ease: "power4.inOut",
                                         scrollTrigger: {
-                                            trigger: "#bottleCanvas",
-                                            start: "0vh 150rem",
-                                            end: "top 0",
+                                            markers: true,
+                                            
                                             toggleActions:
                                                 "play none none reverse ",
                                         },
