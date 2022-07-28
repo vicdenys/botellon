@@ -18,7 +18,7 @@
 </head>
 
 
-<body class="antialiased cursor-none text-green {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}"  x-data="{menuOpen: false}">
+<body class="antialiased cursor-none text-green {{  Request::is('/') ? 'overflow-hidden' : '' }} {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}"  x-data="{menuOpen: false}">
 
         <div class="min-h-screen font-bazovy" @resize.window="menuOpen = false">
             @include('layouts.navigation-guest', ['isDarkTheme' => isset($isDarkTheme)])
