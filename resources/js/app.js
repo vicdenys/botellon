@@ -2,7 +2,7 @@ require("./bootstrap");
 
 import Alpine from "alpinejs";
 import * as THREE from "three";
-import { gsap, Power1 } from "gsap";
+import { gsap, Power1, Power4 } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader.js";
 import { RGBELoader } from "three/examples/jsm/loaders/RGBELoader.js";
@@ -180,6 +180,20 @@ if (ctx) {
                                     Math.cos(((-1 * (Math.PI / 2)) / 8) * i),
                                 duration: 1,
                                 ease: "power1.inOut",
+                                onComplete: () => {
+                                    gsap.to(bottlecopies[i].position, {
+                                        x: 0,
+                                        duration: 1,
+                                        ease: "power4.inOut",
+                                        scrollTrigger: {
+                                            trigger: "#bottleCanvas",
+                                            start: "0vh 60rem",
+                                            end: "top 0",
+                                            toggleActions:
+                                                "play none none reverse ",
+                                        },
+                                    });
+                                },
                             }
                         );
                     }
@@ -204,7 +218,6 @@ if (ctx) {
         requestAnimationFrame(animate);
         renderer.render(scene, camera);
     }
-
 
     function initGSAP() {
         if (isMenuCanvas) {
@@ -243,7 +256,6 @@ if (ctx) {
     }
 }
 
-
 // MENU TOP SECTION ANIMATION
 
 if (document.getElementById("menuTopSectionText")) {
@@ -254,44 +266,50 @@ if (document.getElementById("menuTopSectionText")) {
             color: "#f6eee3",
             duration: 0.1,
         })
-        .to("#menuTopSection", {
-            paddingTop: "2rem",
-            paddingBottom: "2rem",
-            ease: Power1.easeIn,
-            duration: 0.2,
-        }, '<')
-        .to("#menuTopSectionText", {
-            height: 0,
-            marginBottom: 0,
-            ease: Power1.easeOut,
-            duration: 0.2,
-        },'<');
+        .to(
+            "#menuTopSection",
+            {
+                paddingTop: "2rem",
+                paddingBottom: "2rem",
+                ease: Power1.easeIn,
+                duration: 0.2,
+            },
+            "<"
+        )
+        .to(
+            "#menuTopSectionText",
+            {
+                height: 0,
+                marginBottom: 0,
+                ease: Power1.easeOut,
+                duration: 0.2,
+            },
+            "<"
+        );
 
     ScrollTrigger.create({
         animation: topSectionAnim,
         start: "-312rem top",
         end: "-197rem top",
         scrub: true,
-        trigger: '#menu-content',
+        trigger: "#menu-content",
         toggleActions: "play none none reverse ",
     });
 }
 
-
-window.addEventListener('load',e => {
+window.addEventListener("load", (e) => {
     gsap.utils.toArray("[data-module-parallax]").forEach((section) => {
         gsap.utils
             .toArray(section.querySelectorAll("[data-parallax]"))
             .forEach((parallax) => {
                 const depth = parallax.dataset.speed;
                 const movement = -(parallax.offsetHeight * depth);
-    
+
                 gsap.fromTo(
                     parallax,
                     {
                         lazy: false,
                         y: -movement,
-                        
                     },
                     {
                         y: movement,
@@ -305,9 +323,7 @@ window.addEventListener('load',e => {
                 );
             });
     });
-})
-
-
+});
 
 // MOUSE ACTION
 
