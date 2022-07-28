@@ -22,7 +22,7 @@ class MenuUploadController extends Controller
             ->get();
 
 
-        return view('menu')->with(['activeFile' => $activeFile[0]]);
+        return view('menu')->with(['activeFile' => $activeFile]);
     }
 
     /**
