@@ -186,8 +186,7 @@ if (ctx) {
                                         duration: 1,
                                         ease: "power4.inOut",
                                         scrollTrigger: {
-                                            markers: true,
-                                            
+
                                             toggleActions:
                                                 "play none none reverse ",
                                         },
