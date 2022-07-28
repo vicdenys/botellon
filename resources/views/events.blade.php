@@ -66,15 +66,17 @@
                     {{ __('events.3.5') }} </span>
             </p>
         </div>
+        
         <div data-module-parallax class="parallax-container flex  items-center justify-center relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-t md:border-none border-green">
             <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-full relative md:absolute h-auto" src="/img/bruschetta.jpg" alt="bruschetta  ">
         </div>
 
     </div>
-
+<!--
     <div class="text-center py-4 border-t border-green ">
         <h1 class="font-victorianna-thin text-3xl  ">{{ __('events.title.3') }}</h1>
     </div>
+    -->
     <x-contact-footer></x-contact-footer>
 </div>
 
