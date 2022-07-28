@@ -21,7 +21,7 @@
                 <span class="absolute top-1/2 w-full text-center left-0 transform -translate-y-1/2">
                     <span class="inline-block opacity-0 transform translate-y-full animate-pop-up-out" style="animation-delay: 3.2s;">pick</span>
                     <span class="inline-block opacity-0 transform translate-y-full animate-pop-up-out" style="animation-delay: 3.25s;">your</span>
-                    <span class="inline-block opacity-0 transform translate-y-full animate-pop-up-out" style="animation-delay: 3.3s;">bottles</span>
+                    <span class="inline-block opacity-0 transform translate-y-full animate-pop-up-out" style="animation-delay: 3.3s;">b(o)ttles</span>
                 </span>
             </h2>
         </div>

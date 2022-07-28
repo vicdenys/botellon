@@ -56,4 +56,5 @@ a {
 
 #homePageWrapper{
     max-height: -webkit-fill-available;
+    height:  calc(100vh - env(safe-area-inset-bottom));
 }

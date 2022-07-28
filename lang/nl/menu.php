@@ -29,4 +29,8 @@ return [
     "4.2" => "Wij zorgen voor de amuses en hapjes die
     geregeld (receptiestijl) zullen passeren.",
     "4.3" => "Dit minstens tot de zon ondergaat…",
+    "0.title" => "botellón betekent letterlijk grote fles en is een diepgeworteld cultureel fenomeen in Spanje dat verwijst naar mensen die op straat samenkomen om te socializen en gezellig te drinken.",
+    "0.1" => "Zodus zijn al onze dranken enkel verkrijgbaar per fles",
+    "0.2" => "Don't worry! Overschot kan steeds worden meegenomen of bewaren wij voor u tot morgen.",
+    
 ];
