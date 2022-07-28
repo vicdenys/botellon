@@ -337,37 +337,27 @@ gsap.utils.toArray("[data-module-parallax]").forEach((section) => {
 let mouseIsMovable = true;
 let mouseIsHoveringBtn = false;
 let allHoverLinks = document.querySelectorAll("a[data-hover]");
-let allHoverDivs = document.querySelectorAll("div[data-hover-btn]");
-let allHoverButton = document.querySelectorAll("a[data-hover-btn]");
+// let allHoverDivs = document.querySelectorAll("div[data-hover-btn]");
+// let allHoverButton = document.querySelectorAll("a[data-hover-btn]");
 
-allHoverDivs.forEach((btn) => {
-    btn.addEventListener("mouseenter", (e) => {
-        gsap.to("#mouse", {
-            duration: 0.1,
-            css: {
-                backgroundColor: "#f6eee3",
-            },
-        });
-    });
-    btn.addEventListener("mouseout", (e) => {
-        gsap.to("#mouse", {
-            duration: 0.1,
-            css: {
-                backgroundColor: "#063e33",
-            },
-        });
-    });
-});
-allHoverButton.forEach((btn) => {
-    btn.addEventListener("mouseenter", (e) => {
-        gsap.to("#mouse", {
-            duration: 0.1,
-            css: {
-                backgroundColor: "#f6eee3",
-            },
-        });
-    });
-})
+// allHoverDivs.forEach((btn) => {
+//     btn.addEventListener("mouseenter", (e) => {
+//         gsap.to("#mouse", {
+//             duration: 0.1,
+//             css: {
+//                 backgroundColor: "#f6eee3",
+//             },
+//         });
+//     });
+//     btn.addEventListener("mouseout", (e) => {
+//         gsap.to("#mouse", {
+//             duration: 0.1,
+//             css: {
+//                 backgroundColor: "#063e33",
+//             },
+//         });
+//     });
+// });
 
 allHoverLinks.forEach((link) => {
     link.addEventListener("mouseenter", (e) => {

@@ -24,7 +24,7 @@
          </p>
       </div>
       
-      <div id="bottleCanvasContainer" class="col-span-2 w-full top-8 md:mb-0 md:w-auto md:col-span-1 border-green z-30 h-60 md:h-96 top-0 left-0 relative">
+      <div id="bottleCanvasContainer" class="col-span-2 w-full border-b md:border-none md:mb-0 md:w-auto md:col-span-1 border-green z-30 h-60 md:h-96 top-0 left-0 relative">
          <canvas id="bottleCanvas" class="menuCanvas w-full h-full" width="100%" height="100%"></canvas>
       </div>
    </div>
