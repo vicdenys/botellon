@@ -278,7 +278,7 @@ if (document.getElementById("menuTopSectionText")) {
 
     topSectionAnim
         .to("#menuTopSectionText", {
-            color: "#063e33",
+            color: "#f6eee3",
             duration: 0.1,
         })
         .to("#menuTopSection", {

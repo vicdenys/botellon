@@ -4,8 +4,8 @@
 
 
 <div id="menu-container" class=" mb-20  relative z-40 mx-auto text-xl  items-center  mt-[4.25rem] md:mt-20">
-   <div data-hover-btn id="menuTopSection" class="fixed w-screen left-0 z-50 top-16 bg-green md:top-20  text-center border-b border-green py-8 md:py-16">
-      <h1 id="menuTopSectionText" class="font-victorianna-thin text-white text-3xl mb-4 hidden md:block pointer-events-none">{{ __('menu.curious') }}</h1>
+   <div data-hover-btn id="menuTopSection" class="fixed w-screen left-0 z-50 top-16 bg-white md:top-20  text-center border-b border-green py-8 md:py-16">
+      <h1 id="menuTopSectionText" class="font-victorianna-thin text-green text-3xl mb-4 hidden md:block pointer-events-none">{{ __('menu.curious') }}</h1>
       <a data-hover-btn  class="bg-green hover:bg-green/95 hover:scale-105 transition-transform text-white  border border-white inline-block   rounded-full font-victorianna-thin text-xl px-6 py-3" href="/menu-files/{{ $activeFile->title }}" target="_blank">{{ __('menu.seemenu') }}</a>
    </div>
 
