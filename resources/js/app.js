@@ -161,9 +161,6 @@ if (ctx) {
 
                     for (let i = 0; i < 8; i++) {
                         bottlecopies[i] = bottleObj.clone();
-                        //bottlecopies[i].position.z -= 20* Math.cos(-1*(Math.PI/2) / 8 *i);
-                        //bottlecopies[i].position.x += -7- (10* Math.sin(-1*(Math.PI/2) / 8 *i));
-                        console.log(Math.sin(((-1 * (Math.PI / 2)) / 8) * i));
                         scene.add(bottlecopies[i]);
                         gsap.fromTo(
                             bottlecopies[i].position,
@@ -202,28 +199,12 @@ if (ctx) {
     );
 
     function animate() {
-        // camera.lookAt(bottleObj.position);
         resizeCanvasToDisplaySize();
 
         requestAnimationFrame(animate);
         renderer.render(scene, camera);
     }
 
-    function addMouseMoveListener() {
-        document.addEventListener("mousemove", (e) => {
-            // pointLight.position.x =
-            //     ((e.screenX / document.body.clientWidth) * 100 - 50) * 0.02;
-            // pointLight.position.y =
-            //     ((e.screenY / document.body.clientHeight) * 100 - 50) * 0.02 +
-            //     2;
-            // bottleObj.rotation.z =
-            //     ((e.screenY / document.body.clientWidth) * 100 - 50) * 0.001;
-            // bottleObj.rotation.x =
-            //     ((e.screenX / document.body.clientWidth) * 100 - 50) * 0.002;
-            // bottleObj.rotation.y =
-            //     ((e.screenY / document.body.clientWidth) * 100 - 50) * 0.002;
-        });
-    }
 
     function initGSAP() {
         if (isMenuCanvas) {
@@ -262,14 +243,6 @@ if (ctx) {
     }
 }
 
-// gsap.to(".paralax-img", {
-//     top: -20,
-//     scrollTrigger: {
-//         trigger: ".parallax-container",
-//         scrub: 1,
-//         top: "top 0",
-//     },
-// });
 
 // MENU TOP SECTION ANIMATION
 
@@ -304,32 +277,37 @@ if (document.getElementById("menuTopSectionText")) {
     });
 }
 
-gsap.utils.toArray("[data-module-parallax]").forEach((section) => {
-    gsap.utils
-        .toArray(section.querySelectorAll("[data-parallax]"))
-        .forEach((parallax) => {
-            const depth = parallax.dataset.speed;
-            const movement = -(parallax.offsetHeight * depth);
 
-            gsap.fromTo(
-                parallax,
-                {
-                    lazy: false,
-                    y: -movement,
-                    
-                },
-                {
-                    y: movement,
-                    ease: "none",
-                    lazy: false,
-                    scrollTrigger: {
-                        trigger: section,
-                        scrub: true,
+window.addEventListener('load',e => {
+    gsap.utils.toArray("[data-module-parallax]").forEach((section) => {
+        gsap.utils
+            .toArray(section.querySelectorAll("[data-parallax]"))
+            .forEach((parallax) => {
+                const depth = parallax.dataset.speed;
+                const movement = -(parallax.offsetHeight * depth);
+    
+                gsap.fromTo(
+                    parallax,
+                    {
+                        lazy: false,
+                        y: -movement,
+                        
                     },
-                }
-            );
-        });
-});
+                    {
+                        y: movement,
+                        ease: "none",
+                        lazy: false,
+                        scrollTrigger: {
+                            trigger: section,
+                            scrub: true,
+                        },
+                    }
+                );
+            });
+    });
+})
+
+
 
 // MOUSE ACTION
 
