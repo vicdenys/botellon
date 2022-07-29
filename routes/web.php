@@ -37,6 +37,10 @@ Route::get('/contact', function () {
     return view('contact');
 });
 
+Route::get('/sitemap.xml', function () {
+    return view('sitemap');
+});
+
 
 
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);
