@@ -186,7 +186,6 @@ if (ctx) {
                                         duration: 1,
                                         ease: "power4.inOut",
                                         scrollTrigger: {
-
                                             toggleActions:
                                                 "play none none reverse ",
                                         },
@@ -404,9 +403,11 @@ function moveMouse(e) {
 window.addEventListener("mousemove", moveMouse);
 
 // HIDE MouSE IF MOBILE
+
 if (
-    /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(
-        navigator.userAgent
+    /iPhone|Android/i.test(navigator.userAgent) &&
+    /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(
+        userAgent
     )
 ) {
     document.getElementById("mouse").hidden = true;
