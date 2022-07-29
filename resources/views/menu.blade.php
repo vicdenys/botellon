@@ -50,7 +50,7 @@
          </p>
       </div>
       <div data-module-parallax class="parallax-container flex  items-center justify-center relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-y md:border-none border-green">
-         <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-full  md:w-auto relative md:absolute h-auto md:h-[300%]" src="/img/brunch-botellon.jpeg" alt="brunch images ">
+         <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-full relative md:absolute h-auto " src="/img/brunch-botellon.jpeg" alt="brunch images ">
       </div>
 
    </div>
@@ -75,6 +75,9 @@
          </span>
          <span>
             {{ __('menu.2.5.1') }} </span>
+         <span class="block ">
+            {{ __('menu.2.6') }}
+         </span>
 
       </p>
    </div>

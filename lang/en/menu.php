@@ -15,8 +15,9 @@ return [
     "2.3" => "Saturdays and Sundays ",
     "2.3.1" => "21,5 euro per person",
     "2.4" => "Coffee and tea is included!",
-    "2.5" => "All of this accompanied by a great bottle?",
+    "2.5" => "And for the hedonist amongst us",
     "2.5.1" => "-OF COURSE-",
+    "2.5" => "All of this accompanied by a great bottle of wine",
     "3.1" => "Good food, a (well selected) bottle of wine, pearls or a (not so common) beer… 
     In the background you’ll hear the best and easy listening worldly music in a cozy and relaxing setting. 
     A wonderful experience is what we aim for! 

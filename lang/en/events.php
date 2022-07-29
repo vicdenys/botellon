@@ -6,7 +6,7 @@ return [
     "title.3" => "Gallery",
     "1.1" => "Would you like to experience the botellón-vibe in a more private setting? Just you and your guests? Then we love to make that possible for you.",
     "1.2" => "On Monday, Tuesday and Wednesday you can privatise botellón",
-    "2.1" => "Wij verzorgen heel graag uw",
+    "2.1" => "Come to us for your",
     "2.2.1" => "A teambuilding moment",
     "2.2.2" => "A family event",
     "2.2.3" => "A birthday party",
