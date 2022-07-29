@@ -1,4 +1,4 @@
-@extends('layouts.master' , ['isDarkTheme' => 'true'])
+@extends('layouts.master' , ['isDarkTheme' => 'true', 'title' => 'Home'])
 
 @section('content')
 

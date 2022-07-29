@@ -8,7 +8,12 @@
     <meta name="description" content="brunch & aperitif restaurant! located in the hippest neighborhood of Antwerp, the south part!" />
 
 
-    <title>Botellon</title>
+    <title>
+        botellon - 
+        @isset($title)
+            {{ $title }} 
+        @endisset
+    </title>
 
     <x-favicon></x-favicon>
 
