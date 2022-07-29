@@ -407,7 +407,7 @@ window.addEventListener("mousemove", moveMouse);
 if (
     /iPhone|Android/i.test(navigator.userAgent) ||
     /(ipad|tablet|(android(?!.*mobile))|(windows(?!.*phone)(.*touch))|kindle|playbook|silk|(puffin(?!.*(IP|AP|WP))))/.test(
-        userAgent
+        navigator.userAgent.toLowerCase()
     )
 ) {
     document.getElementById("mouse").hidden = true;
