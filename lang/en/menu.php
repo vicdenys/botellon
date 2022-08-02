@@ -23,10 +23,13 @@ return [
     A wonderful experience is what we aim for! 
     Nothing more, nothing less!",
     "3.2" => "Are you a 0% (alcohol) kind a person? No worries! We’ve got that covered too! ",
-    "4.1" => "We will pass by on a regular base with some amazing savoury and sweet snacks of which you can take to your likings.",
-    "4.2" => "Accompanied with a nice bottle and some good folks! What more do you want!? ",
-    "4.3" => "All of this until the sun sets…",
-    "0.title" => "botellón literally means big bottle. It is a deep-rooted cultural phenomenon in Spain that refers to people gathering in the street to socialise and drink together.",
-    "0.1" => "Thus all our drinks our only available by the bottle.",
-    "0.2" => "Don't worry! You can take what is left or we will keep it cool for you until the day after your visit.",
+    "4.1" => "After the buffet (from 3 pm) it is apéro time and you can enjoy a nice bottle in peace",
+    "4.1.5" => "-Pick your bites-",
+    "4.2" => "On our menu you can choose from some amazing cold cuts.
+    We also regularly come around with more amuse-bouche. You can simply take these amuse-bouche at the table.
+    Think 'walking dinner', but seated. 😉",
+    "4.3" => "All of this at least until the sun goes down…",
+    "0.title" => "A botellón (Spanish for large bottle) is a social phenomenon that originated in Spain in the early 1990s.",
+    "0.1" => "A botellón consists of a group of friends who gather in a park or some other place outdoors to drink.",
+    "0.2" => "",
 ];

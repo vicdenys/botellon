@@ -7,12 +7,12 @@
    @if( count($activeFile) )
    <div data-hover-btn id="menuTopSection" class="fixed w-screen left-0 z-50 top-16 bg-white md:top-20  text-center border-b border-green py-8 md:py-16">
       <h1 id="menuTopSectionText" class="font-victorianna-thin text-green text-3xl mb-4 hidden md:block pointer-events-none">{{ __('menu.curious') }}</h1>
-      <a data-hover-btn  class="bg-green hover:bg-green/95 hover:scale-105 transition-transform text-white  border border-white inline-block   rounded-full font-victorianna-thin text-xl px-6 py-3" href="/menu-files/{{ $activeFile[0]->title }}" target="_blank">{{ __('menu.seemenu') }}</a>
+      <a data-hover-btn class="bg-green hover:bg-green/95 hover:scale-105 transition-transform text-white  border border-white inline-block   rounded-full font-victorianna-thin text-xl px-6 py-3" href="/menu-files/{{ $activeFile[0]->title }}" target="_blank">{{ __('menu.seemenu') }}</a>
    </div>
    @endif
 
 
-   <div  id="menu-content" class="text-left  {{ count($activeFile) ? 'mt-[11.35rem] md:mt-[19.5rem]' : ''}} flex-wrap flex-wrap-reverse flex md:grid grid-cols-2  lg:gap-8 items-center   overflow-hidden border-green ">
+   <div id="menu-content" class="text-left  {{ count($activeFile) ? 'mt-[11.35rem] md:mt-[19.5rem]' : ''}} flex-wrap flex-wrap-reverse flex md:grid grid-cols-2  lg:gap-8 items-center   overflow-hidden border-green ">
       <div class="px-8 w-full md:w-auto pb-12 md:pt-12 text-center md:text-left md:pl-8 transform translate-y-8 md:transform-none col-span-2 md:col-span-1">
          <h1 class="font-victorianna-thin text-3xl mb-8 ">{{ __('menu.0.title') }}</h1>
          <p class="font-bazovy">
@@ -25,7 +25,7 @@
 
          </p>
       </div>
-      
+
       <div id="bottleCanvasContainer" class="col-span-2 w-full border-b md:border-none md:mb-0 md:w-auto md:col-span-1 border-green z-30 h-60 md:h-96 top-0 left-0 relative">
          <canvas id="bottleCanvas" class="menuCanvas w-full h-full" width="100%" height="100%"></canvas>
       </div>
@@ -108,6 +108,8 @@
       <p class="font-bazovy max-w-xl">
          <span class="block mb-8">
             {{ __('menu.4.1') }} </span>
+         <span class="block mb-8">
+            {{ __('menu.4.1.5') }} </span>
          <span class="block mb-8">
             {{ __('menu.4.2') }} </span>
          <span>

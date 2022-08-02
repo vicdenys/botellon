@@ -4,7 +4,7 @@ return [
     "menu" => "menu",
     "bottle-bag" => "bottle-bag",
     "our-makers" => "onze makers",
-    "museum" => "museum",
+    "group" => "groepen",
     "events" => "events",
     "contact" => "contact"
 ];

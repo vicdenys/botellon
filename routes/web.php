@@ -27,8 +27,8 @@ Route::get('/bottle-bag', function () {
 Route::get('/our-makers', function () {
     return view('our-makers');
 });
-Route::get('/museum', function () {
-    return view('museum');
+Route::get('/group', function () {
+    return view('group');
 });
 Route::get('/events', function () {
     return view('events');

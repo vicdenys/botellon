@@ -37,7 +37,7 @@
                         </li>
                         -->
                 <li class="mb-4 md:mb-8 lg:mb-0 transform transition-all" :class="[ menuOpen ? 'opacity-100 translate-y-0 delay-[1.3s]':'opacity-0 translate-y-2 lg:opacity-100 lg:translate-y-0  ' ]">
-                    <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" class="{{  request()->is('museum') ? 'font-victorianna-thin-italic ' : '' }}" href="/museum" data-hover>{{ __('nav.museum') }}</a>
+                    <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" class="{{  request()->is('museum') ? 'font-victorianna-thin-italic ' : '' }}" href="/group" data-hover>{{ __('nav.group') }}</a>
                 </li>
                 <li class="mb-4 md:mb-8 lg:mb-0 transform transition-all" :class="[ menuOpen ? 'opacity-100 translate-y-0 delay-[1.4s]':'opacity-0 translate-y-2 lg:opacity-100 lg:translate-y-0 ' ]">
                     <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" class="{{  request()->is('events') ? 'font-victorianna-thin-italic ' : '' }}" href="/events" data-hover>{{ __('nav.events') }}</a>
