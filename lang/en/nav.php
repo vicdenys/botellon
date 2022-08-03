@@ -7,5 +7,6 @@ return [
     "our-makers" => "our makers",
     "group" => "groups",
     "events" => "events",
-    "contact" => "contact"
+    "contact" => "contact",
+    "about" => "about"
 ];

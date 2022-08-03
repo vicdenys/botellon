@@ -10,11 +10,11 @@ module.exports = {
     safelist: [
         {
             pattern: /bg-(white|green|red)/,
-            variants: [ "hover", "focus", "hover"],
+            variants: ["hover", "focus", "hover"],
         },
         {
             pattern: /text-(white|green|red)/,
-            variants: [ "hover", "focus", "hover"],
+            variants: ["hover", "focus", "hover"],
         },
     ],
 
@@ -40,6 +40,7 @@ module.exports = {
                 },
                 "pop-up": {
                     "0%": { transform: "translateY(100%)", opacity: 0 },
+                    "50%": { opacity: 0 },
                     "100%": { transform: "translateY(0)", opacity: 1 },
                 },
                 "pop-up-out": {
@@ -62,8 +63,4 @@ module.exports = {
     plugins: [require("@tailwindcss/forms")],
 };
 
-
-
 // MOUSE ACTION
-
-
