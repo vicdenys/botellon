@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class=" mb-20  relative z-40 mx-auto text-xl  items-center  mt-16 md:mt-20">
+<div class=" pb-20  relative z-40 mx-auto text-xl  items-center  mt-16 md:mt-20">
 
     <div class="text-center py-4 border-b border-green ">
         <h1 class="font-victorianna-thin text-3xl  ">{{ __('bottle-bag.title') }}</h1>

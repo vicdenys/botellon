@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div id="menu-container" class=" mb-20  relative z-40 mx-auto text-xl  items-center  mt-[4.25rem] md:mt-20">
+<div id="menu-container" class=" pb-20  relative z-40 mx-auto text-xl  items-center  mt-[4.25rem] md:mt-20">
    @if( count($activeFile) )
    <div data-hover-btn id="menuTopSection" class="fixed w-screen left-0 z-50 top-16 bg-white md:top-20  text-center border-b border-green py-8 md:py-16">
       <h1 id="menuTopSectionText" class="font-victorianna-thin text-green text-3xl mb-4 hidden md:block pointer-events-none">{{ __('menu.curious') }}</h1>
