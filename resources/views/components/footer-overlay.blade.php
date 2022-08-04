@@ -1,4 +1,4 @@
-<div id="footerContainer" class="   left-0 w-screen lg:border-t  {{ $isDarkTheme ? 'border-t-green lg:border-t-white' : 'border-t-green lg:bg-white' }} {{ isset($isAboutNav)  ? 'absolute  -bottom-[100vh] overflow-hidden z-[63]' : 'fixed bottom-0 z-[60]'  }}">
+<div id="footerContainer" class="   left-0 w-screen lg:border-t  {{ $isDarkTheme ? 'border-t-green lg:border-t-white' : 'border-t-green lg:bg-white' }} {{ isset($isAboutNav)  ? 'absolute  -bottom-[100vh] overflow-hidden z-[64]' : 'fixed bottom-0 z-[60]'  }}">
     <ul  id="{{ isset($isAboutNav) ? 'footerList' : '' }}" class="pt-6 lg:py-6 w-full lg:px-8  text-white lg:flex items-center justify-between {{ isset($isAboutNav)  ? ' transform translate-y-full' : ''  }}">
         <li class="uppercase relative gap-4 flex text-lg text-center justify-center  py-3 lg:py-0 font-light tracking-wider  opacity-0 transform translate-y-full animate-pop-up" style="animation-delay: 0.3s;" :class="[ menuOpen ? 'visible':'invisible lg:visible' ]">
 
