@@ -23,7 +23,7 @@
         </li>
 
         <li class=" z-[60] lg:relative w-screen h-[calc(100%-15rem)] top-20 left-0 lg:w-auto lg:h-auto lg:top-auto lg:left-auto lg:inline-block font-victorianna-thin text-white text-[1.35rem] {{ $isAboutNav  ? 'absolute h-[calc(100vh-15rem)]' : 'fixed h-[calc(100%-15rem)]'  }}" :class="[ menuOpen ? 'visible':'invisible lg:visible' ]">
-            <ul id="navList" class="lg:flex absolute lg:relative transform -translate-x-1/2 lg:transform-none -translate-y-1/2 left-1/2 top-1/2 lg:left-0 lg:top-0 text-3xl sm:text-4xl lg:text-xl    lg:pt-0 text-green text-center items-center gap-8 {{ $isDarkTheme ? 'lg:text-white' : 'lg:text-green' }}">
+            <ul id="navList" class="lg:flex absolute lg:relative transform -translate-x-1/2 lg:transform-none -translate-y-1/2 left-1/2 top-1/2 lg:left-0 lg:top-0 text-2xl sm:text-4xl lg:text-xl    lg:pt-0 text-green text-center items-center gap-8 {{ $isDarkTheme ? 'lg:text-white' : 'lg:text-green' }}">
                 <li class="mb-4 md:mb-8 lg:mb-0 transform transition-all" :class="[ menuOpen ? 'opacity-100 translate-y-0 delay-1000':'opacity-0 translate-y-2 lg:opacity-100 lg:translate-y-0 ' ]">
                     <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" class="{{  request()->is('/#AboutContainer') ? 'font-victorianna-thin-italic ' : '' }} " @click='menuOpen = false' href="/#AboutContainer" data-hover>{{ __('nav.about') }}</a>
                 </li>
