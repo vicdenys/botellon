@@ -66,6 +66,6 @@ body{
 }
 #homePageSubTitleWrapper{
     bottom: 5rem;
-    bottom: calc(5rem + env(safe-area-inset-bottom));
+    bottom: calc(5rem + env(safe-area-inset-bottom) + env(safe-area-inset-top));
 }
 
