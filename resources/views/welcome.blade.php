@@ -32,7 +32,7 @@
         </div>
 
 
-        <div id="bottleCanvasContainer" class="absolute w-screen z-30 h-screen top-0 left-0" style="height:  calc(100vh - env(safe-area-inset-bottom));">
+        <div id="bottleCanvasContainer" class="absolute w-screen z-30 h-screen top-0 left-0" style="height:  100%;">
             <canvas id="bottleCanvas" class="w-full h-full"></canvas>
         </div>
     </div>
