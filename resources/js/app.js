@@ -293,37 +293,7 @@ window.addEventListener( 'load',() => {
                 // HOME PAGE SCROLL ACTION
 
                 if (document.getElementById("homeScrollContainer")) {
-                    let homeScrollAnim = gsap.timeline({
-                        onComplete: () => {
-                            gsap.fromTo('#footerList', {
-                                translateY: '100%',
-                            }, {
-                                translateY: 0,
-                                duration: 0.4,
-                                ease: Power1.easeInOut,
-                            })
-                            
-                        },
-                        onRepeat: () => {
-                            gsap.fromTo('#footerList',  {
-                                translateY: '100%',
-                            },{
-                                translateY: 0,
-                                duration: 0.4,
-                                ease: Power1.easeInOut,
-                            })
-                        },
-                        onStart: () => {
-                            gsap.fromTo('#footerList',  {
-                                translateY: 0,
-                            },{
-                                translateY: '100%',
-                                duration: 0.2,
-                                ease: Power1.easeInOut,
-                            })
-                        },
-                        
-                    });
+                    let homeScrollAnim = gsap.timeline();
 
                     homeScrollAnim
 
