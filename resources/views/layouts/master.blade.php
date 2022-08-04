@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="{{  Request::is('/') ? 'overflow-hidden relative' : '' }}">
 
 <head>
     <meta charset="utf-8">
@@ -23,7 +23,7 @@
 </head>
 
 
-<body class="antialiased cursor-none text-green {{  Request::is('/') ? 'overflow-hidden' : '' }} {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}"  x-data="{menuOpen: false}">
+<body class="antialiased cursor-none text-green {{  Request::is('/') ? 'overflow-hidden relative' : '' }} {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}"  x-data="{menuOpen: false}">
 
         <div class=" h-full font-bazovy" @resize.window="menuOpen = false">
             @include('layouts.navigation-guest', ['isDarkTheme' => isset($isDarkTheme), 'isAboutNav' => false])
