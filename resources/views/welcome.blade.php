@@ -2,7 +2,8 @@
 
 @section('content')
 
-<div id="homeScrollContainer" class=" relative overflow-y-scroll  scroll-smooth  max-h-screen snap-mandatory snap-always snap-y">
+<div id="homeScrollContainer" class=" relative scroll-smooth  max-h-screen snap-mandatory snap-always snap-y"
+    :class="[ menuOpen ? 'overflow-hidden overflow-y-hidden':' overflow-y-scroll  ' ]" >
     <div class=" snap-center snap-always">
         <div class=" max-h-screen  relative z-40 mx-auto items-center text-[1.5rem] ">
             <div id="homePageWrapper" class="w-full h-screen flex justify-center">

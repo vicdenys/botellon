@@ -26,7 +26,7 @@
 <body class="antialiased cursor-none text-green {{  Request::is('/') ? 'overflow-hidden' : '' }} {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}"  x-data="{menuOpen: false}">
 
         <div class="min-h-screen font-bazovy" @resize.window="menuOpen = false">
-            @include('layouts.navigation-guest', ['isDarkTheme' => isset($isDarkTheme)])
+            @include('layouts.navigation-guest', ['isDarkTheme' => isset($isDarkTheme), 'isAboutNav' => false])
 
             
 
@@ -35,7 +35,7 @@
                 @yield('content')
             </main>
 
-            <x-footer-overlay :isDarkTheme="isset($isDarkTheme)"></x-footer-overlay>
+            <x-footer-overlay :isDarkTheme="isset($isDarkTheme)" ></x-footer-overlay>
 
             
         </div>

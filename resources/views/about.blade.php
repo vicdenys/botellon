@@ -1,6 +1,12 @@
+@include('layouts.navigation-guest', [
+        'isDarkTheme' => false,
+        'isAboutNav' => true
+        ])
+
+<x-footer-overlay :isDarkTheme="isset($isDarkTheme)"  :isAboutNav="true" ></x-footer-overlay>
+
 <div id="AboutContainer" class="max-h-screen  overflow-hidden overflow-y-scroll  snap-always snap-center ">
-    <div class="absolute z-50 w-full h-16 md:h-20 top-screen left-0 bg-white"></div>
-    <div class="absolute z-50 w-full h-[4.75rem] md:h-20 lg:top-[calc(200vh-5rem)]   top-[calc(200vh-4.75rem)] left-0 bg-white"></div>
+
     <div class=" pb-20 bg-white  relative z-40 mx-auto text-xl  items-center pt-16 md:pt-20 ">
 
 
@@ -103,3 +109,4 @@
         <x-contact-footer></x-contact-footer>
     </div>
 </div>
+

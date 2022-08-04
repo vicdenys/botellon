@@ -1,13 +1,12 @@
-<nav id="navigation" class=" block z-[60] fixed top-0 w-screen border-b  {{ $isDarkTheme ? 'border-b-white ' : 'border-b-green bg-white' }}">
 
-
+<nav id="navigation" class=" block    w-screen border-b  {{ $isDarkTheme || $isAboutNav ? 'border-b-white ' : 'border-b-green bg-white' }} {{ $isAboutNav  ? 'border-b-green bg-white absolute top-100vh z-[61]' : 'fixed top-0 z-[60]'  }}">
 
 
     <ul class="w-full md:py-6 py-4 px-8 flex items-center justify-between">
         <li class="z-[60] relative">
             <div class="w-16  flex items-center">
                 @if($isDarkTheme)
-                <a id="appLogo" class="fill-white py-2  ' " href="/" :class="[ menuOpen ? 'fill-green delay-300':'fill-white  delay-300 ' ]" data-hover>
+                <a id="appLogo" class="fill-white py-2 ' " href="/" :class="[ menuOpen ? 'fill-green delay-300':'fill-white  delay-300 ' ]" data-hover>
                     <object class=" pointer-events-none" data="" type="" aria-label="Botellon logo & home page link">
                         <x-application-logo />
                     </object>
@@ -23,10 +22,10 @@
             </div>
         </li>
 
-        <li class=" z-[60] fixed lg:relative w-screen h-[calc(100%-15rem)] top-20 left-0 lg:w-auto lg:h-auto lg:top-auto lg:left-auto lg:inline-block font-victorianna-thin text-white text-[1.35rem]" :class="[ menuOpen ? 'visible':'invisible lg:visible' ]">
+        <li class=" z-[60] lg:relative w-screen h-[calc(100%-15rem)] top-20 left-0 lg:w-auto lg:h-auto lg:top-auto lg:left-auto lg:inline-block font-victorianna-thin text-white text-[1.35rem] {{ $isAboutNav  ? 'absolute h-[calc(100vh-15rem)]' : 'fixed h-[calc(100%-15rem)]'  }}" :class="[ menuOpen ? 'visible':'invisible lg:visible' ]">
             <ul id="navList" class="lg:flex absolute lg:relative transform -translate-x-1/2 lg:transform-none -translate-y-1/2 left-1/2 top-1/2 lg:left-0 lg:top-0 text-4xl sm:text-4xl lg:text-xl    lg:pt-0 text-green text-center items-center gap-8 {{ $isDarkTheme ? 'lg:text-white' : 'lg:text-green' }}">
                 <li class="mb-4 md:mb-8 lg:mb-0 transform transition-all" :class="[ menuOpen ? 'opacity-100 translate-y-0 delay-1000':'opacity-0 translate-y-2 lg:opacity-100 lg:translate-y-0 ' ]">
-                    <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" class="{{  request()->is('/#AboutContainer') ? 'font-victorianna-thin-italic ' : '' }} " href="/#AboutContainer" data-hover>{{ __('nav.about') }}</a>
+                    <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" class="{{  request()->is('/#AboutContainer') ? 'font-victorianna-thin-italic ' : '' }} " @click='menuOpen = false' href="/#AboutContainer" data-hover>{{ __('nav.about') }}</a>
                 </li>
                 <li class="mb-4 md:mb-8 lg:mb-0 transform transition-all" :class="[ menuOpen ? 'opacity-100 translate-y-0 delay-1000':'opacity-0 translate-y-2 lg:opacity-100 lg:translate-y-0 ' ]">
                     <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" class="{{  request()->is('menu') ? 'font-victorianna-thin-italic ' : '' }} " href="/menu" data-hover>{{ __('nav.menu') }}</a>
@@ -75,9 +74,9 @@
 
     </ul>
 
-    <div class=" fixed z-50 h-screen top-0 left-0 bg-white transition-all duration-500 ease-in-out " :class=" [ menuOpen ? 'w-screen delay-200' :'w-0 ' ]"></div>
+    <div class="  z-50 h-screen top-0 left-0 bg-white transition-all duration-500 ease-in-out {{ $isAboutNav  ? 'absolute' : 'fixed'  }} " :class=" [ menuOpen ? 'w-screen delay-200' :'w-0 ' ]"></div>
     <!-- Line under -->
-    <div class="fixed z-[60] top-16 md:top-20 left-0 bg-green h-px transition-all duration-500" :class="[ menuOpen ? ' w-screen delay-700':'w-0 ' ]"></div>
+    <div class=" z-[60] top-16 md:top-20 left-0 bg-green h-px transition-all duration-500 {{ $isAboutNav  ? 'absolute' : 'fixed'  }}" :class="[ menuOpen ? ' w-screen delay-700':'w-0 ' ]"></div>
 
 
 </nav>

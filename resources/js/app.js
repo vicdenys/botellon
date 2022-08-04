@@ -15,7 +15,6 @@ window.Alpine = Alpine;
 Alpine.start();
 
 window.addEventListener( 'load',() => {
-    console.log('test')
     const ctx = document.getElementById("bottleCanvas");
     const ctxContainer = document.getElementById("bottleCanvasContainer");
 
@@ -216,7 +215,6 @@ window.addEventListener( 'load',() => {
             },
             undefined,
             function (error) {
-                console.error(error);
             }
         );
 
@@ -296,29 +294,39 @@ window.addEventListener( 'load',() => {
 
                 if (document.getElementById("homeScrollContainer")) {
                     let homeScrollAnim = gsap.timeline({
-                        onStart: () => {
-                            document.getElementById("appLogo").classList.remove('delay-300');
-                            document.getElementById("appLogo").classList.add('delay-0');
+                        onComplete: () => {
+                            gsap.fromTo('#footerList', {
+                                translateY: '100%',
+                            }, {
+                                translateY: 0,
+                                duration: 0.4,
+                                ease: Power1.easeInOut,
+                            })
+                            
                         },
                         onRepeat: () => {
-                            document.getElementById("appLogo").classList.remove('delay-300');
-                            document.getElementById("appLogo").classList.add('delay-0');
+                            gsap.fromTo('#footerList',  {
+                                translateY: '100%',
+                            },{
+                                translateY: 0,
+                                duration: 0.4,
+                                ease: Power1.easeInOut,
+                            })
                         },
-                        onComplete: () => {
-                            document.getElementById("appLogo").classList.add('delay-300');
-                            document.getElementById("appLogo").classList.remove('delay-0');
-                        }
+                        onStart: () => {
+                            gsap.fromTo('#footerList',  {
+                                translateY: 0,
+                            },{
+                                translateY: '100%',
+                                duration: 0.2,
+                                ease: Power1.easeInOut,
+                            })
+                        },
+                        
                     });
 
                     homeScrollAnim
 
-                        .to(
-                            "#navList",
-                            {
-                                color: "#063e33",
-                            },
-                            "<"
-                        )
                         .to(
                             "#appLogoAnim",
                             {
@@ -332,14 +340,6 @@ window.addEventListener( 'load',() => {
                             "#mouse",
                             {
                                 backgroundColor: "#063e33",
-                            },
-                            "<"
-                        )
-                        .to(
-                            ".language",
-                            {
-                                color: "#063e33",
-                                borderColor: "#063e33",
                             },
                             "<"
                         )
@@ -359,45 +359,7 @@ window.addEventListener( 'load',() => {
                             },
                             "<"
                         )
-                        .to(
-                            "#reservationLink",
-                            {
-                                color: "#063e33",
-                                borderTopColor: "#063e33",
-                            },
-                            "<"
-                        )
-                        .to(
-                            "#footerContainer",
-                            {
-                                borderTopColor: "#063e33",
-                            },
-                            "<"
-                        )
-                        .to(
-                            "#navigation",
-                            {
-                                borderBottomColor: "#063e33",
-                            },
-                            "<"
-                        )
 
-                        .to(
-                            ".hamburgerline",
-                            {
-                                backgroundColor: "#063e33",
-                                duration: 0.1,
-                            },
-                            "<"
-                        )
-                        .to(
-                            "#appLogo",
-                            {
-                                fill: "#063e33",
-                                duration: 0.1,
-                            },
-                            "<"
-                        );
                     ScrollTrigger.create({
                         animation: homeScrollAnim,
                         scroller: "#homeScrollContainer",
@@ -572,14 +534,4 @@ window.addEventListener( 'load',() => {
         document.getElementById("mouse").hidden = true;
     }
 
-    // Scroll position home page never inbetween
-    document
-        .getElementById("homeScrollContainer")
-        .addEventListener("scroll", (e) => {
-            let homeScrollContainer = document.getElementById(
-                "homeScrollContainer"
-            );
-
-            console.log(e);
-        });
 })
