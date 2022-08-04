@@ -64,4 +64,8 @@ body{
     height: 100vh; /* Fallback for browsers that do not support Custom Properties */
     height: calc(var(--vh, 1vh) * 100);
 }
+#homePageSubTitleWrapper{
+    bottom: 5rem;
+    bottom: calc(5rem + env(safe-area-inset-bottom));
+}
 
