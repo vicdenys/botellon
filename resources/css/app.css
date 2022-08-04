@@ -61,10 +61,7 @@ a {
 
 body{
     position: relative;
-    padding:
-    env(safe-area-inset-top, 20px)
-    env(safe-area-inset-right, 20px)
-    env(safe-area-inset-bottom, 20px)
-    env(safe-area-inset-left, 20px);
+    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+    height: calc(var(--vh, 1vh) * 100);
 }
 
