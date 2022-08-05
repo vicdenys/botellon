@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="{{  Request::is('/') ? ' relative' : '' }}">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}" class="{{  Request::is('/') ? 'overflow-hidden relative' : '' }}">
 
 <head>
     <meta charset="utf-8">
@@ -23,7 +23,7 @@
 </head>
 
 
-<body class="antialiased cursor-none text-green {{  Request::is('/') ? '' : '' }} {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}"  x-data="{menuOpen: false}">
+<body class="antialiased cursor-none text-green {{  Request::is('/') ? 'overflow-hidden' : '' }} {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}"  x-data="{menuOpen: false}">
 
         <div class=" h-full font-bazovy" @resize.window="menuOpen = false">
             @include('layouts.navigation-guest', ['isDarkTheme' => isset($isDarkTheme), 'isAboutNav' => false])
@@ -40,7 +40,7 @@
             
         </div>
        
-        <div id="mouse" class="fixed z-[1000] transform -translate-x-1/2 -translate-y-1/2 w-4 h-4  rounded-full pointer-events-none {{  isset($isDarkTheme) ? 'bg-white ' : 'bg-green' }}" :class="[ menuOpen ? '!bg-green': 'bg-white' ]">
+        <div id="mouse" class="fixed z-[1000] transform -translate-x-1/2 -translate-y-1/2 w-4 h-4  rounded-full pointer-events-none {{  isset($isDarkTheme) ? 'bg-white ' : 'bg-green' }}" :class="[ menuOpen ? 'bg-green': 'bg-white' ]">
             
         </div>
 
