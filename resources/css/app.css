@@ -59,19 +59,4 @@ a {
     height:  calc(100vh - env(safe-area-inset-bottom));
 }
 
-body{
-    position: relative;
-    height: 100vh; /* Fallback for browsers that do not support Custom Properties */
-    height: calc(var(--vh, 1vh) * 100);
-}
-#homePageSubTitleWrapper{
-    top: calc(100vh  - 10rem);
-    top: calc((var(--vh, 1vh) * 100) - 10rem );
-}
 
-@media only screen and (min-width: 768px) {
-    #homePageSubTitleWrapper{
-        top: calc(100vh  - 12rem);
-        top: calc((var(--vh, 1vh) * 100) - 12rem );
-    }
-  }
