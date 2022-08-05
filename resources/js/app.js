@@ -312,6 +312,10 @@ window.addEventListener("load", () => {
                         onComplete: () => {
                             document.getElementById('homeScrollContainer').classList.remove(['overflow-y-scroll']);
                             document.getElementById('homeScrollContainer').classList.add(['overflow-y-hidden']);
+                            document.getElementById('AboutContainer').addEventListener('wheel', e => {
+                                console.log(e);
+                                alert(e);
+                            })
                         }
                     });
 
