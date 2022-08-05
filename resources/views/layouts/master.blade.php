@@ -23,7 +23,7 @@
 </head>
 
 
-<body class="antialiased cursor-none text-green {{  Request::is('/') ? 'overflow-hidden relative' : '' }} {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}"  x-data="{menuOpen: false}">
+<body class="antialiased cursor-none text-green {{  Request::is('/') ? ' relative' : '' }} {{ isset($isDarkTheme) ? 'bg-green' : 'bg-white' }}"  x-data="{menuOpen: false}">
 
         <div class=" h-full font-bazovy" @resize.window="menuOpen = false">
             @include('layouts.navigation-guest', ['isDarkTheme' => isset($isDarkTheme), 'isAboutNav' => false])
