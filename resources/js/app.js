@@ -331,7 +331,7 @@ window.addEventListener("load", () => {
                             "#homePageSubTitle",
                             {
                                 opacity: 0,
-                                y: "100%",
+                                bottom: "10rem",
                             },
                             "<"
                         )
