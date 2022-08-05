@@ -307,33 +307,7 @@ window.addEventListener("load", () => {
                 // HOME PAGE SCROLL ACTION
 
                 if (document.getElementById("homeScrollContainer")) {
-                    let homeScrollAnim = gsap.timeline({
-                        onComplete: () => {
-                            let homeScrollContainer = document.getElementById(
-                                "homeScrollContainer"
-                            );
-                            let AboutContainer =
-                                document.getElementById("AboutContainer");
-
-                            homeScrollContainer.classList.remove([
-                                "overflow-y-scroll",
-                            ]);
-                            homeScrollContainer.classList.add([
-                                "overflow-y-hidden",
-                            ]);
-                            AboutContainer.addEventListener(
-                                "wheel",
-                                (e) => {
-                                    console.log(e);
-                                }
-                            );
-
-                            AboutContainer.addEventListener("touchmove", function (e) {
-                                console.log(e)
-                            });
-                            
-                        },
-                    });
+                    let homeScrollAnim = gsap.timeline();
 
                     homeScrollAnim
 
@@ -373,12 +347,25 @@ window.addEventListener("load", () => {
                     ScrollTrigger.create({
                         animation: homeScrollAnim,
                         scroller: "#homeScrollContainer",
-                        trigger: "#AboutContainer",
-                        end: "top top",
+                        trigger: "#homeTopHero",
+                        end: "bottom top",
+                        start: "bottom bottom",
                         ease: Power1.easeInOut,
                         scrub: true,
                         toggleActions: "play complete restart reverse",
                     });
+
+                    gsap.to("#footerContainer", {
+                        translateY: 0,
+                        scrollTrigger : {
+                            scroller: "#homeScrollContainer",
+                            trigger: "#homeScrollContainer",
+                            end: "200% top",
+                            start: "bottom top",
+                            ease: Power1.easeInOut,
+                            toggleActions: "play none none reverse",
+                        }
+                    })
                 }
             }
         }

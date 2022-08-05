@@ -5,7 +5,7 @@
 
 <x-footer-overlay :isDarkTheme="isset($isDarkTheme)"  :isAboutNav="true" ></x-footer-overlay>
 
-<div id="AboutContainer" class="max-h-screen overscroll-none overflow-hidden overflow-y-scroll  snap-always snap-center relative z-[63] ">
+<div id="AboutContainer" class="overscroll-none  snap-always snap-start relative z-[63] ">
 
     <div class=" pb-20 bg-white  relative z-40 mx-auto text-xl  items-center pt-16 md:pt-20 ">
 
