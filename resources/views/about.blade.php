@@ -7,7 +7,7 @@
 
 <div id="AboutContainer" class="overscroll-none  snap-always snap-start relative z-[63] ">
 
-    <div class=" pb-20 pb-[calc(5rem+env(safe-area-inset-top)+env(safe-area-inset-bottom))] bg-white  relative z-40 mx-auto text-xl  items-center pt-16 md:pt-20 ">
+    <div class=" pb-20  bg-white  relative z-40 mx-auto text-xl  items-center pt-16 md:pt-20 ">
 
 
         <div class="text-center py-4 border-b border-green ">
