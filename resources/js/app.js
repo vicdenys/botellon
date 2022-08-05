@@ -315,26 +315,24 @@ window.addEventListener("load", () => {
                             let AboutContainer =
                                 document.getElementById("AboutContainer");
 
-                                AboutContainer.classList.add(['overscroll-none'])
+                            homeScrollContainer.classList.remove([
+                                "overflow-y-scroll",
+                            ]);
+                            homeScrollContainer.classList.add([
+                                "overflow-y-hidden",
+                            ]);
 
-                            // homeScrollContainer.classList.remove([
-                            //     "overflow-y-scroll",
-                            // ]);
-                            // homeScrollContainer.classList.add([
-                            //     "overflow-y-hidden",
-                            // ]);
-
-                            // AboutContainer.addEventListener("touchmove", function () {
-                            //     AboutContainer.trigger("wheel");
-                            //     alert('alert triggered')
-                            // });
-                            // AboutContainer.addEventListener(
-                            //     "wheel",
-                            //     (e) => {
-                            //         console.log(e);
-                            //         alert(e);
-                            //     }
-                            // );
+                            AboutContainer.addEventListener("touchmove", function () {
+                                AboutContainer.trigger("wheel");
+                                alert('alert triggered')
+                            });
+                            AboutContainer.addEventListener(
+                                "wheel",
+                                (e) => {
+                                    console.log(e);
+                                    alert(e);
+                                }
+                            );
                         },
                     });
 
