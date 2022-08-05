@@ -2,7 +2,7 @@
 
 return [
     "title" => "Over ons",
-    "title.1" => "Eten met passie",
+    "title.1" => "Passie en vakmanschap",
     "1.1" => "Bij botellón hechten we veel waarde aan onze producenten, leveranciers en medewerkers. Wij kiezen dan ook steevast voor passie, vakkennis en duurzaamheid bij alles en bij iedereen.",
     "2.1" => "Onze bedrijfsfilosofie kan je lekker distilleren uit volgende wijsheden:",
     "2.2.1" => "Streef naar de perfectie in alles wat je doet",

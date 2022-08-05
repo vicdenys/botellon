@@ -12,7 +12,7 @@
                         <x-application-logo-animated></x-application-logo-animated>
                     </h1>
                 </div>
-                <div id="homePageSubTitleWrapper" class=" fixed  w-full overflow-hidden bottom-[4.8rem] bottom-[calc(4.8rem+env(safe-area-inset-bottom))] lg:bottom-[calc(5rem+env(safe-area-inset-bottom))] md:h-28 h-20 mx-auto md:py-8 border-t border-t-white text-center font-victorianna-thin text-white text-2xl sm:text-4xl lg:text-6xl">
+                <div id="homePageSubTitleWrapper" class=" fixed  w-full overflow-hidden pointer-events-none bottom-[4.8rem] bottom-[calc(4.8rem+env(safe-area-inset-bottom))] lg:bottom-[calc(5rem+env(safe-area-inset-bottom))] md:h-28 h-20 mx-auto md:py-8 border-t border-t-white text-center font-victorianna-thin text-white text-2xl sm:text-4xl lg:text-6xl">
                     <h2 id="homePageSubTitle" class="relative h-full w-full">
                         <span class=" absolute top-1/2 w-full text-center left-0 transform -translate-y-1/2">
                             <span class="inline-block opacity-0 transform translate-y-full animate-pop-up-out" style="animation-delay: 0.2s;">brunch</span>
