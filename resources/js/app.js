@@ -329,7 +329,8 @@ window.addEventListener("load", () => {
                                 }
                             );
 
-                            AboutContainer.addEventListener("touchmove", function () {
+                            AboutContainer.addEventListener("touchmove", function (e) {
+                                alert('inside touch');
                                 AboutContainer.dispatchEvent("wheel");
                             });
                             
