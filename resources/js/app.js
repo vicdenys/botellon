@@ -324,6 +324,7 @@ window.addEventListener("load", () => {
 
                             AboutContainer.addEventListener("touchmove", function () {
                                 AboutContainer.trigger("wheel");
+                                alert('alert triggered')
                             });
                             AboutContainer.addEventListener(
                                 "wheel",
