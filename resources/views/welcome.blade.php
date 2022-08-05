@@ -2,7 +2,7 @@
 
 @section('content')
 
-<div id="homeScrollContainer" class="overscroll-none relative scroll-smooth  max-h-screen snap-mandatory snap-always snap-y"
+<div id="homeScrollContainer" class=" relative   max-h-screen snap-mandatory snap-always snap-y"
     :class="[ menuOpen ? 'overflow-hidden overflow-y-hidden':' overflow-y-scroll  ' ]" >
     <div id="homeTopHero" class=" snap-start snap-always">
         <div class=" max-h-screen  relative z-40 mx-auto items-center text-[1.5rem] ">

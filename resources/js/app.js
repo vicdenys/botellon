@@ -357,15 +357,15 @@ window.addEventListener("load", () => {
 
                     gsap.to("#footerContainer", {
                         translateY: 0,
-                        scrollTrigger : {
+                        scrollTrigger: {
                             scroller: "#homeScrollContainer",
                             trigger: "#homeScrollContainer",
                             end: "200% top",
                             start: "bottom top",
                             ease: Power1.easeInOut,
                             toggleActions: "play none none reverse",
-                        }
-                    })
+                        },
+                    });
                 }
             }
         }
@@ -412,32 +412,30 @@ window.addEventListener("load", () => {
         });
     }
 
-    window.addEventListener("load", (e) => {
-        gsap.utils.toArray("[data-module-parallax]").forEach((section) => {
-            gsap.utils
-                .toArray(section.querySelectorAll("[data-parallax]"))
-                .forEach((parallax) => {
-                    const depth = parallax.dataset.speed;
-                    const movement = -(parallax.offsetHeight * depth);
+    gsap.utils.toArray("[data-module-parallax]").forEach((section) => {
+        gsap.utils
+            .toArray(section.querySelectorAll("[data-parallax]"))
+            .forEach((parallax) => {
+                const depth = parallax.dataset.speed;
+                const movement = -(parallax.offsetHeight * depth);
 
-                    gsap.fromTo(
-                        parallax,
-                        {
-                            lazy: false,
-                            y: -movement,
+                gsap.fromTo(
+                    parallax,
+                    {
+                        lazy: false,
+                        y: -movement,
+                    },
+                    {
+                        y: movement,
+                        ease: "none",
+                        lazy: false,
+                        scrollTrigger: {
+                            trigger: section,
+                            scrub: true,
                         },
-                        {
-                            y: movement,
-                            ease: "none",
-                            lazy: false,
-                            scrollTrigger: {
-                                trigger: section,
-                                scrub: true,
-                            },
-                        }
-                    );
-                });
-        });
+                    }
+                );
+            });
     });
 
     // MOUSE ACTION

@@ -40,7 +40,7 @@
             
         </div>
        
-        <div id="mouse" class="fixed z-[1000] transform -translate-x-1/2 -translate-y-1/2 w-4 h-4  rounded-full pointer-events-none {{  isset($isDarkTheme) ? 'bg-white ' : 'bg-green' }}" :class="[ menuOpen ? 'bg-green': 'bg-white' ]">
+        <div id="mouse" class="fixed z-[1000] transform -translate-x-1/2 -translate-y-1/2 w-4 h-4  rounded-full pointer-events-none {{  isset($isDarkTheme) ? 'bg-white ' : 'bg-green' }}" :class="[ menuOpen ? '!bg-green': 'bg-white' ]">
             
         </div>
 
