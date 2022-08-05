@@ -8,7 +8,7 @@ return [
     "1.2" => "Van donderdag t.e.m. zondag voorzien wij een heerlijk brunch buffet.
     Denk aan soep, stoofpotjes, salades, brood & beleg, gebak, vers fruit en zoveel meer!",
     "1.3" => "Last van keuzestress?",
-    "1.4" => "Dan neem je toch gewoon alles! 😉",
+    "1.4" => "Dan neem je toch gewoon alles! ;-)",
     "2.1" => "Tussen 11u30 en 14u30 serveren we een rijkelijk brunchbuffet",
     "2.2" => "Op donderdag en vrijdag ",
     "2.2.1" => "voor 19,5 euro per persoon",
@@ -29,7 +29,7 @@ return [
     "4.1.5" => "-Pick your bites-",
     "4.2" => "Op ons menu kan u kiezen uit enkele waanzinnige cold cuts plankjes.
     Wij komen bovendien regelmatig rond met nog meer amuses. Deze amuses kan u gewoon afnemen aan tafel.
-    Denk 'walking dinner', maar dan al zittend. 😉",
+    Denk 'walking dinner', maar dan al zittend. ;-)",
     "4.3" => "Dit minstens tot de zon ondergaat…",
     "0.title" => "Een botellón (Spaans voor grote fles) is een gezelschapsfenomeen dat in Spanje in het begin van de jaren '90 is ontstaan.",
     "0.1" => "Een botellón bestaat uit een groep vrienden, die in een park of op een andere plaats in de buitenlucht samenkomen om te drinken. ",

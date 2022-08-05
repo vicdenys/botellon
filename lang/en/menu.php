@@ -27,7 +27,7 @@ return [
     "4.1.5" => "-Pick your bites-",
     "4.2" => "On our menu you can choose from some amazing cold cuts.
     We also regularly come around with more amuse-bouche. You can simply take these amuse-bouche at the table.
-    Think 'walking dinner', but seated. 😉",
+    Think 'walking dinner', but seated. ;-)",
     "4.3" => "All of this at least until the sun goes down…",
     "0.title" => "A botellón (Spanish for large bottle) is a social phenomenon that originated in Spain in the early 1990s.",
     "0.1" => "A botellón consists of a group of friends who gather in a park or some other place outdoors to drink.",
