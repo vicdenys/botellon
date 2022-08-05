@@ -72,7 +72,7 @@
                 </p>
             </div>
             <div data-module-parallax class="parallax-container flex  items-center justify-end relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-t md:border-none border-green">
-                <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-[180%] md:w-[200%] mt-[40%]  lg:w-[150%]  relative md:absolute h-auto" src="/img/sarah-en-ivo.jpg" alt="Sarah and Ivo ">
+                <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-[180%] md:w-[200%] md:-[10%] mt-[40%]  lg:w-[150%]  relative md:absolute h-auto" src="/img/sarah-en-ivo.jpg" alt="Sarah and Ivo ">
             </div>
 
         </div>
