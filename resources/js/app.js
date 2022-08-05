@@ -338,7 +338,7 @@ window.addEventListener("load", () => {
                             "#homePageSubTitleWrapper",
                             {
                                 opacity: 0,
-                                bottom: "10rem",
+                                bottom: "7.5rem",
                                 duration: 0.1,
                             },
                             "<"
