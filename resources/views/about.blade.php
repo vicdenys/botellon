@@ -1,13 +1,10 @@
-@include('layouts.navigation-guest', [
-'isDarkTheme' => false,
-'isAboutNav' => true
-])
+<div id="AboutContainer" class="  snap-always snap-start relative z-[63] ">
+    @include('layouts.navigation-guest', [
+    'isDarkTheme' => false,
+    'isAboutNav' => true
+    ])
 
-<x-footer-overlay :isDarkTheme="isset($isDarkTheme)" :isAboutNav="true"></x-footer-overlay>
-
-<div id="AboutContainer" class="overscroll-none  snap-always snap-start relative z-[63] ">
-
-    <div class=" pb-20  bg-white  relative z-40 mx-auto text-xl  items-center pt-16 md:pt-20 ">
+    <div class=" pb-20  bg-white  relative z-40 mx-auto text-xl  items-center ">
 
 
         <div class="text-center py-4 border-b border-green ">
@@ -74,7 +71,7 @@
                 </ul>
                 </p>
             </div>
-            <div data-module-parallax class="parallax-container flex  items-center justify-end relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-y md:border-none border-green">
+            <div data-module-parallax class="parallax-container flex  items-center justify-end relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-t md:border-none border-green">
                 <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-[180%] md:w-[200%] mt-[40%]  lg:w-[150%]  relative md:absolute h-auto" src="/img/sarah-en-ivo.jpg" alt="Sarah and Ivo ">
             </div>
 
@@ -104,4 +101,8 @@
 
         <x-contact-footer></x-contact-footer>
     </div>
+
+
+    <x-footer-overlay :isDarkTheme="isset($isDarkTheme)" :isAboutNav="true"></x-footer-overlay>
+
 </div>

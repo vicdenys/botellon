@@ -360,7 +360,7 @@ window.addEventListener("load", () => {
                         scrollTrigger: {
                             scroller: "#homeScrollContainer",
                             trigger: "#homeScrollContainer",
-                            end: "200% top",
+                            end: "1000% top",
                             start: "bottom top",
                             ease: Power1.easeInOut,
                             toggleActions: "play none none reverse",

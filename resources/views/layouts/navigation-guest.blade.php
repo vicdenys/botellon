@@ -1,5 +1,5 @@
 
-<nav id="navigation" class=" block    w-screen border-b  {{ $isDarkTheme || $isAboutNav ? 'border-b-white ' : 'border-b-green bg-white' }} {{ $isAboutNav  ? 'border-b-green bg-white sticky top-0 top-[env(safe-area-inset-top)] z-[64]' : 'fixed top-0 z-[60]'  }}">
+<nav id="navigation" class=" block    w-screen border-b  {{ $isDarkTheme || $isAboutNav ? 'border-b-white ' : 'border-b-green bg-white' }} {{ $isAboutNav  ? 'border-b-green bg-white sticky  top-0 top-[env(safe-area-inset-top)] z-[64]' : 'fixed top-0 z-[60]'  }}">
 
 
     <ul class="w-full md:py-6 py-4 px-8 flex items-center justify-between">
