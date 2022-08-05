@@ -325,13 +325,11 @@ window.addEventListener("load", () => {
                                 "wheel",
                                 (e) => {
                                     console.log(e);
-                                    alert(e);
                                 }
                             );
 
                             AboutContainer.addEventListener("touchmove", function (e) {
-                                alert('inside touch');
-                                AboutContainer.dispatchEvent("wheel");
+                                console.log(e)
                             });
                             
                         },
