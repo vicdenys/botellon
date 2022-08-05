@@ -2,10 +2,10 @@
 
 @section('content')
 
-<div id="homeScrollContainer" class=" relative overscroll-none   max-h-screen snap-mandatory snap-always snap-y"
+<div id="homeScrollContainer" class=" relative overscroll-none  max-h-screen max-h-[calc(var(--vh,1vh)*100)] snap-mandatory snap-always snap-y"
     :class="[ menuOpen ? 'overflow-hidden overflow-y-hidden':' overflow-y-scroll  ' ]" >
     <div id="homeTopHero" class=" snap-start snap-always">
-        <div class=" max-h-screen  relative z-40 mx-auto items-center text-[1.5rem] ">
+        <div class=" max-h-screen max-h-[calc(var(--vh,1vh)*100)]  relative z-40 mx-auto items-center text-[1.5rem] ">
             <div id="homePageWrapper" class="w-full h-screen flex justify-center">
                 <div class="w-full absolute md:h-[calc(100%-12rem)] h-[calc(100%-10rem)] pt-20 fill-white flex justify-center items-center">
                     <h1 class=" md:w-96 w-56  ">
