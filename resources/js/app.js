@@ -28,7 +28,6 @@ window.addEventListener("load", () => {
         document.documentElement.style.setProperty("--vh", `${vh}px`);
     });
 
-
     // THREE JS
 
     const ctx = document.getElementById("bottleCanvas");
@@ -310,13 +309,30 @@ window.addEventListener("load", () => {
                 if (document.getElementById("homeScrollContainer")) {
                     let homeScrollAnim = gsap.timeline({
                         onComplete: () => {
-                            document.getElementById('homeScrollContainer').classList.remove(['overflow-y-scroll']);
-                            document.getElementById('homeScrollContainer').classList.add(['overflow-y-hidden']);
-                            document.getElementById('AboutContainer').addEventListener('wheel', e => {
-                                console.log(e);
-                                alert(e);
-                            })
-                        }
+                            let homeScrollContainer = document.getElementById(
+                                "homeScrollContainer"
+                            );
+                            let AboutContainer =
+                                document.getElementById("AboutContainer");
+
+                            homeScrollContainer.classList.remove([
+                                "overflow-y-scroll",
+                            ]);
+                            homeScrollContainer.classList.add([
+                                "overflow-y-hidden",
+                            ]);
+
+                            AboutContainer.addEventListener("touchmove", function () {
+                                AboutContainer.trigger("wheel");
+                            });
+                            AboutContainer.addEventListener(
+                                "wheel",
+                                (e) => {
+                                    console.log(e);
+                                    alert(e);
+                                }
+                            );
+                        },
                     });
 
                     homeScrollAnim
