@@ -9,7 +9,7 @@ return [
     "2.2.2" => "Je doet beter 1 ding goed, dan 3 dingen middelmatig",
     "2.2.3" => "Ervaring maakt kunst ",
     "2.2.4" => "Luisteren is beter dan horen ",
-    "2.2.5" => "Efficiënty is our middlename ",
+    "2.2.5" => "Efficiëntie is our middlename ",
     "2.2.6" => "Genieten is van levensbelang ",
     "2.2.7" => "Sustainability is key",
     "3.1" => "Voor onze wijnen kijken we steeds naar de passie van haar makers. Kleinere (onbekendere) wijnmakers krijgen dan ook steeds dat klein beetje meer aandacht. Dit aanbod wordt samengesteld door onszelf i.s.m. de jongens van Artevino",

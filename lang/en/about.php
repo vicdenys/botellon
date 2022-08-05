@@ -9,7 +9,7 @@ return [
     "2.2.2" => "Beter to do one thing well than 3 things mediocre",
     "2.2.3" => "Experience makes art",
     "2.2.4" => "Listening is better than hearing",
-    "2.2.5" => "Efficiëncy is our middlename",
+    "2.2.5" => "Efficiency is our middlename",
     "2.2.6" => "Enjoyment is a vital importance",
     "2.2.7" => "Sustainability is key",
     "3.1" => "For our wine selection we thrive to go for the “smaller”, less known, but very passionate winemakers. We just love all the back stories they have and we love to spread their message and passion to whomever is open for it! We collaborate with the guys from Artevino for our wine selection
