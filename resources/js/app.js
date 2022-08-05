@@ -323,8 +323,7 @@ window.addEventListener("load", () => {
                             ]);
 
                             AboutContainer.addEventListener("touchmove", function () {
-                                AboutContainer.trigger("wheel");
-                                alert('alert triggered')
+                                AboutContainer.dispatchEvent("wheel");
                             });
                             AboutContainer.addEventListener(
                                 "wheel",
