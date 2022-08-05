@@ -321,6 +321,7 @@ window.addEventListener("load", () => {
                             homeScrollContainer.classList.add([
                                 "overflow-y-hidden",
                             ]);
+                            alert('eeee');
 
                             AboutContainer.addEventListener("touchmove", function () {
                                 AboutContainer.dispatchEvent("wheel");
