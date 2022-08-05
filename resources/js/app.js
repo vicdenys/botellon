@@ -308,7 +308,12 @@ window.addEventListener("load", () => {
                 // HOME PAGE SCROLL ACTION
 
                 if (document.getElementById("homeScrollContainer")) {
-                    let homeScrollAnim = gsap.timeline();
+                    let homeScrollAnim = gsap.timeline({
+                        onComplete: () => {
+                            document.getElementById('homeScrollContainer').classList.remove(['overflow-y-scroll']);
+                            document.getElementById('homeScrollContainer').classList.add(['overflow-y-hidden']);
+                        }
+                    });
 
                     homeScrollAnim
 
