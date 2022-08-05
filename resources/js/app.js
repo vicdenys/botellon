@@ -315,24 +315,26 @@ window.addEventListener("load", () => {
                             let AboutContainer =
                                 document.getElementById("AboutContainer");
 
-                            homeScrollContainer.classList.remove([
-                                "overflow-y-scroll",
-                            ]);
-                            homeScrollContainer.classList.add([
-                                "overflow-y-hidden",
-                            ]);
+                                AboutContainer.classList.add(['overscroll-none'])
 
-                            AboutContainer.addEventListener("touchmove", function () {
-                                AboutContainer.trigger("wheel");
-                                alert('alert triggered')
-                            });
-                            AboutContainer.addEventListener(
-                                "wheel",
-                                (e) => {
-                                    console.log(e);
-                                    alert(e);
-                                }
-                            );
+                            // homeScrollContainer.classList.remove([
+                            //     "overflow-y-scroll",
+                            // ]);
+                            // homeScrollContainer.classList.add([
+                            //     "overflow-y-hidden",
+                            // ]);
+
+                            // AboutContainer.addEventListener("touchmove", function () {
+                            //     AboutContainer.trigger("wheel");
+                            //     alert('alert triggered')
+                            // });
+                            // AboutContainer.addEventListener(
+                            //     "wheel",
+                            //     (e) => {
+                            //         console.log(e);
+                            //         alert(e);
+                            //     }
+                            // );
                         },
                     });
 
