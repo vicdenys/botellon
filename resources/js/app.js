@@ -321,11 +321,6 @@ window.addEventListener("load", () => {
                             homeScrollContainer.classList.add([
                                 "overflow-y-hidden",
                             ]);
-                            alert('eeee');
-
-                            AboutContainer.addEventListener("touchmove", function () {
-                                AboutContainer.dispatchEvent("wheel");
-                            });
                             AboutContainer.addEventListener(
                                 "wheel",
                                 (e) => {
@@ -333,6 +328,11 @@ window.addEventListener("load", () => {
                                     alert(e);
                                 }
                             );
+
+                            AboutContainer.addEventListener("touchmove", function () {
+                                AboutContainer.dispatchEvent("wheel");
+                            });
+                            
                         },
                     });
 
