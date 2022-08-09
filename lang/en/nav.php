@@ -8,5 +8,5 @@ return [
     "group" => "groups",
     "events" => "events",
     "contact" => "contact",
-    "about" => "about"
+    "about" => "about us"
 ];

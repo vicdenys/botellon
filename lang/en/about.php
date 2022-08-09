@@ -1,7 +1,7 @@
 <?php
 
 return [
-    "title" => "About",
+    "title" => "About us",
     "title.1" => "Passion and craftsmanship",
     "1.1" => "At botellón we take value in our producers, suppliers and colleagues. We only settle for the best and choose passion, knowledge and sustainability above all.",
     "2.1" => "Our philosophy is set out in following wisdoms;",

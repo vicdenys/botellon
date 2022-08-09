@@ -10,7 +10,7 @@ return [
     "content.title" => "Content bottle bag:",
     "content.1" => "Eco friendly bottle bag for 2 bottles, made of jute  (5)",
     "content.2" => "reuseable cooling element",
-    "content.3" => "Biodegradable wine cups  (2)",
+    "content.3" => "Wine cups  (2)",
     "content.4" => "The greatest focaccia toasts and dips  (6)",
     "content.5" => "botellón’s very own apéro playlist (spotify) ",
     "content.6" => "a map with the nicest sunset spots in the area ",

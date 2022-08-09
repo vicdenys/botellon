@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class=" pb-20  relative z-40 mx-auto text-xl  items-center  mt-16 md:mt-20">
+<div class="pb-16 md:pb-20  relative z-40 mx-auto text-xl  items-center  mt-16 md:mt-20">
 
     <div class="text-center py-4 border-b border-green ">
         <h1 class="font-victorianna-thin text-3xl  ">{{ __('events.title') }}</h1>
@@ -19,6 +19,9 @@
             </p>
         </div>
         <div data-module-parallax class="parallax-container flex  items-center justify-center relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-t md:border-none border-green">
+            <div class="absolute top-1/2  left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <svg class="animate-spin h-8 w-8 rounded-full bg-transparent border border-transparent  border-r-green border-t-green" viewBox="0 0 24 24"></svg>
+            </div>
             <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-full relative md:absolute h-auto" src="/img/bottle-rose.jpeg" alt="picnic cloth ">
         </div>
 
@@ -63,16 +66,21 @@
                 <span class="block mb-4">
                     {{ __('events.3.4') }} </span>
                 <span class="block ">
-                    {{ __('events.3.5') }} </span>
+                    {{ __('events.3.5') }}
+                    <a data-hover href="mailto:info@botellonantwerp.be">info@botellonantwerp.be</a> </span>
+                </span>
             </p>
         </div>
-        
+
         <div data-module-parallax class="parallax-container flex  items-center justify-center relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-t md:border-none border-green">
+            <div class="absolute top-1/2  left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <svg class="animate-spin h-8 w-8 rounded-full bg-transparent border border-transparent  border-r-green border-t-green" viewBox="0 0 24 24"></svg>
+            </div>
             <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-full relative md:absolute h-auto" src="/img/bruschetta.jpg" alt="bruschetta  ">
         </div>
 
     </div>
-<!--
+    <!--
     <div class="text-center py-4 border-t border-green ">
         <h1 class="font-victorianna-thin text-3xl  ">{{ __('events.title.3') }}</h1>
     </div>

@@ -4,7 +4,7 @@
     'isAboutNav' => true
     ])
 
-    <div class=" pb-20 pb-[calc(5rem+env(safe-area-inset-top)+env(safe-area-inset-bottom))] bg-white  relative z-40 mx-auto text-xl  items-center ">
+    <div class="pb-16 md:pb-20 md:pb-[calc(5rem+env(safe-area-inset-top)+env(safe-area-inset-bottom))]  pb-[calc(4rem+env(safe-area-inset-top)+env(safe-area-inset-bottom))] bg-white  relative z-40 mx-auto text-xl  items-center ">
 
 
         <div class="text-center py-4 border-b border-green ">
@@ -72,6 +72,9 @@
                 </p>
             </div>
             <div data-module-parallax class="parallax-container flex  items-center justify-end relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-t md:border-none border-green">
+                <div class="absolute top-1/2  left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                    <svg class="animate-spin h-8 w-8 rounded-full bg-transparent border border-transparent  border-r-green border-t-green" viewBox="0 0 24 24"></svg>
+                </div>
                 <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-[180%] md:w-[200%] md:-[10%] mt-[40%]  lg:w-[150%]  relative md:absolute h-auto" src="/img/sarah-en-ivo.jpg" alt="Sarah and Ivo ">
             </div>
 

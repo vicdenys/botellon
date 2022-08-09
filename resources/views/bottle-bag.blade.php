@@ -3,7 +3,7 @@
 @section('content')
 
 
-<div class=" pb-20  relative z-40 mx-auto text-xl  items-center  mt-16 md:mt-20">
+<div class="pb-16 md:pb-20  relative z-40 mx-auto text-xl  items-center  mt-16 md:mt-20">
 
     <div class="text-center py-4 border-b border-green ">
         <h1 class="font-victorianna-thin text-3xl  ">{{ __('bottle-bag.title') }}</h1>
@@ -33,6 +33,9 @@
 
     <div class=" flex min-h-[10rem] sm:min-h-[15rem] bg-white md:border-y border-green">
         <div data-module-parallax class="parallax-container flex  items-center justify-center relative max-h-40  sm:max-h-60 md:max-h-[initial]   w-full overflow-hidden  border-y md:border-none border-green">
+            <div class="absolute top-1/2  left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <svg class="animate-spin h-8 w-8 rounded-full bg-transparent border border-transparent  border-r-green border-t-green" viewBox="0 0 24 24"></svg>
+            </div>
             <img data-parallax data-speed='-0.25' class="paralax-img max-w-none w-[150%]  -mt-[15%]  lg:w-full relative md:absolute h-auto" src="/img/quay-antwerp.jpg" alt="quay antwerp images ">
         </div>
     </div>
@@ -99,6 +102,9 @@
             </p>
         </div>
         <div data-module-parallax class="parallax-container flex  items-center justify-center relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-y md:border-none border-green">
+            <div class="absolute top-1/2  left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                <svg class="animate-spin h-8 w-8 rounded-full bg-transparent border border-transparent  border-r-green border-t-green" viewBox="0 0 24 24"></svg>
+            </div>
             <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-[150%] md:w-[200%]  lg:w-[150%] relative md:absolute h-auto" src="/img/picnic-cloth.jpg" alt="picnic cloth ">
         </div>
 

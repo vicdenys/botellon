@@ -18,7 +18,7 @@ return [
     "content.title" => "Inhoud bottle bag:",
     "content.1" => "leuke bottle bag voor 2 flessen, gemaakt van jute (5)",
     "content.2" => "herbruikbaar koelelement",
-    "content.3" => "biologisch afbreekbare wine cups (2)",
+    "content.3" => "Wine cups (2)",
     "content.4" => "de lekkerste focaccia toastjes met heerlijke dips (6)",
     "content.5" => "botellón’s very own apero playlist (spotify)",
     "content.6" => "een lijstje met de mooiste sunset-plekjes uit de buurt",

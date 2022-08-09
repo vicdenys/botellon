@@ -32,7 +32,7 @@ return [
     Denk 'walking dinner', maar dan al zittend. ;-)",
     "4.3" => "Dit minstens tot de zon ondergaat…",
     "0.title" => "Een botellón (Spaans voor grote fles) is een gezelschapsfenomeen dat in Spanje in het begin van de jaren '90 is ontstaan.",
-    "0.1" => "Een botellón bestaat uit een groep vrienden, die in een park of op een andere plaats in de buitenlucht samenkomen om te drinken. ",
+    "0.1" => "Een botellón bestaat uit een groep vrienden, die in een park of op een andere plaats in de buitenlucht samenkomt om te drinken. ",
     "0.2" => "Gezelligheid troef!",
     
 ];

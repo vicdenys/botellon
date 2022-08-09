@@ -225,6 +225,8 @@ window.addEventListener("load", () => {
 
                     initGSAP();
 
+                    document.getElementById('loadingspinner').hidden = true;
+
                     animate();
                 });
             },
@@ -361,7 +363,7 @@ window.addEventListener("load", () => {
                             scroller: "#homeScrollContainer",
                             trigger: "#homeScrollContainer",
                             end: "1000% top",
-                            start: "bottom top",
+                            start: "bottom 1%",
                             ease: Power1.easeInOut,
                             toggleActions: "play none none reverse",
                         },

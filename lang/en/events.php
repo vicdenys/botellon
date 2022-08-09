@@ -16,6 +16,6 @@ return [
     "3.2" => " A reception style event is also a possibility.",
     "3.3" => "For a corporate meeting/event we can meet your digital requirements too!",
     "3.4" => "We love to work out an offer together with you.",
-    "3.5" => "Please contact us at info@botellonantwerp.be",
+    "3.5" => "Please contact us at ",
 
 ];
