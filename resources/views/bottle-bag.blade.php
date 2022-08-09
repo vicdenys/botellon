@@ -11,7 +11,7 @@
 
     <div class="px-8 py-8 md:py-12 bg-white">
         <p class="text-left grid  grid-cols-1 sm:grid-cols-2 gap-8 md:gap-12">
-            <span class=" space-y-8">
+            <span class=" space-y-4">
                 <span class="block">
                     {{ __('bottle-bag.1.1') }} </span>
                 <span class="block">

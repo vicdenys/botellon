@@ -16,13 +16,13 @@
       <div class="px-8 w-full md:w-auto pb-8 md:pt-12 text-center md:text-left md:pl-8 transform translate-y-8 md:transform-none col-span-2 md:col-span-1">
 
          <p class="font-bazovy">
-            <span class="block mb-8">
+            <span class="block mb-4">
                {{ __('menu.0.title')  }}
             </span>
-            <span class="block mb-8">
+            <span class="block mb-4">
                {{ __('menu.0.1') }}
             </span>
-            <span class="block mb-8">
+            <span class="block mb-4">
                {{ __('menu.0.2') }} </span>
             <span class="block ">
 
@@ -43,10 +43,10 @@
    <div class=" md:flex  md:flex-row-reverse md:border-b border-green">
       <div class="px-8 py-8 md:py-12 bg-white md:w-1/2">
          <p class="font-bazovy">
-            <span class="block mb-8">
+            <span class="block mb-4">
                {{ __('menu.1.1') }}
             </span>
-            <span class="block mb-8">
+            <span class="block mb-4">
                {{ __('menu.1.2') }} </span>
             <span class="block ">
                {{ __('menu.1.3') }} </span>
@@ -67,17 +67,17 @@
 
    <div class="px-8 py-8 md:py-12 bg-white">
       <p class="text-center">
-         <span class="block mb-8">
+         <span class="block mb-4">
             {{ __('menu.2.1') }} </span>
          <span class="block ">
             {{ __('menu.2.2') }} </span>
-         <span class="block mb-8">
+         <span class="block mb-4">
             {{ __('menu.2.2.1') }} </span>
          <span class="block">
             {{ __('menu.2.3') }} </span>
-         <span class="block mb-8">
+         <span class="block mb-4">
             {{ __('menu.2.3.1') }} </span>
-         <span class="block mb-8">
+         <span class="block mb-4">
             {{ __('menu.2.4') }} </span>
          <span class="block ">
             {{ __('menu.2.5') }}
@@ -104,7 +104,7 @@
 
       <div class="px-8 py-8 md:py-12 bg-white md:w-1/2">
          <p class="font-bazovy">
-            <span class="block mb-8">
+            <span class="block mb-4">
                {{ __('menu.3.1') }} </span>
             <span>
                {{ __('menu.3.2') }} </span>
