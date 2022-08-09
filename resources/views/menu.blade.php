@@ -121,11 +121,11 @@
 
    <div class="px-8 py-8 md:py-12 md:text-center md:flex md:justify-center  bg-white">
       <p class="font-bazovy max-w-xl">
-         <span class="block mb-8">
+         <span class="block mb-4">
             {{ __('menu.4.1') }} </span>
-         <span class="block mb-8">
+         <span class="block mb-4">
             {{ __('menu.4.1.5') }} </span>
-         <span class="block mb-8">
+         <span class="block mb-4">
             {{ __('menu.4.2') }} </span>
          <span>
             {{ __('menu.4.3') }} </span>
