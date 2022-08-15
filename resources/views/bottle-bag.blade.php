@@ -95,7 +95,10 @@
                 <span class="block">
                     {{ __('bottle-bag.content.7') }} </span>
                 <span class="block">
-                    {{ __('bottle-bag.content.8') }} </span>
+                    {{ __('bottle-bag.content.8') }} 
+                    <br> 
+                    {{ __('bottle-bag.content.8.1') }} 
+                </span>
                 <span class="block">
                     {{ __('bottle-bag.content.9') }} </span>
                 <span class="block">

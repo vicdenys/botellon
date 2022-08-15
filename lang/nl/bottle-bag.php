@@ -23,7 +23,8 @@ return [
     "content.5" => "botellón’s very own apero playlist (spotify)",
     "content.6" => "een lijstje met de mooiste sunset-plekjes uit de buurt",
     "content.7" => "— Prijs: 12 euro",
-    "content.8" => "+ Optioneel: picknick kleed, supercompact en ultralicht doek van 100% katoen (8)",
+    "content.8" => "+ Optioneel: picknick kleed, supercompact",
+    "content.8.1" => "en ultralicht doek van 100% katoen (8)",
     "content.9" => "(je kan alles ook apart verkrijgen uiteraard ;))",
     "end" => "You've got the treats, now choose your bottle and GO!",
 ];

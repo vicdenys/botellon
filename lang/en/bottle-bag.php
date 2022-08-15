@@ -15,7 +15,8 @@ return [
     "content.5" => "botellón’s very own apéro playlist (spotify) ",
     "content.6" => "a map with the nicest sunset spots in the area ",
     "content.7" => "— Price: 12 euro",
-    "content.8" => "+ optional: a picknick rug! A super compact en ultralight rug made from 100% cotton  (8)",
+    "content.8" => "+ optional: a picknick rug! A super compact",
+    "content.8.1" => "and ultralight rug made from 100% cotton  (8)",
     "content.9" => "(you can get everything separately as well off course;))",
     "end" => "You’ve got the treats, now choose your bottle and GO!",
 ];
