@@ -7,7 +7,7 @@ return [
     "1.3" => "Is your answer YES?!",
     "1.4" => "We’ll provide you with a super handy, ecofriendly bottle bag to take along and go where ever you want to enjoy your well-chosen bottle, accompanied by some exciting extra’s.",
     "1.5" => "Then come and get your COOLED botellón bottle bag now! And enjoy professionally selected, cooled, premium wines, bubbles, beers, … to go!",
-    "content.title" => "Content bottle bag:",
+    "content.title" => "Content bottle bag",
     "content.1" => "Eco friendly bottle bag for 2 bottles, made of jute  (5)",
     "content.2" => "reuseable cooling element",
     "content.3" => "Wine cups  (2)",
