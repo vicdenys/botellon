@@ -18,7 +18,7 @@
                         {{ __('about.1.1') }} </span>
                     <span class="block mb-4">
                         {{ __('about.2.1') }} </span>
-                <ul class=" space-y-4">
+                <ul class=" space-y-1">
                     <li class="flex gap-2">
                         <div class="w-[0.2rem] h-[0.2rem] bg-black mt-4"></div>
                         <span>

@@ -46,7 +46,7 @@
 
     <div class=" md:flex   md:border-b border-green">
         <div class="px-8 py-8 md:py-12 space-y-4 bg-white md:w-1/2">
-            <ul class=" space-y-4">
+            <ul class=" space-y-1">
                 <li class="flex gap-2">
                     <div class="w-[0.2rem] h-[0.2rem] bg-black mt-4"></div>
                     <span>
