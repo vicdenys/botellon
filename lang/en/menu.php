@@ -19,10 +19,10 @@ return [
     "2.5.1" => "—OF COURSE—",
     "2.5" => "All of this accompanied by a great bottle of wine",
     "3.1" => "Good food, a (well selected) bottle of wine, pearls or a (not so common) beer… 
-    In the background you’ll hear the best and easy listening worldly music in a cozy and relaxing setting. 
+    In the background you'll hear the best and easy listening worldly music in a cozy and relaxing setting. 
     A wonderful experience is what we aim for! 
     Nothing more, nothing less!",
-    "3.2" => "Are you a 0% (alcohol) kind a person? No worries! We’ve got that covered too! ",
+    "3.2" => "Are you a 0% (alcohol) kind a person? No worries! We've got that covered too! ",
     "4.1" => "After the buffet (from 3 pm) it is apéro time and you can enjoy a nice bottle in peace",
     "4.1.5" => "—Pick your bites—",
     "4.2" => "On our menu you can choose from some amazing cold cuts.
