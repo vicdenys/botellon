@@ -1,7 +1,7 @@
 <?php
 
 return [
-    "title" => "Private events...",
+    "title" => "Private events ...",
     "title.2" => "formulas",
     "title.3" => "Gallery",
     "1.1" => "Would you like to experience the botellón-vibe in a more private setting? Just you and your guests? Then we love to make that possible for you.",

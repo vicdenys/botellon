@@ -1,7 +1,7 @@
 <?php
 
 return [
-    "title" => "De botellón bottle bag...",
+    "title" => "De botellón bottle bag ...",
     "1.1" => "Genieten met vrienden aan de kaaien, of in ’t park met je lief,
     of gewoon thuis? 
     Daar hoort uiteraard een goede fles bij!",

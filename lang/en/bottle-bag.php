@@ -1,7 +1,7 @@
 <?php
 
 return [
-    "title" => "The botellón bottle bag...",
+    "title" => "The botellón bottle bag ...",
     "1.1" => "Celebrating life or just hanging out with friends on the quays, at the park or in the comfort of your own home? It all includes a nice bottle of something, right?",
     "1.2" => "Are you fed up with the warm, crappy, headache providing bottles of wine? The common, usual and ‘everyday’ beers that you’ll find at supermarkets or night shops?",
     "1.3" => "Is your answer YES?!",

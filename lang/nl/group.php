@@ -1,7 +1,7 @@
 <?php
 
 return [
-    "title" => "Groepen...",
+    "title" => "Groepen ...",
     "1.0" => "Onze locatie leent zich perfect om na een heerlijke brunch bij botellón het FOMU (naast de deur) te bezoeken. Ook het MUKHA en het KMSKA liggen op wandelafstand van onze zaak.",
     "1.1" => "Bent u met een groter gezelschap op pad in Antwerpen en wenst u graag een lunch te regelen die voor iedereen toegankelijk is?",
     "1.2" => "Dan is ons lunchbuffet de ideale oplossing voor u.",

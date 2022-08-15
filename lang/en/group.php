@@ -1,7 +1,7 @@
 <?php
 
 return [
-    "title" => "Groups…",    
+    "title" => "Groups …",    
     "1.0" => "Our location is perfect for visiting the FOMU (next door) after a delicious brunch at botellón. The MUKHA and the KMSKA are also within walking distance of our business.",
     "1.1" => "Are you visiting Antwerp with a group of people and like to have a group lunch? ",
     "1.2" => "Then our lunch buffet is the ideal solution for you!",

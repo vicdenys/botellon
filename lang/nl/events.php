@@ -1,8 +1,8 @@
 <?php
 
 return [
-    "title" => "Private events...",
-    "title.2" => "formules",
+    "title" => "Private event ...",
+    "title.2" => "formules", 
     "title.3" => "Gallery",
     "1.1" => "Wil je liever in besloten groep komen genieten van de botellón experience? Dan kan dat uiteraard ook!",
     "1.2" => "Op maandag, dinsdag en woensdag kan je botellón privatiseren!",

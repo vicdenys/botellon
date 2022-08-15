@@ -1,7 +1,7 @@
 <?php
 
 return [
-    "title" => "Over ons",
+    "title" => "Over ons ...",
     "title.1" => "Passie en vakmanschap",
     "1.1" => "Bij botellón hechten we veel waarde aan onze producenten, leveranciers en medewerkers. Wij kiezen dan ook steevast voor passie, vakkennis en duurzaamheid bij alles en bij iedereen.",
     "2.1" => "Onze bedrijfsfilosofie kan je lekker distilleren uit volgende wijsheden:",
@@ -17,7 +17,7 @@ return [
     "3.3" => "Uiteraard zoeken we ook lokaal en werken we onder meer samen met 1 van de oudste en béste slagers uit de buurt, slagerij Buysse. Deze 3 broertjes zorgen eigenhandig voor de beste selectie vlees en maken al hun slaatjes zelf! Wij komen hier zelf al meer dan de helft van ons leven en delen dit dan ook graag met onze gasten van botellón…",
     "3.4" => "Onze eigenste medewerkers zijn mensen met een grote liefde voor de horeca. Wij weten hoe we onze gasten moeten verwennen!
     Bij botellón gaan we voor een totaal-beleving. Onze passie en liefde voor het vak krijg je er gratis bij.",
-    "3.5" => "-Sarah & Ivo-",
+    "3.5" => "—Sarah & Ivo—",
 ];
 
 
