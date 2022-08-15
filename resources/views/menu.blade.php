@@ -71,10 +71,14 @@
             {{ __('menu.2.1') }} </span>
          <span class="block ">
             {{ __('menu.2.2') }} </span>
+         <span class="block ">
+            {{ __('menu.2.2.0') }} </span>
          <span class="block mb-4">
             {{ __('menu.2.2.1') }} </span>
          <span class="block">
             {{ __('menu.2.3') }} </span>
+         <span class="block ">
+            {{ __('menu.2.3.0') }} </span>
          <span class="block mb-4">
             {{ __('menu.2.3.1') }} </span>
          <span class="block mb-4">
