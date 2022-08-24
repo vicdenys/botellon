@@ -10,8 +10,10 @@ return [
     "1.5" => "Parkeren kan vlakbij in de nieuwe ondergrondse beveiligde parking 'Steendok' van Q-park op de Waalsekaai 69a, 2000 Antwerpen.",
     "2.1" => "ma—di—wo",
     "2.2" => "enkel geopend voor private events of groepen",
-    "2.3" => "do—vrij—zat—zon",
+    "2.3" => "do—vrij",
     "2.4" => "geopend vanaf 11u30 tot zonsondergang",
+    "2.5" => "zat—zon",
+    "2.6" => "geopend vanaf 10u tot zonsondergang",
     "3.1" => "Antwerpen",
     "3.2" => "BTW",
 ];

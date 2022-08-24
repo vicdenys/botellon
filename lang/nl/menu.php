@@ -11,7 +11,7 @@ return [
     "1.4" => "Dan neem je toch gewoon alles! ;-)",
     "2.1" => "We serveren een rijkelijk brunchbuffet …",
     "2.2" => "… op donderdag en vrijdag ",
-    "2.2.0" => "tussen 11u en 14u30",
+    "2.2.0" => "tussen 11u30 en 14u30",
     "2.2.1" => "voor 19,5 euro per persoon",
     "2.3" => "… op zaterdag en zondag ",
     "2.3.0" => "om 10u en 12u",

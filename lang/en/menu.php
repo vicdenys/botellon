@@ -14,7 +14,7 @@ return [
     "2.2.0" => "from 11h30 to 14h30",
     "2.2.1" => "for only 19,5 euro per person.",
     "2.3" => "… on Saturdays and Sundays ",
-    "2.3.0" => "from 10h and 12h",
+    "2.3.0" => "at 10h and at 12h",
     "2.3.1" => "21,5 euro per person",
     "2.4" => "Coffee and tea is included!",
     "2.5" => "And for the hedonist amongst us",
