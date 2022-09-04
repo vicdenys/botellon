@@ -77,10 +77,8 @@
             {{ __('menu.2.2.1') }} </span>
          <span class="block">
             {{ __('menu.2.3') }} </span>
-         <span class="block ">
-            {{ __('menu.2.3.0') }} </span>
          <span class="block mb-4">
-            {{ __('menu.2.3.1') }} </span>
+            {{ __('menu.2.3.0') }} </span>
          <span class="block mb-4">
             {{ __('menu.2.4') }} </span>
          <span class="block ">

@@ -10,10 +10,8 @@ return [
     "1.5" => "There is an underground, secured parking right in front of us: Q-park 'Steendok', Waalsekaai 69a, 2000 Antwerpen",
     "2.1" => "Mon—Tue—Wed",
     "2.2" => "open for private events",
-    "2.3" => "Thu—Fri",
+    "2.3" => "Thu—Sun",
     "2.4" => "open from 11:30am until sunset",
-    "2.5" => "Sat—Sun",
-    "2.6" => "open from 10am until sunset",
     "3.1" => "Antwerp",
     "3.2" => "VAT",
 ];

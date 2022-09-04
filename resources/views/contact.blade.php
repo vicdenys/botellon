@@ -81,10 +81,6 @@
                {{ __('contact.2.3') }} </span>
             <span class="block mb-4">
                {{ __('contact.2.4') }} </span>
-            <span class="block ">
-               {{ __('contact.2.5') }} </span>
-            <span class="block mb-4">
-               {{ __('contact.2.6') }} </span>
          </p>
       </div>
    </div>
