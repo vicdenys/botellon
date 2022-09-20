@@ -3,9 +3,9 @@
 return [
     "seemenu" => "see menu",
     "curious" => "Curious to see our menu?",
-    "aperofrom15" => "Aperitif from 15h!",
+    "aperofrom15" => "Aperitif",
     "1.1" => "Every day brunch? That is possible at botellón, because brunch is ALWAYS a good idea!",
-    "1.2" => "From Thursday till Sunday we'll hook you up with an awesome brunch/lunch buffet that will include healthy and less healthy options ;) 
+    "1.2" => "From Thursday till Sunday we'll hook you up with an awesome brunch/lunch buffet (only with reservation) that will include healthy and less healthy options ;) 
     Think soup, stews, salads, bread and toppings, sweets, fruits, etc…",
     "1.3" => "Suffering from 'I can't choose' syndrome? ",
     "1.4" => " Then just take it all!!!",

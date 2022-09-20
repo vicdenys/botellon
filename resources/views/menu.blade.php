@@ -129,8 +129,6 @@
             {{ __('menu.4.1.5') }} </span>
          <span class="block mb-4">
             {{ __('menu.4.2') }} </span>
-         <span>
-            {{ __('menu.4.3') }} </span>
       </p>
    </div>
 
