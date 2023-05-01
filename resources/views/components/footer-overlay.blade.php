@@ -13,13 +13,13 @@
 
         @if($isDarkTheme)
         <li id="reservationLink" class="text-xl text-right  justify-between flex lg:inline px-8 py-4 md:py-6 lg:py-0 lg:px-0 lg:border-none border-t border-t-white  opacity-0 transform translate-y-full animate-pop-up" :class="[ menuOpen ? 'text-green delay-500':'text-white delay-100' ]" style="animation-delay: 0.4s;">
-            <a href="https://www.restogiftcards.com/nl/restaurants/be/181483/botell%C3%B3n+antwerp&obmPrimaryColor=%23063e33&obmFontColor=%23f6eee3&lang={{ Config::get('app.locale') }}" target="_blank" class=" pb-1" data-hover>{{ __('home.vouchers')}}</a>
+            <a href="https://widget.tablebooker.shop/?shop-id=195&source=website&collections=vouchers&primary-color=%23063e33&lang={{ Config::get('app.locale') }}" target="_blank" class=" pb-1" data-hover>{{ __('home.vouchers')}}</a>
             <span class="hidden lg:inline">•</span>
             <a href="https://reservations.tablebooker.com/?restaurantId=51380481&obmPrimaryColor=%23063e33&obmFontColor=%23f6eee3&lang={{ Config::get('app.locale') }}" target="_blank" class=" pb-1" data-hover>{{ __('home.reservation')}}</a>
         </li>
         @else
         <li class="text-xl bg-white lg:pb-0  text-right  justify-between flex lg:inline px-8 py-4 md:py-6 lg:py-0 lg:px-0 lg:border-none border-t border-t-green  opacity-0 transform translate-y-full animate-pop-up text-green" :class="[ menuOpen ? 'border-green delay-500':'' ]" style="animation-delay: 0.4s;">
-            <a href="https://www.restogiftcards.com/nl/restaurants/be/181483/botell%C3%B3n+antwerp&obmPrimaryColor=%23063e33&obmFontColor=%23f6eee3&lang={{ Config::get('app.locale') }}" target="_blank" class="pb-1" data-hover>{{ __('home.vouchers')}}</a>
+            <a href="https://widget.tablebooker.shop/?shop-id=195&source=website&collections=vouchers&primary-color=%23063e33&lang={{ Config::get('app.locale') }}" target="_blank" class="pb-1" data-hover>{{ __('home.vouchers')}}</a>
             <span class="hidden lg:inline">•</span>
             <a href="https://reservations.tablebooker.com/?restaurantId=51380481&obmPrimaryColor=%23063e33&obmFontColor=%23f6eee3&lang={{ Config::get('app.locale') }}" target="_blank" class="pb-1" data-hover>{{ __('home.reservation')}}</a>
         </li>
