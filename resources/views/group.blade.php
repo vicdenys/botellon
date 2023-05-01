@@ -22,6 +22,8 @@
                     {{ __('group.1.3') }} </span>
                 <span class="block">
                     {{ __('group.1.4') }} </span>
+				<span class="block">
+                    {{ __('group.1.5') }} </span>
             </p>
         </div>
         <div data-module-parallax class="parallax-container flex  items-center justify-center relative  max-h-60 md:max-h-[initial]   md:w-1/2 overflow-hidden  border-y md:border-none border-green">
@@ -42,10 +44,10 @@
                     {{ __('group.2.1.2') }} </span>
                 <span class="block">
                     {{ __('group.2.2') }} </span>
-                <span class="block mb-4">
+                <!--<span class="block mb-4">
                     {{ __('group.2.2.2') }} </span>
                 <span class="block ">
-                    {{ __('group.2.3') }} </span>
+                    {{ __('group.2.3') }} </span>-->
             </p>
         </div>
     </div>

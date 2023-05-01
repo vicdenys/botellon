@@ -38,7 +38,7 @@
    </div>
 
    <div class="text-center  py-4 border-y border-green ">
-      <h1 class="font-victorianna-thin text-3xl  ">Every day brunch?</h1>
+      <h1 class="font-victorianna-thin text-3xl  ">BRUNCH</h1>
    </div>
    <div class=" md:flex  md:flex-row-reverse md:border-b border-green">
       <div class="px-8 py-8 md:py-12 bg-white md:w-1/2">
@@ -46,8 +46,8 @@
             <span class="block mb-4">
                {{ __('menu.1.1') }}
             </span>
-            <span class="block mb-4">
-               {{ __('menu.1.2') }} </span>
+            <!--<span class="block mb-4">
+               {{ __('menu.1.2') }} </span>-->
             <span class="block ">
                {{ __('menu.1.3') }} </span>
             <span class="block">
@@ -67,18 +67,18 @@
 
    <div class="px-8 py-8 md:py-12 bg-white">
       <p class="text-center">
-         <span class="block mb-4">
-            {{ __('menu.2.1') }} </span>
          <span class="block ">
+            {{ __('menu.2.1') }} </span>
+         <span class="block mb-4">
             {{ __('menu.2.2') }} </span>
          <span class="block ">
             {{ __('menu.2.2.0') }} </span>
-         <span class="block mb-4">
+         <span class="block ">
             {{ __('menu.2.2.1') }} </span>
-         <span class="block">
-            {{ __('menu.2.3') }} </span>
          <span class="block mb-4">
-            {{ __('menu.2.3.0') }} </span>
+            {{ __('menu.2.3') }} </span>
+         <!--<span class="block mb-4">
+            {{ __('menu.2.3.0') }} </span>-->
          <span class="block mb-4">
             {{ __('menu.2.4') }} </span>
          <span class="block ">
@@ -129,6 +129,10 @@
             {{ __('menu.4.1.5') }} </span>
          <span class="block mb-4">
             {{ __('menu.4.2') }} </span>
+		 <span class="block mb-4">
+            {{ __('menu.4.3') }} </span>
+         <span class="block mb-4">
+            {{ __('menu.4.3.1') }} </span>				
       </p>
    </div>
 

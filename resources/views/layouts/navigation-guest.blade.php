@@ -47,6 +47,9 @@
                 <li class="mb-4 lg:mb-0 transform transition-all" :class="[ menuOpen ? 'opacity-100 translate-y-0 delay-[1.5s]':'opacity-0 translate-y-2 lg:opacity-100 lg:translate-y-0  ' ]">
                     <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" class="{{  request()->is('contact') ? 'font-victorianna-thin-italic ' : '' }}" href="/contact" data-hover>{{ __('nav.contact') }}</a>
                 </li>
+				<li class="mb-4 lg:mb-0 transform transition-all" :class="[ menuOpen ? 'opacity-100 translate-y-0 delay-[1.5s]':'opacity-0 translate-y-2 lg:opacity-100 lg:translate-y-0  ' ]">
+                    <a :class="[ menuOpen ? 'relative':'hidden lg:block ' ]" class="{{  request()->is('vacature') ? 'font-victorianna-thin-italic ' : '' }}" href="/vacature" data-hover>vacature</a>
+                </li>
             </ul>
         </li>
 

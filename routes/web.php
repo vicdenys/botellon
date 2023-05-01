@@ -36,11 +36,16 @@ Route::get('/events', function () {
 Route::get('/contact', function () {
     return view('contact');
 });
-
+Route::get('/vacature', function () {
+    return view('vacature');
+});  
+Route::get('/signup', function () {
+    return view('signup');
+});
+   
 Route::get('/sitemap.xml', function () {
     return view('sitemap');
 });
-
 
 
 Route::get('lang/{lang}', ['as' => 'lang.switch', 'uses' => 'App\Http\Controllers\LanguageController@switchLang']);

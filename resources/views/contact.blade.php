@@ -14,7 +14,7 @@
          <div class="absolute top-1/2  left-1/2 transform -translate-x-1/2 -translate-y-1/2">
             <svg class="animate-spin h-8 w-8 rounded-full bg-transparent border border-transparent  border-r-green border-t-green" viewBox="0 0 24 24"></svg>
          </div>
-         <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-[150%] md:w-[200%]  lg:w-[150%] relative md:absolute h-auto" src="/img/bottle-rose.jpeg" alt="picnic cloth ">
+         <img data-parallax data-speed='-0.15' class="paralax-img max-w-none w-[150%] md:w-[200%]  lg:w-[150%] relative md:absolute h-auto" src="/img/Botellon.jpg" alt="picnic cloth ">
       </div>
       <div class="px-8 py-8 md:py-12 space-y-4 bg-white md:w-1/2">
          <p class="text-left space-y-4">
@@ -41,15 +41,15 @@
       <div class="px-8 py-8 md:py-12 space-y-4 bg-white md:w-1/2">
          <p class="text-center md:text-left space-y-4">
             <span class="block">
-               Botellón Antwerp
+               botellón Antwerp
                <br>
                Waalsekaai 45a
                <br>
-               2000 {{ __('contact.3.1') }}
+               2000 Antwerp<!--{{ __('contact.3.1') }}-->
 
             </span>
             <span class="block">
-               {{ __('contact.3.2') }} BE0673 935 115</span>
+               <!--{{ __('contact.3.2') }}--> VAT BE0673 935 115</span>
             <span class="block">
                <a data-hover href="mailto:info@botellonantwerp.be">info@botellonantwerp.be</a> </span>
             <span class="block">
@@ -81,6 +81,10 @@
                {{ __('contact.2.3') }} </span>
             <span class="block mb-4">
                {{ __('contact.2.4') }} </span>
+			<span class="block ">
+               {{ __('contact.3.1') }} </span>
+            <span class="block mb-4">
+               {{ __('contact.3.2') }} </span> 
          </p>
       </div>
    </div>

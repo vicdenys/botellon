@@ -1,6 +1,81 @@
 @extends('layouts.master' , ['isDarkTheme' => 'true', 'title' => 'Home'])
-
 @section('content')
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/js/all.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<style>
+#popup {
+	background-color: #063e33;
+	padding: 20px;
+	width: 600px;
+	position: absolute;
+	z-index: 999 !important;
+	left: 0;
+	right: 0;
+	height: 90%;
+	top: 50px;
+	border: 8px solid aliceblue;
+	margin: 0 auto;
+}
+#popup h2 {
+  font-size: 25px;
+}
+.closeme {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+	color: #fff;
+	font-size: 25px;
+	font-weight: 700;
+}
+#sib-container {
+	background-color: #063e33 !important;
+	border-radius: 0 !important;
+	border-width: 0 !important;
+}
+.svg-inline--fa.fa-window-close.fa-w-16 {
+	background: #063e33;
+	padding: 0;
+	margin: 0;
+	height: 30px;
+	width: 32px;
+	border-radius: 6px;
+	border: solid #063e33;
+	border-width: 2px;
+}
+@media (max-width:610px){
+	#popup {
+	width: auto;
+	left: 11px;
+	right: 11px;
+	
+}
+}
+</style>
+<div id="popup" style="display:none;">
+  <div class="closeme"><i class="far fa-window-close"></i></div>
+  <iframe width="540" height="305" src="https://6b85c497.sibforms.com/serve/MUIEALsDIszpFW0V3gNi1baooFFJluviVktGKBUwPQXDUDG5O1VFQmGwbqrWdB69uxWtN5T8tKDYRPrFhvSpwzkQ_lScaYxcnBqMyoaj6yoLQL2_ye6ZrRQ4NgMXLMWj82cLOcYbI47qInIUAa0ODhNF-jaiu6M6WpegCjZQvVyRe3NDlVd76WcjTxHlCNkbGDZKX16o9OFZdwqY" frameborder="0" scrolling="auto" allowfullscreen style="margin-left: auto;margin-right: auto;max-width: 100%; height:100%;"></iframe>
+</div>
+<script>
+$(document).ready(function(){
+	setTimeout(showModal,3000);
+	function showModal(){
+			if($.cookie("show") == null) {
+				/* if($(window).width() >= 767) {}*/
+					$("#popup").show();
+					$.cookie("show", "2");
+				
+					
+				}else{
+					$("#popup").hide();
+				}	
+			}
+	$(".closeme").click(function(){
+		 $("#popup").hide();
+	})
+})
+</script>
 
 <div id="homeScrollContainer" class=" relative overscroll-none  max-h-screen max-h-[calc(var(--vh,1vh)*100)] snap-mandatory snap-always snap-y" :class="[ menuOpen ? 'overflow-hidden overflow-y-hidden':' overflow-y-scroll  ' ]">
     <div id="homeTopHero" class=" snap-start snap-always">
@@ -42,6 +117,7 @@
     @include('about')
 
 </div>
+
 
 
 
